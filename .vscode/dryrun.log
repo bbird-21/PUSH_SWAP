@@ -1,0 +1,5 @@
+make: Entering directory '/home/tako21/Bureau/42/PUSH_SWAP'
+make: Leaving directory '/home/tako21/Bureau/42/PUSH_SWAP'
+ 
+Makefile:14: *** recipe commences before first target.  Stop.
+
