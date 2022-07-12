@@ -1,19 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   basics.h                                           :+:      :+:    :+:   */
+/*   operations.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmeguedm <mmeguedm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/09 20:00:32 by mmeguedm          #+#    #+#             */
-/*   Updated: 2022/07/11 15:56:18 by mmeguedm         ###   ########.fr       */
+/*   Created: 2022/07/11 19:10:46 by mmeguedm          #+#    #+#             */
+/*   Updated: 2022/07/12 14:35:38 by mmeguedm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef __INCLUDES__H
-#define __INCLUDES__H
 
-#include <stdlib.h>
-#include <stdio.h> // TO REMOVE
+#include "lst.h"
+#include "basics.h"
 
-#endif
+void	ft_swap(t_stack **lst)
+{
+	// int		lstlenght;
+	// t_stack	*tmp;
+
+	// lstlenght = ft_lstlenght(*lst);
+	while (*lst)
+	{
+		*lst = (*lst)->next;
+	}
+}

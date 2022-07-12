@@ -3,46 +3,73 @@
 /*                                                        :::      ::::::::   */
 /*   lst.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mmeguedm <mmeguedm@student42.fr>           +#+  +:+       +#+        */
+/*   By: mmeguedm <mmeguedm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/09 16:02:22 by mmeguedm          #+#    #+#             */
-/*   Updated: 2022/07/09 21:30:41 by mmeguedm         ###   ########.fr       */
+/*   Updated: 2022/07/12 15:25:54 by mmeguedm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "lst.h"
 #include "basics.h"
+#include "operations.h"
 
-t_stack	ft_fillstack(int value)
-{
-	ft_lstnew(value);
-	ft_lstadd_front()
-}
+// t_stack	ft_fillstack(int value, t_stack st)
+// {
+// 	ft_lstadd_front(&st, ft_lstnew(value));
+// }
 
-t_stack	*ft_lstnew(int value)
+void	ft_lstpush(t_stack **lst, int value, int pos)
 {
-	t_stack *new;
+	t_stack	*new;
 
 	new = malloc(sizeof(*new));
 	if (!new)
-		return (NULL);
-	new->next = NULL;
+		return ;
 	new->value = value;
-	return(new);
-
+	new->pos = pos;
+	new->next = *lst;
+	*lst = new;
 }
 
-void	ft_lstadd_front(t_stack **lst, t_stack *element)
+int	ft_lstlenght(t_stack *st)
 {
-	element->next = *lst;
-	*lst = element;
-}
+	int	lenght;
 
-void	ft_lstprint(t_stack	**lst, t_stack *element)
-{
-	while (element != NULL)
+	lenght = 0;
+	while (st)
 	{
-		printf("[%d]\n", element->value);
-		element = element->next;
+		st = st->next;
+		lenght++;
 	}
+	return (lenght);
+}
+
+void	ft_lstprint(t_stack *sta, t_stack *stb)
+{
+	int	count;
+	int	space;
+
+	space = 0;
+	while (sta || stb)
+	{
+		count = 0;
+		if (sta)
+		{
+			count = printf("|[VALUE : %d] [POS : %d]|   ", sta->value, sta->pos);
+			sta = sta->next;
+		}
+		if (space <= count)
+			space = count;
+		if (count == 0)
+			printf("%*c", space, ' ');
+		if (stb)
+		{
+			printf("|[VALUE : %d] [POS : %d]|", stb->value, stb->pos);
+			stb = stb->next;
+		}
+		printf("\n");
+	}
+	printf("-------%*c-------\n", space, ' ');
+	printf("STACK A%*cSTACK B", space, ' ');
 }

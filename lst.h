@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   lst.h                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mmeguedm <mmeguedm@student42.fr>           +#+  +:+       +#+        */
+/*   By: mmeguedm <mmeguedm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/09 18:09:01 by mmeguedm          #+#    #+#             */
-/*   Updated: 2022/07/09 21:20:24 by mmeguedm         ###   ########.fr       */
+/*   Updated: 2022/07/12 14:44:59 by mmeguedm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,11 @@ typedef struct		s_stack
 	int				target_pos;
 	int				cost_a;
 	int				cost_b;
-	struct s_list	*next;
+	struct s_stack	*next;
 }					t_stack;
 
-t_stack	*ft_lstnew(int value);
-void	ft_lstadd_front(t_stack **lst, t_stack *element);
-void	ft_lstprint(t_stack	**lst, t_stack *element);
+void	ft_lstprint(t_stack	*sta, t_stack *stb);
+void	ft_lstpush(t_stack **lst, int value, int pos);
+int		ft_lstlenght(t_stack *st);
 
-#define __LST__H
+#endif

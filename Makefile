@@ -4,13 +4,13 @@ CC = gcc
 
 CFLAGS = -Wall -Werror -Wextra
 
-SRCS = push_swap.c utils.CC
+SRCS = push_swap.c utils.c lst.c operations.c
 
-OBJS = {SRCS:.c=.o}
+OBJS = ${SRCS:.c=.o}
 
-all = $(NAME)
+all : $(NAME)
 
-$(NAME) = $(OBJS)
+$(NAME) : $(OBJS)
 		$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
 
 clean :

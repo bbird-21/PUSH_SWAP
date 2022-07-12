@@ -1,5 +1,6 @@
-make: Entering directory '/home/tako21/Bureau/42/PUSH_SWAP'
-make: Leaving directory '/home/tako21/Bureau/42/PUSH_SWAP'
+make --dry-run --keep-going --print-directory
+make: Entering directory '/mnt/nfs/homes/mmeguedm/Desktop/Projects/PUSH_SWAP'
+gcc -Wall -Werror -Wextra   -c -o operations.o operations.c
+gcc -Wall -Werror -Wextra push_swap.o utils.o lst.o operations.o -o push_swap
+make: Leaving directory '/mnt/nfs/homes/mmeguedm/Desktop/Projects/PUSH_SWAP'
  
-Makefile:14: *** recipe commences before first target.  Stop.
-

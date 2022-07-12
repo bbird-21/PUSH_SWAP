@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mmeguedm <mmeguedm@student42.fr>           +#+  +:+       +#+        */
+/*   By: mmeguedm <mmeguedm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/09 16:01:13 by mmeguedm          #+#    #+#             */
-/*   Updated: 2022/07/09 19:07:56 by mmeguedm         ###   ########.fr       */
+/*   Updated: 2022/07/11 15:56:56 by mmeguedm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,4 +16,4 @@
 #define TRUE 1
 #define FALSE 0
 
-#define __PUSH_SWAP__H
+#endif
