@@ -2,7 +2,8 @@ NAME = push_swap
 
 CC = gcc
 
-CFLAGS = -Wall -Werror -Wextra
+# DON T FORGET FLAGS
+CFLAGS = -g
 
 SRCS = push_swap.c utils.c lst.c operations.c
 

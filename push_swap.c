@@ -6,7 +6,7 @@
 /*   By: mmeguedm <mmeguedm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/09 16:00:36 by mmeguedm          #+#    #+#             */
-/*   Updated: 2022/07/12 14:46:07 by mmeguedm         ###   ########.fr       */
+/*   Updated: 2022/07/12 20:43:44 by mmeguedm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #include "push_swap.h"
 #include "utils.h"
 #include "lst.h"
+#include "operations.h"
 
 // void	ft_sort_two()
 
@@ -53,6 +54,10 @@ int	main(int argc, char **argv)
 			ft_lstpush(&stb, i, i);
 		}
 	}
+	ft_lstprint(sta, stb);
+	// ft_swap(&stb, "sb\n");
+	// ft_push(&sta, &stb, "pb\n");
+	ft_rotate(&sta, "ra\n");
 	ft_lstprint(sta, stb);
 		// more than 3 number algorithm
 }

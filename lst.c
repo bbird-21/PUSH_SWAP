@@ -6,7 +6,7 @@
 /*   By: mmeguedm <mmeguedm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/09 16:02:22 by mmeguedm          #+#    #+#             */
-/*   Updated: 2022/07/12 15:25:54 by mmeguedm         ###   ########.fr       */
+/*   Updated: 2022/07/12 20:14:04 by mmeguedm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,19 +50,17 @@ void	ft_lstprint(t_stack *sta, t_stack *stb)
 	int	count;
 	int	space;
 
-	space = 0;
+	space = 35;
 	while (sta || stb)
 	{
 		count = 0;
 		if (sta)
 		{
-			count = printf("|[VALUE : %d] [POS : %d]|   ", sta->value, sta->pos);
+			count = printf("|[VALUE : %d] [POS : %d]|", sta->value, sta->pos);
 			sta = sta->next;
 		}
-		if (space <= count)
-			space = count;
-		if (count == 0)
-			printf("%*c", space, ' ');
+		count = space - count;
+		printf("%*c", count, ' ');
 		if (stb)
 		{
 			printf("|[VALUE : %d] [POS : %d]|", stb->value, stb->pos);
@@ -70,6 +68,6 @@ void	ft_lstprint(t_stack *sta, t_stack *stb)
 		}
 		printf("\n");
 	}
-	printf("-------%*c-------\n", space, ' ');
-	printf("STACK A%*cSTACK B", space, ' ');
+	printf("-------%*c-------\n", space, '-');
+	printf("STACK A%*cSTACK B\n\n", space, ' ');
 }
