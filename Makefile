@@ -5,7 +5,7 @@ CC = gcc
 # DON T FORGET FLAGS
 CFLAGS = -g
 
-SRCS = push_swap.c utils.c lst.c operations.c
+SRCS = push_swap.c utils.c lst.c operations.c sort_algo.c
 
 OBJS = ${SRCS:.c=.o}
 

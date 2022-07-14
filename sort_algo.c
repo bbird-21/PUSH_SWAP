@@ -1,24 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   sort_algo.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmeguedm <mmeguedm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/09 16:01:13 by mmeguedm          #+#    #+#             */
-/*   Updated: 2022/07/14 17:30:46 by mmeguedm         ###   ########.fr       */
+/*   Created: 2022/07/14 15:53:38 by mmeguedm          #+#    #+#             */
+/*   Updated: 2022/07/14 17:48:18 by mmeguedm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef __PUSH__SWAP__H
-#define __PUSH_SWAP__H
-
+#include "sort_algo.h"
 #include "lst.h"
+#include "operations.h"
 
-/* CREATING A FUNTION POINTER */
-typedef int(*t_pf)(t_stack **sta, t_stack **stb);
+int	ft_sort_two(t_stack **sta, t_stack **stb)
+{
+	(void)**stb;
+	ft_swap(sta, "sa\n");
+	return (1);
+}
 
-t_pf	ft_parse_args(int argc);
-void	ft_fillstack(int argc, char **argv, t_stack **sta);
+// void	ft_sort_three()
+// {
 
-#endif
+// }
+
+// void	ft_sort()
+// {
+
+// }

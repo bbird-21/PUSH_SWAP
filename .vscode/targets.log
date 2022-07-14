@@ -1,13 +1,14 @@
 make all --print-data-base --no-builtin-variables --no-builtin-rules --question
+make: *** No rule to make target 'sort_algo.o', needed by 'push_swap'.  Stop.
+
 # GNU Make 4.2.1
- 
 # Built for x86_64-pc-linux-gnu
 # Copyright (C) 1988-2016 Free Software Foundation, Inc.
 # License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Tue Jul 12 21:39:55 2022
+# Make data base, printed on Thu Jul 14 17:38:22 2022
 
 # Variables
 
@@ -48,7 +49,7 @@ _ = /usr/bin/code
 # makefile (from 'Makefile', line 6)
 CFLAGS = -g
 # environment
-JOURNAL_STREAM = 9:52063
+JOURNAL_STREAM = 9:2140052
 # environment
 XDG_CONFIG_DIRS = /etc/xdg/xdg-ubuntu:/etc/xdg
 # makefile (from 'Makefile', line 1)
@@ -70,15 +71,15 @@ VSCODE_VERBOSE_LOGGING = true
 # makefile (from 'Makefile', line 10)
 OBJS = ${SRCS:.c=.o}
 # environment
-MANAGERPID = 2455
+MANAGERPID = 531290
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /run/user/101815/vscode-ipc-c932ea8f-dbdd-4e90-87b7-086c2cb14104.sock
+VSCODE_IPC_HOOK_EXTHOST = /run/user/101815/vscode-ipc-7d11549c-5bf6-4dfb-b6a4-ac8e7d820c8f.sock
 # environment
-VSCODE_CWD = /mnt/nfs/homes/mmeguedm/Desktop/Projects/PUSH_SWAP
+VSCODE_CWD = /mnt/nfs/homes/mmeguedm
 # environment
-XDG_SESSION_PATH = /org/freedesktop/DisplayManager/Session0
+XDG_SESSION_PATH = /org/freedesktop/DisplayManager/Session9
 # environment
-KRB5CCNAME = FILE:/tmp/krb5cc_101815_h0JAMx
+KRB5CCNAME = FILE:/tmp/krb5cc_101815_Y1b6iu
 # default
 MAKE_HOST := x86_64-pc-linux-gnu
 # environment
@@ -88,7 +89,7 @@ GPG_AGENT_INFO = /run/user/101815/gnupg/S.gpg-agent:0:1
 # environment
 LSCOLORS = Gxfxcxdxbxegedabagacad
 # environment
-SESSION_MANAGER = local/e1r3p21.clusters.42paris.fr:@/tmp/.ICE-unix/2973,unix/e1r3p21.clusters.42paris.fr:/tmp/.ICE-unix/2973
+SESSION_MANAGER = local/e2r10p1.clusters.42paris.fr:@/tmp/.ICE-unix/531807,unix/e2r10p1.clusters.42paris.fr:/tmp/.ICE-unix/531807
 # environment
 XDG_RUNTIME_DIR = /run/user/101815
 # environment
@@ -98,7 +99,7 @@ VSCODE_LOG_STACK = false
 # environment
 ELECTRON_RUN_AS_NODE = 1
 # environment
-INVOCATION_ID = 4e4a49bb853f408f86b86fd99369e8a3
+INVOCATION_ID = 110050adec9544a894118e3d4305a694
 # default
 .FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell archives jobserver output-sync check-symlink load
 # environment
@@ -112,7 +113,7 @@ XDG_SESSION_DESKTOP = ubuntu
 # environment
 SSH_AUTH_SOCK = /run/user/101815/keyring/ssh
 # environment
-GIO_LAUNCHED_DESKTOP_FILE_PID = 4206
+GIO_LAUNCHED_DESKTOP_FILE_PID = 532691
 # automatic
 %F = $(notdir $%)
 # environment
@@ -124,7 +125,7 @@ PWD = /mnt/nfs/homes/mmeguedm/Desktop/Projects/PUSH_SWAP
 # default
 .LOADED := 
 # environment
-SSH_AGENT_PID = 2937
+SSH_AGENT_PID = 531771
 # environment
 ORIGINAL_XDG_CURRENT_DESKTOP = ubuntu:GNOME
 # environment
@@ -160,13 +161,13 @@ MAKECMDGOALS := all
 # environment
 QT_IM_MODULE = ibus
 # makefile (from 'Makefile', line 8)
-SRCS = push_swap.c utils.c lst.c operations.c
+SRCS = push_swap.c utils.c lst.c operations.c sort_algo.c
 # environment
 SHLVL = 2
 # makefile (from 'Makefile', line 3)
 CC = gcc
 # environment
-TERMINATOR_UUID = urn:uuid:124a201b-02ae-4375-abcf-868f046f4d3b
+TERMINATOR_UUID = urn:uuid:e04045bd-7a0f-49f1-b2d0-85a7c10ad0c2
 # default
 MAKE_VERSION := 4.2.1
 # environment
@@ -240,7 +241,7 @@ TERMINATOR_DBUS_NAME = net.tenshu.Terminator21a9d5db22c73a993ff0b42f64b396873
 # environment
 DOCKER_HOST = unix:///run/user/101815/docker.sock
 # environment
-VSCODE_PID = 4373
+VSCODE_PID = 532750
 # variable set hash-table stats:
 # Load=115/1024=11%, Rehash=0, Collisions=21/145=14%
 
@@ -250,9 +251,9 @@ VSCODE_PID = 4373
 
 # Directories
 
-# . (device 59, inode 228139009): 24 files, no impossibilities.
+# . (device 58, inode 228139009): 25 files, no impossibilities.
 
-# 24 files, no impossibilities in 1 directories.
+# 25 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -260,26 +261,31 @@ VSCODE_PID = 4373
 
 # Files
 
+# Not a target:
+sort_algo.o:
+#  Implicit rule search has been done.
+#  File does not exist.
+#  File has not been updated.
+
 all: push_swap
 #  Phony target (prerequisite of .PHONY).
 #  Command line target.
 #  Implicit rule search has not been done.
 #  File does not exist.
-#  File has been updated.
-#  Successfully updated.
+#  File has not been updated.
 
 .PHONY: all clean fclean re bonus
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
 
+ 
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-07-12 21:39:52.46874439
+#  Last modified 2022-07-14 17:38:21.324121572
 #  File has been updated.
 #  Successfully updated.
- 
 
 bonus:
 #  Phony target (prerequisite of .PHONY).
@@ -318,53 +324,52 @@ clean:
 # Not a target:
 operations.o:
 #  Implicit rule search has been done.
-#  Last modified 2022-07-12 21:39:53.957742903
+#  Last modified 2022-07-14 17:37:26.377174332
 #  File has been updated.
 #  Successfully updated.
 
 # Not a target:
 push_swap.o:
 #  Implicit rule search has been done.
-#  Last modified 2022-07-12 21:39:53.814743045
+#  Last modified 2022-07-14 17:37:26.217174481
 #  File has been updated.
 #  Successfully updated.
 
-push_swap: push_swap.o utils.o lst.o operations.o
+push_swap: push_swap.o utils.o lst.o operations.o sort_algo.o
 #  Implicit rule search has not been done.
-#  Last modified 2022-07-12 21:39:53.985742874
-#  File has been updated.
-#  Successfully updated.
+#  File does not exist.
+#  File has not been updated.
 #  recipe to execute (from 'Makefile', line 15):
 		$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
 
 # Not a target:
 lst.o:
 #  Implicit rule search has been done.
-#  Last modified 2022-07-12 21:39:53.914742945
+#  Last modified 2022-07-14 17:37:26.322174384
 #  File has been updated.
 #  Successfully updated.
 
 # Not a target:
 utils.o:
 #  Implicit rule search has been done.
-#  Last modified 2022-07-12 21:39:53.857743002
+#  Last modified 2022-07-14 17:37:26.274174428
 #  File has been updated.
 #  Successfully updated.
 
 # files hash-table stats:
-# Load=14/1024=1%, Rehash=0, Collisions=0/39=0%
+# Load=15/1024=1%, Rehash=0, Collisions=1/41=2%
 # VPATH Search Paths
 
 # No 'vpath' search paths.
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 34 / storage = 293 B / avg = 8 B
-# current buf: size = 8162 B / used = 293 B / count = 34 / avg = 8 B
+# strcache buffers: 1 (0) / strings = 37 / storage = 329 B / avg = 8 B
+# current buf: size = 8162 B / used = 329 B / count = 37 / avg = 8 B
 
-# strcache performance: lookups = 58 / hit rate = 41%
+# strcache performance: lookups = 60 / hit rate = 38%
 # hash-table stats:
-# Load=34/8192=0%, Rehash=0, Collisions=1/58=2%
-# Finished Make data base on Tue Jul 12 21:39:55 2022
+# Load=37/8192=0%, Rehash=0, Collisions=1/60=2%
+# Finished Make data base on Thu Jul 14 17:38:22 2022
 
  

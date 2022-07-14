@@ -1,24 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   sort_algo.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmeguedm <mmeguedm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/09 16:01:13 by mmeguedm          #+#    #+#             */
-/*   Updated: 2022/07/14 17:30:46 by mmeguedm         ###   ########.fr       */
+/*   Created: 2022/07/14 15:53:08 by mmeguedm          #+#    #+#             */
+/*   Updated: 2022/07/14 17:42:32 by mmeguedm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef __PUSH__SWAP__H
-#define __PUSH_SWAP__H
+#ifndef __SORT__ALGO__H
+#define __SORT__ALGO__H
 
 #include "lst.h"
 
-/* CREATING A FUNTION POINTER */
-typedef int(*t_pf)(t_stack **sta, t_stack **stb);
-
-t_pf	ft_parse_args(int argc);
-void	ft_fillstack(int argc, char **argv, t_stack **sta);
+int	ft_sort_two(t_stack **sta, t_stack **stb);
 
 #endif
