@@ -6,7 +6,7 @@
 /*   By: mmeguedm <mmeguedm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/09 16:00:36 by mmeguedm          #+#    #+#             */
-/*   Updated: 2022/07/14 17:48:18 by mmeguedm         ###   ########.fr       */
+/*   Updated: 2022/07/14 18:45:02 by mmeguedm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,14 +36,14 @@ t_pf	ft_parse_args(int argc)
 {
 	t_pf	*table;
 
-	table = (t_pf[5]){
+	table = (t_pf[3]){
 		NULL,
-	[2] = ft_sort_two
-	// [3] = // ft_sort_three
-	// [4] = // ft_sort
+	[0] = ft_sort_two,
+	// [1] = // ft_sort_three
+	[2] = ft_sort
 	};
 	if (argc > 3)
-		return (table[4]);
+		return (table[2]);
 	return (table[argc]);
 }
 

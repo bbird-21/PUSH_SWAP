@@ -6,7 +6,7 @@
 /*   By: mmeguedm <mmeguedm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/11 19:10:46 by mmeguedm          #+#    #+#             */
-/*   Updated: 2022/07/13 14:54:34 by mmeguedm         ###   ########.fr       */
+/*   Updated: 2022/07/14 20:39:24 by mmeguedm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,22 +46,59 @@ void	ft_push(t_stack **dest, t_stack **src, char *op)
 	ft_putstr(op);
 }
 
+// void	ft_rotate(t_stack **st, char *op)
+// {
+// 	t_stack	*last;
+// 	t_stack	*before_last;
+
+// 	last = *st;
+// 	if (!*st)
+// 		return ;
+// 	while (last->next)
+// 	{
+// 		before_last = last;
+// 		last = last->next;
+// 	}
+// 	last->next = (*st)->next; // LE DERNIER ELEMENT POINTE VERS LE DEUXIEME ELEMENT
+// 	before_last->next = (*st); //L AVANT DERNIER ELEMENT POINT VERS LE PREMIER
+// 	(*st)->next = NULL; // LE PREMIER ELEMENT POINTE VERS NULL
+// 	(*st) = last;
+// 	ft_putstr(op);
+// }
+
 void	ft_rotate(t_stack **st, char *op)
+{
+	t_stack	*last;
+	t_stack	*second;
+
+	second = (*st)->next;
+	last = *st;
+	if (!*st)
+		return ;
+	while (last->next)
+		last = last->next;
+	last->next = (*st); // LE DERNIER ELEMENT POINTE VERS LE PREMIER
+	(*st)->next = NULL;
+	(*st) = second; // LE POINTEUR DE LA PILE POINTE VERS LE NOUVEAU PREMIER
+}
+
+void	ft_rrotate(t_stack **st, char *op)
 {
 	t_stack	*last;
 	t_stack	*before_last;
 
-	last = *st;
-	if (!*st)
-		return ;
+	last = (*st);
 	while (last->next)
 	{
 		before_last = last;
 		last = last->next;
 	}
-	last->next = (*st)->next; // LE DERNIER ELEMENT POINTE VERS LE DEUXIEME ELEMENT
-	before_last->next = (*st); //L AVANT DERNIER ELEMENT POINT VERS LE PREMIER
-	(*st)->next = NULL; // LE PREMIER ELEMENT POINTE VERS NULL
+	last->next = (*st);
+	before_last->next = NULL;
 	(*st) = last;
-	ft_putstr(op);
+
 }
+// void	ft_rrotate(t_stack **st, char *op)
+// {
+
+// }
