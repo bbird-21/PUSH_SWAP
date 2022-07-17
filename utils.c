@@ -6,11 +6,10 @@
 /*   By: mmeguedm <mmeguedm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/09 18:20:20 by mmeguedm          #+#    #+#             */
-/*   Updated: 2022/07/14 15:46:12 by mmeguedm         ###   ########.fr       */
+/*   Updated: 2022/07/17 20:02:19 by mmeguedm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "basics.h"
 #include "utils.h"
 #include "push_swap.h"
 
@@ -70,31 +69,11 @@ t_bool	ft_strcmp(char *s1, char *s2)
 	while (s1[i] == s2[i] && (s1[i] || s2[i]))
 		i++;
 	if (s1[i] == s2[i])
-		return (true);
-	return (false);
+		return (false);
+	return (true);
 }
 
-t_bool	ft_checkargs(int argc, char **argv)
+int	ft_isdigit(int c)
 {
-	int	i;
-	int	j;
-
-	while (--argc)
-	{
-		i = 0;
-		j = 1;
-		while (argv[argc][i])
-		{
-			if (argv[argc][i] < 48 || argv[argc][i] > 57)
-				return (false);
-			i++;
-		}
-		while (j < argc)
-		{
-			if (ft_strcmp(argv[argc], argv[j]))
-				return (false);
-			j++;
-		}
-	}
-	return (true);
+	return (c >= '0' && c <= '9');
 }

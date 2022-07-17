@@ -6,7 +6,7 @@
 /*   By: mmeguedm <mmeguedm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/09 21:38:02 by mmeguedm          #+#    #+#             */
-/*   Updated: 2022/07/11 19:22:26 by mmeguedm         ###   ########.fr       */
+/*   Updated: 2022/07/16 18:35:54 by mmeguedm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void	ft_lstprint(t_list *lst)
+void	ft_lstprint_all(t_list *lst)
 {
 	int	size;
 
@@ -38,5 +38,5 @@ int	main(void)
 	beginElement = ft_lstnew(s1);
 	ft_lstadd_front(&beginElement, ft_lstnew(s2));
 	ft_lstadd_front(&beginElement, ft_lstnew(s3));
-	ft_lstprint(beginElement);
+	ft_lstprint_all(beginElement);
 }

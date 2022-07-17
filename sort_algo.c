@@ -6,13 +6,13 @@
 /*   By: mmeguedm <mmeguedm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/14 15:53:38 by mmeguedm          #+#    #+#             */
-/*   Updated: 2022/07/14 20:39:02 by mmeguedm         ###   ########.fr       */
+/*   Updated: 2022/07/14 20:55:15 by mmeguedm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "sort_algo.h"
 #include "lst.h"
-#include "operations.h"
+#include "do_op.h"
 
 int	ft_sort_two(t_stack **sta, t_stack **stb)
 {

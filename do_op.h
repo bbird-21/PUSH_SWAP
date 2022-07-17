@@ -1,20 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   basics.h                                           :+:      :+:    :+:   */
+/*   do_op.h                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmeguedm <mmeguedm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/09 20:00:32 by mmeguedm          #+#    #+#             */
-/*   Updated: 2022/07/12 18:21:33 by mmeguedm         ###   ########.fr       */
+/*   Created: 2022/07/11 19:06:59 by mmeguedm          #+#    #+#             */
+/*   Updated: 2022/07/14 20:39:50 by mmeguedm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef __INCLUDES__H
-#define __INCLUDES__H
+#ifndef __OPERATIONS__H
+#define __OPERATIONS__H
 
-#include <stdlib.h>
-#include <stdio.h> // TO REMOVE
-#include <unistd.h>
+#include "lst.h"
 
+void	ft_swap(t_stack **st, char *op);
+void	ft_print(void);
+void	ft_push(t_stack **dest, t_stack **src, char *op);
+void	ft_rotate(t_stack **st, char *op);
+void	ft_rrotate(t_stack **st, char *op);
 #endif

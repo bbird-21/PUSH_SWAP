@@ -1,6 +1,5 @@
 make --dry-run --keep-going --print-directory
 make: Entering directory '/mnt/nfs/homes/mmeguedm/Desktop/Projects/PUSH_SWAP'
-gcc -g   -c -o sort_algo.o sort_algo.c
-gcc -g push_swap.o utils.o lst.o operations.o sort_algo.o -o push_swap
+make: Nothing to be done for 'all'.
 make: Leaving directory '/mnt/nfs/homes/mmeguedm/Desktop/Projects/PUSH_SWAP'
  

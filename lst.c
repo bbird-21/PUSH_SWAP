@@ -6,13 +6,13 @@
 /*   By: mmeguedm <mmeguedm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/09 16:02:22 by mmeguedm          #+#    #+#             */
-/*   Updated: 2022/07/14 18:43:59 by mmeguedm         ###   ########.fr       */
+/*   Updated: 2022/07/17 15:05:14 by mmeguedm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "utils.h"
 #include "lst.h"
-#include "basics.h"
-#include "operations.h"
+#include "do_op.h"
 
 // t_stack	ft_fillstack(int value, t_stack st)
 // {
@@ -29,6 +29,7 @@ void	ft_lstpush(t_stack **lst, int value, int pos)
 	new->value = value;
 	new->pos = pos;
 	new->next = *lst;
+	new->index = 0;
 	*lst = new;
 }
 
@@ -45,7 +46,7 @@ int	ft_lstlenght(t_stack *st)
 	return (lenght);
 }
 
-void	ft_lstprint(t_stack *sta, t_stack *stb)
+void	ft_lstprint_all(t_stack *sta, t_stack *stb)
 {
 	int	count;
 	int	space;
@@ -70,4 +71,13 @@ void	ft_lstprint(t_stack *sta, t_stack *stb)
 	}
 	printf("-------%*c-------\n", space, '-');
 	printf("STACK A%*cSTACK B\n\n", space, ' ');
+}
+
+void	ft_lstprint_one(t_stack *st)
+{
+	while (st)
+	{
+		printf("|[VALUE : %d][POS : %d][INDEX : %d]|\n", st->value, st->pos, st->index);
+		st = st->next;
+	}
 }

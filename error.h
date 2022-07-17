@@ -1,23 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   operations.h                                       :+:      :+:    :+:   */
+/*   error.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmeguedm <mmeguedm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/11 19:06:59 by mmeguedm          #+#    #+#             */
-/*   Updated: 2022/07/14 20:39:50 by mmeguedm         ###   ########.fr       */
+/*   Created: 2022/07/17 18:37:32 by mmeguedm          #+#    #+#             */
+/*   Updated: 2022/07/17 19:54:39 by mmeguedm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef __OPERATIONS__H
-#define __OPERATIONS__H
+#ifndef __ERROR__H
+#define __ERROR__H
 
-#include "lst.h"
+#include "utils.h"
 
-void	ft_swap(t_stack **st, char *op);
-void	ft_print(void);
-void	ft_push(t_stack **dest, t_stack **src, char *op);
-void	ft_rotate(t_stack **st, char *op);
-void	ft_rrotate(t_stack **st, char *op);
+t_bool	ft_checkargs(int argc, char **argv);
+t_bool	ft_allowed_string(char *str);
+t_bool	ft_duplicate_string(char **argv, char *str);
 #endif

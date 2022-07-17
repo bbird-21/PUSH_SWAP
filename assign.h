@@ -1,34 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   lst.h                                              :+:      :+:    :+:   */
+/*   assign.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmeguedm <mmeguedm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/09 18:09:01 by mmeguedm          #+#    #+#             */
-/*   Updated: 2022/07/16 18:37:40 by mmeguedm         ###   ########.fr       */
+/*   Created: 2022/07/16 18:10:14 by mmeguedm          #+#    #+#             */
+/*   Updated: 2022/07/17 17:16:50 by mmeguedm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef __LST__H
-#define __LST__H
+#ifndef __ASSIGN__H
+#define __ASSIGN__H
 
-#include <stdlib.h>
+// void	ft_assign_index(t_stack *sta, int index);
 
-typedef struct		s_stack
-{
-	int				value;
-	int				pos;
-	int				index;
-	int				target_pos;
-	int				cost_a;
-	int				cost_b;
-	struct s_stack	*next;
-}					t_stack;
+// void	ft_assign_index(t_stack *sta);
 
-void	ft_lstprint_all(t_stack	*sta, t_stack *stb);
-void	ft_lstpush(t_stack **lst, int value, int pos);
-int		ft_lstlenght(t_stack *st);
-void	ft_lstprint_one(t_stack *st);
+void	ft_assign_index(t_stack *sta, int index);
 
 #endif
