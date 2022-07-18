@@ -6,12 +6,11 @@
 /*   By: mmeguedm <mmeguedm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/09 18:20:20 by mmeguedm          #+#    #+#             */
-/*   Updated: 2022/07/17 20:02:19 by mmeguedm         ###   ########.fr       */
+/*   Updated: 2022/07/18 18:39:03 by mmeguedm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "utils.h"
-#include "push_swap.h"
+#include "lst.h"
 
 int	ft_atoi(const char *str)
 {

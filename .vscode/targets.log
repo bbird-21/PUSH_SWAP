@@ -6,7 +6,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Sun Jul 17 19:07:52 2022
+# Make data base, printed on Mon Jul 18 19:41:28 2022
 
 # Variables
 
@@ -39,6 +39,8 @@ CURDIR := /mnt/nfs/homes/mmeguedm/Desktop/Projects/PUSH_SWAP
 # makefile
 SHELL = /bin/sh
 # environment
+GDM_LANG = en
+# environment
 VTE_VERSION = 6003
 # environment
 VSCODE_NLS_CONFIG = {"locale":"en-us","availableLanguages":{},"_languagePackSupport":true}
@@ -47,7 +49,7 @@ _ = /usr/bin/code
 # makefile (from 'Makefile', line 6)
 CFLAGS = -g
 # environment
-JOURNAL_STREAM = 9:10277430
+JOURNAL_STREAM = 9:519358
 # environment
 XDG_CONFIG_DIRS = /etc/xdg/xdg-ubuntu:/etc/xdg
 # makefile (from 'Makefile', line 1)
@@ -69,15 +71,15 @@ VSCODE_VERBOSE_LOGGING = true
 # makefile (from 'Makefile', line 10)
 OBJS = ${SRCS:.c=.o}
 # environment
-MANAGERPID = 251461
+MANAGERPID = 126158
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /run/user/101815/vscode-ipc-39a05e61-2fb1-441c-95fb-92a738bb2758.sock
+VSCODE_IPC_HOOK_EXTHOST = /run/user/101815/vscode-ipc-1efb3671-9bed-4fe0-915e-073302a78055.sock
 # environment
 VSCODE_CWD = /mnt/nfs/homes/mmeguedm/Desktop/Projects/PUSH_SWAP
 # environment
-XDG_SESSION_PATH = /org/freedesktop/DisplayManager/Session4
+XDG_SESSION_PATH = /org/freedesktop/DisplayManager/Session2
 # environment
-KRB5CCNAME = FILE:/tmp/krb5cc_101815_0mlBuB
+KRB5CCNAME = FILE:/tmp/krb5cc_101815_HNbCtD
 # default
 MAKE_HOST := x86_64-pc-linux-gnu
 # environment
@@ -87,7 +89,7 @@ GPG_AGENT_INFO = /run/user/101815/gnupg/S.gpg-agent:0:1
 # environment
 LSCOLORS = Gxfxcxdxbxegedabagacad
 # environment
-SESSION_MANAGER = local/e1r3p19.clusters.42paris.fr:@/tmp/.ICE-unix/251857,unix/e1r3p19.clusters.42paris.fr:/tmp/.ICE-unix/251857
+SESSION_MANAGER = local/e2r6p4.clusters.42paris.fr:@/tmp/.ICE-unix/126708,unix/e2r6p4.clusters.42paris.fr:/tmp/.ICE-unix/126708
 # environment
 XDG_RUNTIME_DIR = /run/user/101815
 # environment
@@ -97,7 +99,7 @@ VSCODE_LOG_STACK = false
 # environment
 ELECTRON_RUN_AS_NODE = 1
 # environment
-INVOCATION_ID = 7d8d781ecdb84013bc003bbe52202fa8
+INVOCATION_ID = 4f0b08c6108a4b99b73a6f97cb93a8cc
 # default
 .FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell archives jobserver output-sync check-symlink load
 # environment
@@ -111,7 +113,7 @@ XDG_SESSION_DESKTOP = ubuntu
 # environment
 SSH_AUTH_SOCK = /run/user/101815/keyring/ssh
 # environment
-GIO_LAUNCHED_DESKTOP_FILE_PID = 252435
+GIO_LAUNCHED_DESKTOP_FILE_PID = 135421
 # automatic
 %F = $(notdir $%)
 # environment
@@ -123,7 +125,7 @@ PWD = /mnt/nfs/homes/mmeguedm/Desktop/Projects/PUSH_SWAP
 # default
 .LOADED := 
 # environment
-SSH_AGENT_PID = 251814
+SSH_AGENT_PID = 126672
 # environment
 ORIGINAL_XDG_CURRENT_DESKTOP = ubuntu:GNOME
 # environment
@@ -165,7 +167,7 @@ SHLVL = 2
 # makefile (from 'Makefile', line 3)
 CC = gcc
 # environment
-TERMINATOR_UUID = urn:uuid:5b97f26a-df0a-4998-841d-bebe6d1e6663
+TERMINATOR_UUID = urn:uuid:b9f15b83-766d-41de-b27e-606f7191d6db
 # default
 MAKE_VERSION := 4.2.1
 # environment
@@ -190,6 +192,8 @@ TERMINATOR_DBUS_PATH = /net/tenshu/Terminator2
 .VARIABLES := 
 # automatic
 *F = $(notdir $*)
+# environment
+LANGUAGE = en
 # environment
 XDG_SEAT_PATH = /org/freedesktop/DisplayManager/Seat0
 # environment
@@ -239,9 +243,9 @@ TERMINATOR_DBUS_NAME = net.tenshu.Terminator21a9d5db22c73a993ff0b42f64b396873
 # environment
 DOCKER_HOST = unix:///run/user/101815/docker.sock
 # environment
-VSCODE_PID = 252613
+VSCODE_PID = 145713
 # variable set hash-table stats:
-# Load=115/1024=11%, Rehash=0, Collisions=21/145=14%
+# Load=117/1024=11%, Rehash=0, Collisions=21/147=14%
 
 # Pattern-specific Variable Values
 
@@ -249,7 +253,7 @@ VSCODE_PID = 252613
 
 # Directories
 
-# . (device 59, inode 228139009): 32 files, no impossibilities.
+# . (device 58, inode 228139009): 32 files, no impossibilities.
 
 # 32 files, no impossibilities in 1 directories.
 
@@ -262,7 +266,7 @@ VSCODE_PID = 252613
 # Not a target:
 sort_algo.o:
 #  Implicit rule search has been done.
-#  Last modified 2022-07-17 19:07:51.152347287
+#  Last modified 2022-07-18 19:41:25.594055127
 #  File has been updated.
 #  Successfully updated.
 
@@ -273,9 +277,9 @@ all: push_swap
 #  File does not exist.
 #  File has been updated.
 #  Successfully updated.
+ 
 
 .PHONY: all clean fclean re bonus
- 
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -283,28 +287,28 @@ all: push_swap
 # Not a target:
 do_op.o:
 #  Implicit rule search has been done.
-#  Last modified 2022-07-17 19:07:51.121347322
+#  Last modified 2022-07-18 19:41:25.551055172
 #  File has been updated.
 #  Successfully updated.
 
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-07-17 19:07:50.200348356
+#  Last modified 2022-07-18 19:41:23.619057182
 #  File has been updated.
 #  Successfully updated.
 
 # Not a target:
 error.o:
 #  Implicit rule search has been done.
-#  Last modified 2022-07-17 19:07:51.225347205
+#  Last modified 2022-07-18 19:41:25.675055043
 #  File has been updated.
 #  Successfully updated.
 
 # Not a target:
 assign.o:
 #  Implicit rule search has been done.
-#  Last modified 2022-07-17 19:07:51.188347246
+#  Last modified 2022-07-18 19:41:25.63005509
 #  File has been updated.
 #  Successfully updated.
 
@@ -345,13 +349,13 @@ clean:
 # Not a target:
 push_swap.o:
 #  Implicit rule search has been done.
-#  Last modified 2022-07-17 19:07:51.003347454
+#  Last modified 2022-07-18 19:41:25.422055306
 #  File has been updated.
 #  Successfully updated.
 
 push_swap: push_swap.o utils.o lst.o do_op.o sort_algo.o assign.o error.o
 #  Implicit rule search has not been done.
-#  Last modified 2022-07-17 19:07:51.266347159
+#  Last modified 2022-07-18 19:41:25.712055004
 #  File has been updated.
 #  Successfully updated.
 #  recipe to execute (from 'Makefile', line 15):
@@ -360,14 +364,14 @@ push_swap: push_swap.o utils.o lst.o do_op.o sort_algo.o assign.o error.o
 # Not a target:
 lst.o:
 #  Implicit rule search has been done.
-#  Last modified 2022-07-17 19:07:51.079347369
+#  Last modified 2022-07-18 19:41:25.508055216
 #  File has been updated.
 #  Successfully updated.
 
 # Not a target:
 utils.o:
 #  Implicit rule search has been done.
-#  Last modified 2022-07-17 19:07:51.04234741
+#  Last modified 2022-07-18 19:41:25.468055258
 #  File has been updated.
 #  Successfully updated.
 
@@ -385,6 +389,6 @@ utils.o:
 # strcache performance: lookups = 69 / hit rate = 39%
 # hash-table stats:
 # Load=42/8192=1%, Rehash=0, Collisions=1/69=1%
-# Finished Make data base on Sun Jul 17 19:07:52 2022
+# Finished Make data base on Mon Jul 18 19:41:28 2022
 
  

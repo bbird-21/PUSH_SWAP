@@ -12,8 +12,6 @@
 
 
 #include "lst.h"
-#include "do_op.h"
-#include "utils.h"
 
 void	ft_swap(t_stack **st, char *op)
 {
@@ -79,6 +77,7 @@ void	ft_rotate(t_stack **st, char *op)
 	last->next = (*st); // LE DERNIER ELEMENT POINTE VERS LE PREMIER
 	(*st)->next = NULL;
 	(*st) = second; // LE POINTEUR DE LA PILE POINTE VERS LE NOUVEAU PREMIER
+	ft_putstr(op);
 }
 
 void	ft_rrotate(t_stack **st, char *op)
@@ -95,7 +94,7 @@ void	ft_rrotate(t_stack **st, char *op)
 	last->next = (*st);
 	before_last->next = NULL;
 	(*st) = last;
-
+	ft_putstr(op);
 }
 // void	ft_rrotate(t_stack **st, char *op)
 // {

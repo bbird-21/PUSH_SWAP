@@ -6,13 +6,11 @@
 /*   By: mmeguedm <mmeguedm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/09 16:02:22 by mmeguedm          #+#    #+#             */
-/*   Updated: 2022/07/17 15:05:14 by mmeguedm         ###   ########.fr       */
+/*   Updated: 2022/07/18 18:40:49 by mmeguedm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "utils.h"
 #include "lst.h"
-#include "do_op.h"
 
 // t_stack	ft_fillstack(int value, t_stack st)
 // {
