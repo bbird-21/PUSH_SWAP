@@ -12,6 +12,7 @@
 
 
 #include "lst.h"
+#include "utils.h"
 
 void	ft_swap(t_stack **st, char *op)
 {

@@ -1,16 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmeguedm <mmeguedm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/09 16:00:36 by mmeguedm          #+#    #+#             */
-/*   Updated: 2022/07/18 20:07:58 by mmeguedm         ###   ########.fr       */
+/*   Updated: 2022/07/19 19:57:53 by mmeguedm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "lst.h"
+#include "tools.h"
+#include "do_op.h"
+#include "utils.h"
+#include "sort_algo.h"
+#include "assign.h"
+#include "error.h"
 
 void	ft_fillstack(char **argv, t_stack **sta, int argc)
 {
@@ -35,7 +41,7 @@ t_pf	ft_parse_args(int argc)
 	table = (t_pf[5]){
 		NULL,
 	[2] = ft_sort_two,
-	// [3] = // ft_sort_three
+	// [3] = ft_sort_three,
 	[4] = ft_sort
 	};
 	if (argc > 3)

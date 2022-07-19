@@ -3,9 +3,22 @@ NAME = push_swap
 CC = gcc
 
 # DON T FORGET FLAGS
-CFLAGS = -g
 
-SRCS = push_swap.c utils.c lst.c do_op.c sort_algo.c assign.c error.c
+# PATHS
+
+DSRC = src/
+DINC = inc/
+
+CFLAGS = -g -I $(DINC)
+
+SRCS = $(addprefix $(DSRC),\
+		main.c\
+		utils.c\
+		lst.c\
+		do_op.c\
+		sort_algo.c\
+		assign.c\
+		error.c)
 
 OBJS = ${SRCS:.c=.o}
 

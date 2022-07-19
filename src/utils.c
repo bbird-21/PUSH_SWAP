@@ -6,10 +6,11 @@
 /*   By: mmeguedm <mmeguedm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/09 18:20:20 by mmeguedm          #+#    #+#             */
-/*   Updated: 2022/07/18 18:39:03 by mmeguedm         ###   ########.fr       */
+/*   Updated: 2022/07/19 19:59:01 by mmeguedm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <unistd.h>
 #include "lst.h"
 
 int	ft_atoi(const char *str)

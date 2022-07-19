@@ -6,12 +6,12 @@
 /*   By: mmeguedm <mmeguedm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/17 18:36:54 by mmeguedm          #+#    #+#             */
-/*   Updated: 2022/07/18 19:49:09 by mmeguedm         ###   ########.fr       */
+/*   Updated: 2022/07/19 19:59:40 by mmeguedm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "lst.h"
-
+#include "utils.h"
 
 t_bool	ft_allowed_string(char *str)
 {

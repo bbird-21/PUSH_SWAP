@@ -6,11 +6,13 @@
 /*   By: mmeguedm <mmeguedm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/16 18:10:16 by mmeguedm          #+#    #+#             */
-/*   Updated: 2022/07/18 18:36:43 by mmeguedm         ###   ########.fr       */
+/*   Updated: 2022/07/19 19:59:01 by mmeguedm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "lst.h"
+#include <stdlib.h>
+#include "assign.h"
+#include "tools.h"
 
 // void	ft_assign_index(t_stack *sta)
 // {

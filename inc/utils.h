@@ -1,21 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   utils.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmeguedm <mmeguedm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/09 16:01:13 by mmeguedm          #+#    #+#             */
-/*   Updated: 2022/07/18 20:02:50 by mmeguedm         ###   ########.fr       */
+/*   Created: 2022/07/09 18:31:41 by mmeguedm          #+#    #+#             */
+/*   Updated: 2022/07/19 19:52:07 by mmeguedm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef __PUSH__SWAP__H
-#define __PUSH_SWAP__H
+#ifndef __UTILS__H
+#define __UTILS__H
 
-/* CREATING A FUNTION POINTER */
 
-t_pf	ft_parse_args(int argc);
-void	ft_fillstack(char **argv, t_stack **sta, int argc);
+#include <stdio.h> // TO REMOVE
+
+#include "tools.h"
+
+int	ft_atoi(const char *str);
+int		ft_putchar(char c);
+int		ft_putstr(char *str);
+t_bool	ft_strcmp(char *s1, char *s2);
+int		ft_isdigit(int c);
 
 #endif
+

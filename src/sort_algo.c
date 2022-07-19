@@ -6,11 +6,13 @@
 /*   By: mmeguedm <mmeguedm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/14 15:53:38 by mmeguedm          #+#    #+#             */
-/*   Updated: 2022/07/18 19:55:26 by mmeguedm         ###   ########.fr       */
+/*   Updated: 2022/07/19 19:58:06 by mmeguedm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "lst.h"
+#include "do_op.h"
+#include "utils.h"
 
 int	ft_sort_two(t_stack **sta, t_stack **stb)
 {
@@ -21,7 +23,7 @@ int	ft_sort_two(t_stack **sta, t_stack **stb)
 
 // int	ft_sort_three(t_stack **sta, t_stack **stb)
 // {
-
+// 	if ((*sta)->index)
 // }
 
 int	ft_sort(t_stack **sta, t_stack **stb)
