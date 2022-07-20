@@ -14,7 +14,18 @@
 #include "lst.h"
 #include "utils.h"
 
-void	ft_swap(t_stack **st, char *op)
+t_bool	ft_is_sta(t_stack **sta)
+{
+	static t_stack **sta_glob = 0;
+
+	if (sta_glob == 0)
+		sta_glob = sta;
+	if (sta_glob == sta)
+		return (true);
+	return (false);
+}
+
+void	ft_swap(t_stack **st)
 {
 	t_stack	*cst;
 	t_stack	*tmp;
@@ -25,10 +36,13 @@ void	ft_swap(t_stack **st, char *op)
 	cst->next = tmp->next;
 	tmp->next = cst;
 	*st = tmp;
-	ft_putstr(op);
+	if (ft_is_sta(st))
+		ft_putstr("sa\n");
+	else
+		ft_putstr("sb\n");
 }
 
-void	ft_push(t_stack **dest, t_stack **src, char *op)
+void	ft_push(t_stack **dest, t_stack **src)
 {
 	t_stack	*tmp_a;
 	t_stack	*tmp_b;
@@ -39,32 +53,13 @@ void	ft_push(t_stack **dest, t_stack **src, char *op)
 		return ;
 	(*src)->next = *dest; // NEXT POINTE VERS LE SOMMET DE LA PILE A
 	*src = tmp_b; // LE POINTEUR IDENTIFIANT LA PILE B POINTE MAINTENANT VERS LE NOUVEAU PREMIER
-
 	*dest = tmp_a;  // LE POINTEUR IDENTIFIANT LA PILE A POINTE MAINTENANT VERS LE NOUVEAU PREMIER
-	ft_putstr(op);
-}
+	if (ft_is_sta(dest))
+		ft_putstr("pa\n");
+	else
+		ft_putstr("pb\n");}
 
-// void	ft_rotate(t_stack **st, char *op)
-// {
-// 	t_stack	*last;
-// 	t_stack	*before_last;
-
-// 	last = *st;
-// 	if (!*st)
-// 		return ;
-// 	while (last->next)
-// 	{
-// 		before_last = last;
-// 		last = last->next;
-// 	}
-// 	last->next = (*st)->next; // LE DERNIER ELEMENT POINTE VERS LE DEUXIEME ELEMENT
-// 	before_last->next = (*st); //L AVANT DERNIER ELEMENT POINT VERS LE PREMIER
-// 	(*st)->next = NULL; // LE PREMIER ELEMENT POINTE VERS NULL
-// 	(*st) = last;
-// 	ft_putstr(op);
-// }
-
-void	ft_rotate(t_stack **st, char *op)
+void	ft_rotate(t_stack **st)
 {
 	t_stack	*last;
 	t_stack	*second;
@@ -75,13 +70,16 @@ void	ft_rotate(t_stack **st, char *op)
 		return ;
 	while (last->next)
 		last = last->next;
-	last->next = (*st); // LE DERNIER ELEMENT POINTE VERS LE PREMIER
+	last->next = (*st);
 	(*st)->next = NULL;
-	(*st) = second; // LE POINTEUR DE LA PILE POINTE VERS LE NOUVEAU PREMIER
-	ft_putstr(op);
+	(*st) = second;
+	if (ft_is_sta(st))
+		ft_putstr("ra\n");
+	else
+		ft_putstr("rb\n");
 }
 
-void	ft_rrotate(t_stack **st, char *op)
+void	ft_rrotate(t_stack **st)
 {
 	t_stack	*last;
 	t_stack	*before_last;
@@ -95,9 +93,9 @@ void	ft_rrotate(t_stack **st, char *op)
 	last->next = (*st);
 	before_last->next = NULL;
 	(*st) = last;
-	ft_putstr(op);
-}
-// void	ft_rrotate(t_stack **st, char *op)
-// {
+	if (ft_is_sta(st))
+		ft_putstr("rra\n");
+	else
+		ft_putstr("rrb\n");
 
-// }
+}

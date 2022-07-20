@@ -6,12 +6,14 @@
 /*   By: mmeguedm <mmeguedm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/19 18:45:25 by mmeguedm          #+#    #+#             */
-/*   Updated: 2022/07/19 19:52:07 by mmeguedm         ###   ########.fr       */
+/*   Updated: 2022/07/20 17:27:28 by mmeguedm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef __STRUCTS__H
 #define __STRUCTS__H
+
+#define HIGHEST_INDEX 3
 
 typedef enum {false, true} t_bool;
 
