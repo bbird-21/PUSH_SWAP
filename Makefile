@@ -18,6 +18,7 @@ SRCS = $(addprefix $(DSRC),\
 		do_op.c\
 		sort_algo.c\
 		assign.c\
+		safo3n.c\
 		error.c)
 
 OBJS = ${SRCS:.c=.o}

@@ -6,7 +6,7 @@
 /*   By: mmeguedm <mmeguedm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/09 16:00:36 by mmeguedm          #+#    #+#             */
-/*   Updated: 2022/07/20 19:24:43 by mmeguedm         ###   ########.fr       */
+/*   Updated: 2022/07/21 17:17:59 by mmeguedm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,17 +20,8 @@
 
 void	ft_fillstack(char **argv, t_stack **sta, int argc)
 {
-	int	value;
-	int	pos;
-
-	pos = 1;
-	value = 0;
 	while (argc--)
-	{
-		value = ft_atoi(argv[argc]);
-		ft_lstpush(sta, value, pos);
-		pos++;
-	}
+		ft_lstpush(sta, ft_atoi(argv[argc]));
 	ft_assign_index(*sta, 1);
 	ft_is_sta(sta);
 }
@@ -59,24 +50,14 @@ int	main(int argc, char **argv)
 
 	sta = NULL;
 	stb = NULL;
-
 	if (argc > 1 && !(ft_checkargs(argv + 1)))
 		return (ft_putstr("Error\n"));
 	ft_fillstack(argv + 1, &sta, argc - 1);
 	if (ft_stack_is_sorted(sta))
-		return (1);
+		return (21);
 	ft_lstprint_one(sta);
 	sort_algo = ft_parse_args(argc - 1);
 	sort_algo(&sta, &stb);
 	ft_lstprint_one(sta);
 	printf("\n");
-	// ft_lstprint_all(sta, stb);
-
-
-	// for (int i = 5; i > 0; i--)
-	// ft_swap(&stb, "sb\n");
-	// ft_push(&sta, &stb, "pb\n");
-	// ft_rotate(&sta, "ra\n");
-	// ft_lstprint_all(sta, stb);
-		// more than 3 number algorithm
 }

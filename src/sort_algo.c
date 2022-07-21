@@ -6,7 +6,7 @@
 /*   By: mmeguedm <mmeguedm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/14 15:53:38 by mmeguedm          #+#    #+#             */
-/*   Updated: 2022/07/20 19:38:35 by mmeguedm         ###   ########.fr       */
+/*   Updated: 2022/07/21 16:46:00 by mmeguedm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,9 +39,17 @@ int	ft_sort_three(t_stack **sta, t_stack **stb)
 
 int	ft_sort(t_stack **sta, t_stack **stb)
 {
-	(void)**stb;
-	// ft_swap(sta, "sa\n");
-	ft_rrotate(sta);
+	t_stack	*tmp;
+
+	tmp = (*sta);
+	int	median;
+
+	median = ft_lstsize((*sta)) / 2;
+	while (tmp)
+	{
+
+		tmp = tmp->next;
+	}
 	return (1);
 }
 

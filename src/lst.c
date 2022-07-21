@@ -6,19 +6,13 @@
 /*   By: mmeguedm <mmeguedm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/09 16:02:22 by mmeguedm          #+#    #+#             */
-/*   Updated: 2022/07/19 19:36:13 by mmeguedm         ###   ########.fr       */
+/*   Updated: 2022/07/21 16:29:43 by mmeguedm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "lst.h"
 
-
-// t_stack	ft_fillstack(int value, t_stack st)
-// {
-// 	ft_lstadd_front(&st, ft_lstnew(value));
-// }
-
-void	ft_lstpush(t_stack **lst, int value, int pos)
+void	ft_lstpush(t_stack **lst, int value)
 {
 	t_stack	*new;
 
@@ -26,13 +20,12 @@ void	ft_lstpush(t_stack **lst, int value, int pos)
 	if (!new)
 		return ;
 	new->value = value;
-	new->pos = pos;
 	new->next = *lst;
 	new->index = 0;
 	*lst = new;
 }
 
-int	ft_lstlenght(t_stack *st)
+int	ft_lstsize(t_stack *st)
 {
 	int	lenght;
 
