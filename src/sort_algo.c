@@ -6,7 +6,7 @@
 /*   By: mmeguedm <mmeguedm@student42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/14 15:53:38 by mmeguedm          #+#    #+#             */
-/*   Updated: 2022/08/02 16:03:09 by mmeguedm         ###   ########.fr       */
+/*   Updated: 2022/08/02 17:36:27 by mmeguedm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,28 +15,39 @@
 #include "do_op.h"
 #include "utils.h"
 
-int	ft_sort_two(t_stack **sta, t_stack **stb)
+static int	get_highest_index(t_stack *st)
 {
-	(void)**stb;
+	int highest_index;
+
+	highest_index = st->index;
+	while (st)
+	{
+		if (st->index > highest_index)
+			highest_index = st->index;
+		st = st->next;
+	}
+	return (highest_index);
+}
+
+int	ft_sort_two(t_stack **sta)
+{
 	ft_swap(sta);
 	return (1);
 }
 
 int	ft_sort_three(t_stack **sta)
 {
-	t_stack	*second;
+	int	highest_index;
 
-	second  = (*sta)->next;
-	if ((*sta)->index == HIGHEST_INDEX)
+	highest_index = get_highest_index(*sta);
+	if ((*sta)->index == highest_index)
 		ft_rotate(sta);
-	else if (second->index == HIGHEST_INDEX)
+	else if ((*sta)->next->index == highest_index)
 		ft_rrotate(sta);
-	second  = (*sta)->next;
-	if ((*sta)->index > second->index)
+	if ((*sta)->index > (*sta)->next->index)
 		ft_swap(sta);
 	return (1);
 }
-
 
 int	ft_sort(t_stack **sta, t_stack **stb)
 {

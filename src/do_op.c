@@ -47,9 +47,9 @@ int	ft_push(t_stack **src, t_stack **dest)
 {
 	t_stack	*tmp_src;
 
-	tmp_src = (*src)->next;
 	if (!*src)
 		return (-1);
+	tmp_src = (*src)->next;
 	(*src)->next = *dest;
 	*dest = *src;
 	*src = tmp_src;
