@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   lst.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mmeguedm <mmeguedm@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mmeguedm <mmeguedm@student42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/09 16:02:22 by mmeguedm          #+#    #+#             */
-/*   Updated: 2022/07/21 16:29:43 by mmeguedm         ###   ########.fr       */
+/*   Updated: 2022/08/02 16:30:19 by mmeguedm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,20 +43,20 @@ void	ft_lstprint_all(t_stack *sta, t_stack *stb)
 	int	count;
 	int	space;
 
-	space = 35;
+	space = 45;
 	while (sta || stb)
 	{
 		count = 0;
 		if (sta)
 		{
-			count = printf("|[VALUE : %d] [POS : %d]|", sta->value, sta->pos);
+			count = printf("|[VALUE : %d] [POS : %d] [INDEX : %d]|", sta->value, sta->pos, sta->index);
 			sta = sta->next;
 		}
 		count = space - count;
 		printf("%*c", count, ' ');
 		if (stb)
 		{
-			printf("|[VALUE : %d] [POS : %d]|", stb->value, stb->pos);
+			printf("|[VALUE : %d] [POS : %d] [INDEX : %d]|", stb->value, stb->pos,stb->index);
 			stb = stb->next;
 		}
 		printf("\n");

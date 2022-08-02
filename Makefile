@@ -28,6 +28,10 @@ all : $(NAME)
 $(NAME) : $(OBJS)
 		$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
 
+
+check : $(NAME)
+		@ARG=$$(shuf -i 0-50 -n $(SIZE)); \
+		./push_swap $$ARG
 clean :
 		rm -rf $(OBJS)
 

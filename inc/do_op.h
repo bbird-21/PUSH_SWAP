@@ -15,10 +15,10 @@
 
 #include "tools.h"
 
-void	ft_swap(t_stack **st);
-void	ft_push(t_stack **dest, t_stack **src);
-void	ft_rotate(t_stack **st);
-void	ft_rrotate(t_stack **st);
+int	ft_swap(t_stack **st);
+int	ft_push(t_stack **src, t_stack **dest);
+int	ft_rotate(t_stack **st);
+int	ft_rrotate(t_stack **st);
 t_bool	ft_is_sta(t_stack **sta);
 
 #endif

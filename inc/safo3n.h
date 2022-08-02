@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   safo3n.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mmeguedm <mmeguedm@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mmeguedm <mmeguedm@student42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/21 16:37:44 by mmeguedm          #+#    #+#             */
-/*   Updated: 2022/07/21 17:30:23 by mmeguedm         ###   ########.fr       */
+/*   Updated: 2022/08/02 16:30:06 by mmeguedm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,6 @@
 
 #include "tools.h"
 
-void	ft_push_to_stb(t_stack **sta);
+void	ft_push_all_ex3(t_stack **sta, t_stack **stb);
 
 #endif

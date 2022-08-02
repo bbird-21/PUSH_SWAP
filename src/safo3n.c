@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   safo3n.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mmeguedm <mmeguedm@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mmeguedm <mmeguedm@student42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/21 16:37:25 by mmeguedm          #+#    #+#             */
-/*   Updated: 2022/07/21 17:36:58 by mmeguedm         ###   ########.fr       */
+/*   Updated: 2022/08/02 16:22:16 by mmeguedm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,20 @@
 #include "lst.h"
 #include "do_op.h"
 
-void	ft_push_to_stb(t_stack **sta)
+void	ft_push_all_ex3(t_stack **sta, t_stack **stb)
 {
-	t_stack	*tmp;
+	int	pushed;
+	int	stack_size;
 
-	tmp = (*sta);
-	int	median;
-
-	median = ft_lstsize((*sta)) / 2;
-	while (tmp)
+	pushed = 0;
+	stack_size = ft_lstsize(*sta);
+	while (pushed < stack_size / 2)
 	{
-		if (tmp->index < median)
-			ft_push(&sta, &stb);
-		tmp = tmp->next;
+		if ((*sta)->index <= stack_size / 2)
+			pushed += ft_push(sta, stb);
+		else
+			ft_rotate(sta);
 	}
+	while (stack_size - pushed > 3)
+		pushed += ft_push(sta, stb);
 }

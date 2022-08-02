@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   tools.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mmeguedm <mmeguedm@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mmeguedm <mmeguedm@student42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/19 18:45:25 by mmeguedm          #+#    #+#             */
-/*   Updated: 2022/07/20 17:27:28 by mmeguedm         ###   ########.fr       */
+/*   Updated: 2022/08/02 15:59:16 by mmeguedm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,9 +29,5 @@ typedef struct		s_stack
 	int				cost_b;
 	struct s_stack	*next;
 }					t_stack;
-
-/* FUNCTION POINTER ABLE TO RECEIVE SORT ALGO*/
-
-typedef int(*t_pf)(t_stack **sta, t_stack **stb);
 
 #endif

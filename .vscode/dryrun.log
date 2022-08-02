@@ -1,15 +1,13 @@
 make --dry-run --keep-going --print-directory
-make: Entering directory '/mnt/nfs/homes/mmeguedm/Desktop/Projects/PUSH_SWAP'
+make: Entering directory '/home/tako21/Bureau/42/PUSH_SWAP'
 gcc -g -I inc/   -c -o src/main.o src/main.c
- 
 gcc -g -I inc/   -c -o src/utils.o src/utils.c
 gcc -g -I inc/   -c -o src/lst.o src/lst.c
 gcc -g -I inc/   -c -o src/do_op.o src/do_op.c
 gcc -g -I inc/   -c -o src/sort_algo.o src/sort_algo.c
 gcc -g -I inc/   -c -o src/assign.o src/assign.c
- 
 gcc -g -I inc/   -c -o src/safo3n.o src/safo3n.c
 gcc -g -I inc/   -c -o src/error.o src/error.c
 gcc -g -I inc/ src/main.o src/utils.o src/lst.o src/do_op.o src/sort_algo.o src/assign.o src/safo3n.o src/error.o -o push_swap
-make: Leaving directory '/mnt/nfs/homes/mmeguedm/Desktop/Projects/PUSH_SWAP'
+make: Leaving directory '/home/tako21/Bureau/42/PUSH_SWAP'
  

@@ -25,7 +25,7 @@ t_bool	ft_is_sta(t_stack **sta)
 	return (false);
 }
 
-void	ft_swap(t_stack **st)
+int	ft_swap(t_stack **st)
 {
 	t_stack	*cst;
 	t_stack	*tmp;
@@ -40,26 +40,27 @@ void	ft_swap(t_stack **st)
 		ft_putstr("sa\n");
 	else
 		ft_putstr("sb\n");
+	return (1);
 }
 
-void	ft_push(t_stack **dest, t_stack **src)
+int	ft_push(t_stack **src, t_stack **dest)
 {
-	t_stack	*tmp_a;
-	t_stack	*tmp_b;
+	t_stack	*tmp_src;
 
-	tmp_b = (*src)->next;
-	tmp_a = *src;
-	if (!*dest || !*src)
-		return ;
-	(*src)->next = *dest; // NEXT POINTE VERS LE SOMMET DE LA PILE A
-	*src = tmp_b; // LE POINTEUR IDENTIFIANT LA PILE B POINTE MAINTENANT VERS LE NOUVEAU PREMIER
-	*dest = tmp_a;  // LE POINTEUR IDENTIFIANT LA PILE A POINTE MAINTENANT VERS LE NOUVEAU PREMIER
+	tmp_src = (*src)->next;
+	if (!*src)
+		return (-1);
+	(*src)->next = *dest;
+	*dest = *src;
+	*src = tmp_src;
 	if (ft_is_sta(dest))
 		ft_putstr("pa\n");
 	else
-		ft_putstr("pb\n");}
+		ft_putstr("pb\n");
+	return (1);
+}
 
-void	ft_rotate(t_stack **st)
+int	ft_rotate(t_stack **st)
 {
 	t_stack	*last;
 	t_stack	*second;
@@ -67,7 +68,7 @@ void	ft_rotate(t_stack **st)
 	second = (*st)->next;
 	last = *st;
 	if (!*st)
-		return ;
+		return (-1);
 	while (last->next)
 		last = last->next;
 	last->next = (*st);
@@ -77,9 +78,10 @@ void	ft_rotate(t_stack **st)
 		ft_putstr("ra\n");
 	else
 		ft_putstr("rb\n");
+	return (1);
 }
 
-void	ft_rrotate(t_stack **st)
+int	ft_rrotate(t_stack **st)
 {
 	t_stack	*last;
 	t_stack	*before_last;
@@ -97,5 +99,6 @@ void	ft_rrotate(t_stack **st)
 		ft_putstr("rra\n");
 	else
 		ft_putstr("rrb\n");
+	return (1);
 
 }
