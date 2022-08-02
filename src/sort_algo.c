@@ -6,7 +6,7 @@
 /*   By: mmeguedm <mmeguedm@student42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/14 15:53:38 by mmeguedm          #+#    #+#             */
-/*   Updated: 2022/08/02 17:36:27 by mmeguedm         ###   ########.fr       */
+/*   Updated: 2022/08/02 18:27:05 by mmeguedm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #include "lst.h"
 #include "do_op.h"
 #include "utils.h"
+#include "assign.h"
 
 static int	get_highest_index(t_stack *st)
 {
@@ -53,6 +54,7 @@ int	ft_sort(t_stack **sta, t_stack **stb)
 {
 	ft_push_all_ex3(sta, stb);
 	ft_sort_three(sta);
+	set_pos(*sta, *stb);
 	// ft_pb_all_ex3(sta, stb);
 	// t_stack	*tmp;
 

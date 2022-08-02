@@ -6,7 +6,7 @@
 /*   By: mmeguedm <mmeguedm@student42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/09 16:00:36 by mmeguedm          #+#    #+#             */
-/*   Updated: 2022/08/02 18:11:40 by mmeguedm         ###   ########.fr       */
+/*   Updated: 2022/08/02 18:21:50 by mmeguedm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,8 +53,8 @@ int	main(int argc, char **argv)
 		return (ft_putstr("Error\n"));
 	if (ft_fillstack(argv + 1, &sta, argc - 1))
 		return (-1);
-	// ft_lstprint_all(sta, stb);
+	ft_lstprint_all(sta, stb);
 	ft_push_swap(argc - 1, &sta, &stb);
-	// printf("\n\nAA");
-	// printf("\n");
+	ft_lstprint_all(sta, stb);
+	printf("\n");
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   assign.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mmeguedm <mmeguedm@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mmeguedm <mmeguedm@student42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/16 18:10:14 by mmeguedm          #+#    #+#             */
-/*   Updated: 2022/07/19 19:52:07 by mmeguedm         ###   ########.fr       */
+/*   Updated: 2022/08/02 18:21:15 by mmeguedm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 // void	ft_assign_index(t_stack *sta);
 #include "tools.h"
 
+void	set_pos(t_stack *sta, t_stack *stb);
 void	ft_assign_index(t_stack *sta, int index);
 
 #endif

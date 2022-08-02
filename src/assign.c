@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   assign.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mmeguedm <mmeguedm@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mmeguedm <mmeguedm@student42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/16 18:10:16 by mmeguedm          #+#    #+#             */
-/*   Updated: 2022/07/19 19:59:01 by mmeguedm         ###   ########.fr       */
+/*   Updated: 2022/08/02 18:31:32 by mmeguedm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,5 +56,25 @@ void	ft_assign_index(t_stack *sta, int index)
 	{
 		current->index = index;
 		ft_assign_index(sta, index + 1);
+	}
+}
+
+void	set_pos(t_stack *sta, t_stack *stb)
+{
+	int		pos;
+
+	pos = 0;
+	while (sta)
+	{
+		sta->pos = pos;
+		sta = sta->next;
+		pos++;
+	}
+	pos = 0;
+	while (stb)
+	{
+		stb->pos = pos;
+		stb = stb->next;
+		pos++;
 	}
 }
