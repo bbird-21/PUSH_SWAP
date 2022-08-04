@@ -1,34 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   safo3n.c                                           :+:      :+:    :+:   */
+/*   stack_info.h                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmeguedm <mmeguedm@student42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/21 16:37:25 by mmeguedm          #+#    #+#             */
-/*   Updated: 2022/08/04 18:13:14 by mmeguedm         ###   ########.fr       */
+/*   Created: 2022/08/03 17:31:40 by mmeguedm          #+#    #+#             */
+/*   Updated: 2022/08/03 17:47:56 by mmeguedm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef __STACK_INFO__H
+#define __STACK_INFO__H
+
 #include "tools.h"
-#include "lst.h"
-#include "do_op.h"
 
-void	ft_push_all_ex3(t_stack **sta, t_stack **stb)
-{
-	int	pushed;
-	int	stack_size;
+int	get_highest_index(t_stack *st);
+int	get_pos_lowest_index(t_stack *st);
 
-	pushed = 0;
-	stack_size = ft_lstsize(*sta);
-	while (stack_size > 6 && pushed < stack_size / 2)
-	{
-		if ((*sta)->index <= stack_size / 2)
-			pushed += ft_push(sta, stb);
-		else
-			ft_rotate(sta);
-	}
-	while (stack_size - pushed > 3)
-		pushed += ft_push(sta, stb);
-}
-
+#endif

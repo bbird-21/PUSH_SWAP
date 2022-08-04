@@ -6,7 +6,7 @@
 /*   By: mmeguedm <mmeguedm@student42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/09 16:02:22 by mmeguedm          #+#    #+#             */
-/*   Updated: 2022/08/02 17:14:13 by mmeguedm         ###   ########.fr       */
+/*   Updated: 2022/08/04 13:49:49 by mmeguedm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ void	ft_lstpush(t_stack **lst, int value)
 	new->value = value;
 	new->next = *lst;
 	new->index = 0;
+	new->target_pos = -1;
 	*lst = new;
 }
 
@@ -43,20 +44,20 @@ void	ft_lstprint_all(t_stack *sta, t_stack *stb)
 	int	count;
 	int	space;
 
-	space = 45;
+	space = 60;
 	while (sta || stb)
 	{
 		count = 0;
 		if (sta)
 		{
-			count = printf("|[VALUE : %d] [POS : %d] [INDEX : %d]|", sta->value, sta->pos, sta->index);
+			count = printf("|[VALUE : %d] [POS : %d] [INDEX : %d][TARGET_POS : %d]|", sta->value, sta->pos, sta->index, sta->target_pos);
 			sta = sta->next;
 		}
 		count = space - count;
 		printf("%*c", count, ' ');
 		if (stb)
 		{
-			printf("|[VALUE : %d] [POS : %d] [INDEX : %d]|", stb->value, stb->pos,stb->index);
+			printf("|[VALUE : %d] [POS : %d] [INDEX : %d][TARGET_POS : %d]|", stb->value, stb->pos,stb->index, stb->target_pos);
 			stb = stb->next;
 		}
 		printf("\n");

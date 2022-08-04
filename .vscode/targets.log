@@ -8,7 +8,7 @@ make: *** No rule to make target 'src/main.o', needed by 'push_swap'.  Stop.
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Tue Aug  2 15:55:59 2022
+# Make data base, printed on Thu Aug  4 18:13:14 2022
 
 # Variables
 
@@ -39,7 +39,7 @@ PWD = /home/tako21/Bureau/42/PUSH_SWAP
 # environment
 XDG_DATA_DIRS = /usr/share/xfce4:/usr/local/share/:/usr/share/:/usr/share
 # environment
-OLDPWD = /home/tako21/Bureau/42
+OLDPWD = /home/tako21
 # automatic
 ^D = $(patsubst %/,%,$(dir $^))
 # automatic
@@ -73,7 +73,7 @@ CURDIR := /home/tako21/Bureau/42/PUSH_SWAP
 # environment
 APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
 # makefile (from 'Makefile', line 14)
-SRCS = $(addprefix $(DSRC), main.c utils.c lst.c do_op.c sort_algo.c assign.c safo3n.c error.c)
+SRCS = $(addprefix $(DSRC), main.c utils.c lst.c do_op.c sort_algo.c assign.c safo3n.c error.c stack_cost.c stack_info.c)
 # automatic
 *D = $(patsubst %/,%,$(dir $*))
 # environment
@@ -81,7 +81,7 @@ LESS_TERMCAP_ue = [0m
 # environment
 MFLAGS = -pqrR
 # environment
-SSH_AUTH_SOCK = /tmp/ssh-XXXXXXCfUbMI/agent.980
+SSH_AUTH_SOCK = /tmp/ssh-XXXXXXx4C8SG/agent.980
 # default
 .SHELLFLAGS := -c
 # environment
@@ -95,7 +95,7 @@ MAKEFILE_LIST := Makefile
 # automatic
 @F = $(notdir $@)
 # environment
-VSCODE_PID = 2785
+VSCODE_PID = 2028
 # environment
 XDG_SESSION_TYPE = x11
 # automatic
@@ -116,7 +116,7 @@ DBUS_SESSION_BUS_ADDRESS = unix:path=/run/user/1000/bus
 VSCODE_NLS_CONFIG = {"locale":"en-us","availableLanguages":{},"_languagePackSupport":true}
 # default
 MAKE_HOST := x86_64-pc-linux-gnu
-# makefile (from 'Makefile', line 24)
+# makefile (from 'Makefile', line 26)
 OBJS = ${SRCS:.c=.o}
 # makefile
 SHELL = /bin/sh
@@ -185,7 +185,7 @@ _ = /usr/bin/code
 # environment
 XDG_RUNTIME_DIR = /run/user/1000
 # makefile (from 'Makefile', line 12)
-CFLAGS = -g -I $(DINC)
+CFLAGS = -g -I $(DINC) -D $(OPTION)
 # environment
 COLORTERM = truecolor
 # makefile (from 'Makefile', line 9)
@@ -243,9 +243,9 @@ GDMSESSION = lightdm-xsession
 
 # Directories
 
-# . (device 2057, inode 3014699): 14 files, no impossibilities.
+# . (device 2057, inode 3014699): 17 files, no impossibilities.
 
-# 14 files, no impossibilities in 1 directories.
+# 17 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -257,14 +257,14 @@ check: push_swap
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 33):
+#  recipe to execute (from 'Makefile', line 35):
 		@ARG=$$(shuf -i 0-50 -n $(SIZE)); \
 		./push_swap $$ARG
 
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-08-02 15:55:59.168796075
+#  Last modified 2022-08-04 18:13:13.332047806
 #  File has been updated.
 #  Successfully updated.
 
@@ -291,7 +291,7 @@ clean:
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 36):
+#  recipe to execute (from 'Makefile', line 38):
 		rm -rf $(OBJS)
 
 # Not a target:
@@ -322,7 +322,6 @@ src/error.o:
 .DEFAULT:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
- 
 #  File has not been updated.
 
 all: push_swap
@@ -337,7 +336,8 @@ fclean: clean
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 39):
+ 
+#  recipe to execute (from 'Makefile', line 41):
 		rm -rf $(NAME)
 
 # Not a target:
@@ -346,15 +346,21 @@ src/do_op.o:
 #  Modification time never checked.
 #  File has not been updated.
 
-push_swap: src/main.o src/utils.o src/lst.o src/do_op.o src/sort_algo.o src/assign.o src/safo3n.o src/error.o
+push_swap: src/main.o src/utils.o src/lst.o src/do_op.o src/sort_algo.o src/assign.o src/safo3n.o src/error.o src/stack_cost.o src/stack_info.o
 #  Implicit rule search has not been done.
-#  Last modified 2022-08-02 15:48:07.292791846
+#  Last modified 2022-08-04 17:21:51.684216051
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 29):
+#  recipe to execute (from 'Makefile', line 31):
 		$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
 
 # Not a target:
 src/sort_algo.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+src/stack_cost.o:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -370,20 +376,26 @@ src/assign.o:
 #  Modification time never checked.
 #  File has not been updated.
 
+# Not a target:
+src/stack_info.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
 # files hash-table stats:
-# Load=19/1024=2%, Rehash=0, Collisions=0/49=0%
+# Load=21/1024=2%, Rehash=0, Collisions=0/53=0%
 # VPATH Search Paths
 
 # No 'vpath' search paths.
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 33 / storage = 301 B / avg = 9 B
-# current buf: size = 8162 B / used = 301 B / count = 33 / avg = 9 B
+# strcache buffers: 1 (0) / strings = 38 / storage = 357 B / avg = 9 B
+# current buf: size = 8162 B / used = 357 B / count = 38 / avg = 9 B
 
-# strcache performance: lookups = 55 / hit rate = 40%
+# strcache performance: lookups = 60 / hit rate = 36%
 # hash-table stats:
-# Load=33/8192=0%, Rehash=0, Collisions=0/55=0%
-# Finished Make data base on Tue Aug  2 15:55:59 2022
+# Load=38/8192=0%, Rehash=0, Collisions=0/60=0%
+# Finished Make data base on Thu Aug  4 18:13:14 2022
 
  

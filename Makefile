@@ -9,7 +9,7 @@ CC = gcc
 DSRC = src/
 DINC = inc/
 
-CFLAGS = -g -I $(DINC)
+CFLAGS = -g -I $(DINC) -D $(OPTION)
 
 SRCS = $(addprefix $(DSRC),\
 		main.c\
@@ -19,7 +19,9 @@ SRCS = $(addprefix $(DSRC),\
 		sort_algo.c\
 		assign.c\
 		safo3n.c\
-		error.c)
+		error.c\
+		stack_cost.c\
+		stack_info.c)
 
 OBJS = ${SRCS:.c=.o}
 
