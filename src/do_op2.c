@@ -1,39 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   tools.h                                            :+:      :+:    :+:   */
+/*   do_op2.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmeguedm <mmeguedm@student42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/19 18:45:25 by mmeguedm          #+#    #+#             */
-/*   Updated: 2022/08/05 17:17:22 by mmeguedm         ###   ########.fr       */
+/*   Created: 2022/08/05 16:25:09 by mmeguedm          #+#    #+#             */
+/*   Updated: 2022/08/05 17:11:49 by mmeguedm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef __STRUCTS__H
-#define __STRUCTS__H
+#include "do_op.h"
+#include "lst.h"
 
-#define HIGHEST_INDEX 3
-
-typedef enum {false, true} t_bool;
-
-/* STRUCTURE TO MANIPULE STACK DATA */
-typedef struct		s_stack
+void	ft_rotate_ab(t_stack **sta, t_stack **stb)
 {
-	int				value;
-	int				pos;
-	int				index;
-	int				target_pos;
-	int				cost_a;
-	int				cost_b;
-	struct s_stack	*next;
-}					t_stack;
+	ft_rotate(sta);
+	ft_rotate(stb);
+}
 
-/* STRUCTURE TO GET COST MOVE */
-typedef struct		s_cost
+void	ft_rrotate_ab(t_stack **sta, t_stack **stb)
 {
-	int				cost_a;
-	int				cost_b;
-}					t_cost;
+	ft_rrotate(sta);
+	ft_rrotate(stb);
+}
 
-#endif
+int	abs(int x)
+{
+	if (x < 0)
+		return (-x);
+	return (x);
+}

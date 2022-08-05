@@ -6,7 +6,7 @@
 /*   By: mmeguedm <mmeguedm@student42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/14 15:53:38 by mmeguedm          #+#    #+#             */
-/*   Updated: 2022/08/05 15:23:51 by mmeguedm         ###   ########.fr       */
+/*   Updated: 2022/08/05 18:49:36 by mmeguedm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,8 +45,8 @@ void	ft_sort(t_stack **sta, t_stack **stb)
 	// {
 		set_pos(*sta, *stb);
 		set_target_pos(*sta, *stb);
-		set_stack_cost(*sta, *stb);
-		// do_cheapest_op(sta, stb);
+		set_cost(*sta, *stb);
+		do_cheapest_op(sta, stb);
 	// }
 }
 

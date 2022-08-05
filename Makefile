@@ -16,10 +16,12 @@ SRCS = $(addprefix $(DSRC),\
 		utils.c\
 		lst.c\
 		do_op.c\
+		do_op2.c\
 		sort_algo.c\
 		assign.c\
 		safo3n.c\
 		error.c\
+		do_move.c\
 		stack_info.c)
 
 OBJS = ${SRCS:.c=.o}
@@ -32,6 +34,7 @@ $(NAME) : $(OBJS)
 
 check : $(NAME) clean
 		@ARG=$$(shuf -i 0-50 -n $(SIZE)); \
+		echo "ARG : " && echo $$ARG; \
 		./push_swap $$ARG
 clean :
 		rm -rf $(OBJS)

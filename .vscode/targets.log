@@ -1,4 +1,6 @@
 make all --print-data-base --no-builtin-variables --no-builtin-rules --question
+make: *** No rule to make target 'src/do_move.o', needed by 'push_swap'.  Stop.
+
 # GNU Make 4.3
 # Built for x86_64-pc-linux-gnu
 # Copyright (C) 1988-2020 Free Software Foundation, Inc.
@@ -6,7 +8,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Fri Aug  5 13:02:49 2022
+# Make data base, printed on Fri Aug  5 18:23:55 2022
 
 # Variables
 
@@ -71,7 +73,7 @@ CURDIR := /home/tako21/Bureau/42/PUSH_SWAP
 # environment
 APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
 # makefile (from 'Makefile', line 14)
-SRCS = $(addprefix $(DSRC), main.c utils.c lst.c do_op.c sort_algo.c assign.c safo3n.c error.c stack_info.c)
+SRCS = $(addprefix $(DSRC), main.c utils.c lst.c do_op.c do_op2.c sort_algo.c assign.c safo3n.c error.c do_move.c stack_info.c)
 # automatic
 *D = $(patsubst %/,%,$(dir $*))
 # environment
@@ -114,7 +116,7 @@ DBUS_SESSION_BUS_ADDRESS = unix:path=/run/user/1000/bus
 VSCODE_NLS_CONFIG = {"locale":"en-us","availableLanguages":{},"_languagePackSupport":true}
 # default
 MAKE_HOST := x86_64-pc-linux-gnu
-# makefile (from 'Makefile', line 25)
+# makefile (from 'Makefile', line 27)
 OBJS = ${SRCS:.c=.o}
 # makefile
 SHELL = /bin/sh
@@ -255,21 +257,22 @@ check: push_swap clean
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 34):
+#  recipe to execute (from 'Makefile', line 36):
 		@ARG=$$(shuf -i 0-50 -n $(SIZE)); \
+		echo "ARG : " && echo $$ARG; \
 		./push_swap $$ARG
 
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-08-05 13:02:48.371405915
+#  Last modified 2022-08-05 18:23:54.247578594
 #  File has been updated.
 #  Successfully updated.
 
 # Not a target:
 src/utils.o:
 #  Implicit rule search has been done.
-#  Last modified 2022-08-05 13:01:44.143405339
+#  Last modified 2022-08-05 18:22:29.211577832
 #  File has been updated.
 #  Successfully updated.
 
@@ -282,23 +285,23 @@ bonus:
 # Not a target:
 src/lst.o:
 #  Implicit rule search has been done.
-#  Last modified 2022-08-05 13:01:44.167405339
+#  Last modified 2022-08-05 18:22:29.239577832
 #  File has been updated.
 #  Successfully updated.
 
 clean:
 #  Phony target (prerequisite of .PHONY).
 #  Implicit rule search has not been done.
- 
 #  File does not exist.
+ 
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 37):
+#  recipe to execute (from 'Makefile', line 40):
 		rm -rf $(OBJS)
 
 # Not a target:
 src/safo3n.o:
 #  Implicit rule search has been done.
-#  Last modified 2022-08-05 13:01:44.26340534
+#  Last modified 2022-08-05 18:22:44.883577972
 #  File has been updated.
 #  Successfully updated.
 
@@ -311,14 +314,14 @@ re: fclean push_swap
 # Not a target:
 src/main.o:
 #  Implicit rule search has been done.
-#  Last modified 2022-08-05 13:01:44.115405339
+#  Last modified 2022-08-05 18:22:29.179577832
 #  File has been updated.
 #  Successfully updated.
 
 # Not a target:
 src/error.o:
 #  Implicit rule search has been done.
-#  Last modified 2022-08-05 13:01:44.28740534
+#  Last modified 2022-08-05 18:22:44.911577973
 #  File has been updated.
 #  Successfully updated.
 
@@ -333,36 +336,41 @@ all: push_swap
 #  Command line target.
 #  Implicit rule search has not been done.
 #  File does not exist.
-#  File has been updated.
-#  Successfully updated.
+#  File has not been updated.
 
 fclean: clean
 #  Phony target (prerequisite of .PHONY).
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 40):
+#  recipe to execute (from 'Makefile', line 43):
 		rm -rf $(NAME)
 
 # Not a target:
 src/do_op.o:
 #  Implicit rule search has been done.
-#  Last modified 2022-08-05 13:01:44.19540534
+#  Last modified 2022-08-05 18:22:29.263577832
 #  File has been updated.
 #  Successfully updated.
 
-push_swap: src/main.o src/utils.o src/lst.o src/do_op.o src/sort_algo.o src/assign.o src/safo3n.o src/error.o src/stack_info.o
+push_swap: src/main.o src/utils.o src/lst.o src/do_op.o src/do_op2.o src/sort_algo.o src/assign.o src/safo3n.o src/error.o src/do_move.o src/stack_info.o
 #  Implicit rule search has not been done.
-#  Last modified 2022-08-05 13:01:44.335405341
-#  File has been updated.
-#  Successfully updated.
-#  recipe to execute (from 'Makefile', line 30):
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 32):
 		$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
 
 # Not a target:
 src/sort_algo.o:
 #  Implicit rule search has been done.
-#  Last modified 2022-08-05 13:01:44.21940534
+#  Last modified 2022-08-05 18:22:29.311577833
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+src/do_op2.o:
+#  Implicit rule search has been done.
+#  Last modified 2022-08-05 18:22:29.287577833
 #  File has been updated.
 #  Successfully updated.
 
@@ -372,33 +380,39 @@ src/sort_algo.o:
 #  File has not been updated.
 
 # Not a target:
+src/do_move.o:
+#  Implicit rule search has been done.
+#  File does not exist.
+#  File has not been updated.
+
+# Not a target:
 src/assign.o:
 #  Implicit rule search has been done.
-#  Last modified 2022-08-05 13:01:44.23940534
+#  Last modified 2022-08-05 18:22:29.339577833
 #  File has been updated.
 #  Successfully updated.
 
 # Not a target:
 src/stack_info.o:
-#  Implicit rule search has been done.
-#  Last modified 2022-08-05 13:01:44.315405341
-#  File has been updated.
-#  Successfully updated.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 # files hash-table stats:
-# Load=20/1024=2%, Rehash=0, Collisions=0/53=0%
+# Load=22/1024=2%, Rehash=0, Collisions=0/57=0%
 # VPATH Search Paths
 
 # No 'vpath' search paths.
 
 # No general ('VPATH' variable) search path.
+ 
 
-# strcache buffers: 1 (0) / strings = 37 / storage = 340 B / avg = 9 B
-# current buf: size = 8162 B / used = 340 B / count = 37 / avg = 9 B
+# strcache buffers: 1 (0) / strings = 40 / storage = 373 B / avg = 9 B
+# current buf: size = 8162 B / used = 373 B / count = 40 / avg = 9 B
 
-# strcache performance: lookups = 60 / hit rate = 38%
+# strcache performance: lookups = 62 / hit rate = 35%
 # hash-table stats:
-# Load=37/8192=0%, Rehash=0, Collisions=0/60=0%
-# Finished Make data base on Fri Aug  5 13:02:49 2022
+# Load=40/8192=0%, Rehash=0, Collisions=0/62=0%
+# Finished Make data base on Fri Aug  5 18:23:55 2022
 
  

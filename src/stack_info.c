@@ -6,20 +6,14 @@
 /*   By: mmeguedm <mmeguedm@student42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/03 17:31:23 by mmeguedm          #+#    #+#             */
-/*   Updated: 2022/08/05 15:23:19 by mmeguedm         ###   ########.fr       */
+/*   Updated: 2022/08/05 18:52:16 by mmeguedm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "tools.h"
 #include "lst.h"
 #include <stdio.h> // TO REMOVE
-
-int	abs(int x)
-{
-	if (x < 0)
-		return (-x);
-	return (x);
-}
+#include "safo3n.h"
 
 int	get_highest_index(t_stack *st)
 {
@@ -34,8 +28,6 @@ int	get_highest_index(t_stack *st)
 	}
 	return (highest_index);
 }
-
-#include <stdio.h>
 
 int	get_pos_lowest_index(t_stack *st)
 {
@@ -56,7 +48,7 @@ int	get_pos_lowest_index(t_stack *st)
 	return (pos_lowest_index);
 }
 
-void	set_stack_cost(t_stack *sta, t_stack *stb)
+void	set_cost(t_stack *sta, t_stack *stb)
 {
 	int	stack_size_a;
 	int	stack_size_b;
@@ -86,3 +78,23 @@ void	set_stack_cost(t_stack *sta, t_stack *stb)
 	}
 }
 
+t_cost	get_cheapest(t_stack *st)
+{
+	t_cost	cost;
+	int		cheapest;
+
+	cost.cost_a = st->cost_a;
+	cost.cost_b = st->cost_b;
+	cheapest = abs((st)->cost_a) + abs((st)->cost_b);
+	while (st)
+	{
+		if (abs((st)->cost_a) + abs((st)->cost_b) < cheapest)
+		{
+			cheapest = abs((st)->cost_a) + abs((st)->cost_b);
+			cost.cost_a = st->cost_a;
+			cost.cost_b = st->cost_b;
+		}
+		st = st->next;
+	}
+	return (cost);
+}

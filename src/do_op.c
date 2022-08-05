@@ -14,17 +14,6 @@
 #include "lst.h"
 #include "utils.h"
 
-t_bool	ft_is_sta(t_stack **sta)
-{
-	static t_stack **sta_glob = 0;
-
-	if (sta_glob == 0)
-		sta_glob = sta;
-	if (sta_glob == sta)
-		return (true);
-	return (false);
-}
-
 int	ft_swap(t_stack **st)
 {
 	t_stack	*cst;
@@ -48,7 +37,7 @@ int	ft_push(t_stack **src, t_stack **dest)
 	t_stack	*tmp_src;
 
 	if (!*src)
-		return (-1);
+		return (1);
 	tmp_src = (*src)->next;
 	(*src)->next = *dest;
 	*dest = *src;
@@ -68,7 +57,7 @@ int	ft_rotate(t_stack **st)
 	second = (*st)->next;
 	last = *st;
 	if (!*st)
-		return (-1);
+		return (1);
 	while (last->next)
 		last = last->next;
 	last->next = (*st);
@@ -100,5 +89,4 @@ int	ft_rrotate(t_stack **st)
 	else
 		ft_putstr("rrb\n");
 	return (1);
-
 }

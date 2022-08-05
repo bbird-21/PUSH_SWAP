@@ -6,7 +6,7 @@
 /*   By: mmeguedm <mmeguedm@student42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/09 16:02:22 by mmeguedm          #+#    #+#             */
-/*   Updated: 2022/08/05 12:59:49 by mmeguedm         ###   ########.fr       */
+/*   Updated: 2022/08/05 16:18:24 by mmeguedm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,17 @@ int	ft_lstsize(t_stack *st)
 		lenght++;
 	}
 	return (lenght);
+}
+
+t_bool	ft_is_sta(t_stack **sta)
+{
+	static t_stack **sta_glob = 0;
+
+	if (sta_glob == 0)
+		sta_glob = sta;
+	if (sta_glob == sta)
+		return (true);
+	return (false);
 }
 
 void	ft_lstprint_all(t_stack *sta, t_stack *stb)

@@ -1,6 +1,7 @@
 make --dry-run --keep-going --print-directory
 make: Entering directory '/home/tako21/Bureau/42/PUSH_SWAP'
-gcc -g -I inc/   -c -o src/main.o src/main.c
-gcc -g -I inc/ src/main.o src/utils.o src/lst.o src/do_op.o src/sort_algo.o src/assign.o src/safo3n.o src/error.o src/stack_info.o -o push_swap
+gcc -g -I inc/   -c -o src/do_move.o src/do_move.c
+ 
+gcc -g -I inc/ src/main.o src/utils.o src/lst.o src/do_op.o src/do_op2.o src/sort_algo.o src/assign.o src/safo3n.o src/error.o src/do_move.o src/stack_info.o -o push_swap
 make: Leaving directory '/home/tako21/Bureau/42/PUSH_SWAP'
  

@@ -6,7 +6,7 @@
 /*   By: mmeguedm <mmeguedm@student42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/09 16:00:36 by mmeguedm          #+#    #+#             */
-/*   Updated: 2022/08/05 13:02:39 by mmeguedm         ###   ########.fr       */
+/*   Updated: 2022/08/05 17:37:06 by mmeguedm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,6 @@ int	main(int argc, char **argv)
 	if (ft_fillstack(argv + 1, &sta, argc - 1))
 		return (-1);
 	ft_push_swap(argc - 1, &sta, &stb);
-
 	ft_lstprint_all(sta, stb);
 /* The following lines are intented for the operation of the script check.sh */
 	// while (stb)
