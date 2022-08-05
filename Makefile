@@ -9,7 +9,7 @@ CC = gcc
 DSRC = src/
 DINC = inc/
 
-CFLAGS = -g -I $(DINC) -D $(OPTION)
+CFLAGS = -g -I $(DINC)
 
 SRCS = $(addprefix $(DSRC),\
 		main.c\
@@ -20,7 +20,6 @@ SRCS = $(addprefix $(DSRC),\
 		assign.c\
 		safo3n.c\
 		error.c\
-		stack_cost.c\
 		stack_info.c)
 
 OBJS = ${SRCS:.c=.o}
@@ -31,7 +30,7 @@ $(NAME) : $(OBJS)
 		$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
 
 
-check : $(NAME)
+check : $(NAME) clean
 		@ARG=$$(shuf -i 0-50 -n $(SIZE)); \
 		./push_swap $$ARG
 clean :

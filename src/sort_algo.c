@@ -6,10 +6,11 @@
 /*   By: mmeguedm <mmeguedm@student42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/14 15:53:38 by mmeguedm          #+#    #+#             */
-/*   Updated: 2022/08/03 17:39:30 by mmeguedm         ###   ########.fr       */
+/*   Updated: 2022/08/05 15:23:51 by mmeguedm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "sort_algo.h"
 #include "safo3n.h"
 #include "lst.h"
 #include "do_op.h"
@@ -17,13 +18,12 @@
 #include "assign.h"
 #include "stack_info.h"
 
-int	ft_sort_two(t_stack **sta)
+void	ft_sort_two(t_stack **sta)
 {
 	ft_swap(sta);
-	return (1);
 }
 
-int	ft_sort_three(t_stack **sta)
+void	ft_sort_three(t_stack **sta)
 {
 	int	highest_index;
 
@@ -34,29 +34,20 @@ int	ft_sort_three(t_stack **sta)
 		ft_rrotate(sta);
 	if ((*sta)->index > (*sta)->next->index)
 		ft_swap(sta);
-	return (1);
 }
 
-int	ft_sort(t_stack **sta, t_stack **stb)
+void	ft_sort(t_stack **sta, t_stack **stb)
 {
 	ft_push_all_ex3(sta, stb);
 	ft_sort_three(sta);
-	set_pos(*sta, *stb);
-	set_target_pos(*sta, *stb);
 
-	// ft_pb_all_ex3(sta, stb);
-	// t_stack	*tmp;
-
-	// tmp = (*sta);
-	// int	median;
-
-	// median = ft_lstsize((*sta)) / 2;
-	// while (tmp)
+	// while (*sta)
 	// {
-
-	// 	tmp = tmp->next;
+		set_pos(*sta, *stb);
+		set_target_pos(*sta, *stb);
+		set_stack_cost(*sta, *stb);
+		// do_cheapest_op(sta, stb);
 	// }
-	return (1);
 }
 
 t_bool	ft_stack_is_sorted(t_stack *sta)

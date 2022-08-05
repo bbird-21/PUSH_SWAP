@@ -6,7 +6,7 @@
 /*   By: mmeguedm <mmeguedm@student42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/16 18:10:16 by mmeguedm          #+#    #+#             */
-/*   Updated: 2022/08/03 17:52:32 by mmeguedm         ###   ########.fr       */
+/*   Updated: 2022/08/05 14:26:13 by mmeguedm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,6 +78,7 @@ void	set_pos(t_stack *sta, t_stack *stb)
 		stb = stb->next;
 		pos++;
 	}
+
 }
 
 void	set_target_pos(t_stack *sta, t_stack *stb)

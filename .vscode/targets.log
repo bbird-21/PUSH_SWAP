@@ -1,6 +1,4 @@
 make all --print-data-base --no-builtin-variables --no-builtin-rules --question
-make: *** No rule to make target 'src/main.o', needed by 'push_swap'.  Stop.
-
 # GNU Make 4.3
 # Built for x86_64-pc-linux-gnu
 # Copyright (C) 1988-2020 Free Software Foundation, Inc.
@@ -8,7 +6,7 @@ make: *** No rule to make target 'src/main.o', needed by 'push_swap'.  Stop.
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Thu Aug  4 18:13:14 2022
+# Make data base, printed on Fri Aug  5 13:02:49 2022
 
 # Variables
 
@@ -73,7 +71,7 @@ CURDIR := /home/tako21/Bureau/42/PUSH_SWAP
 # environment
 APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
 # makefile (from 'Makefile', line 14)
-SRCS = $(addprefix $(DSRC), main.c utils.c lst.c do_op.c sort_algo.c assign.c safo3n.c error.c stack_cost.c stack_info.c)
+SRCS = $(addprefix $(DSRC), main.c utils.c lst.c do_op.c sort_algo.c assign.c safo3n.c error.c stack_info.c)
 # automatic
 *D = $(patsubst %/,%,$(dir $*))
 # environment
@@ -81,7 +79,7 @@ LESS_TERMCAP_ue = [0m
 # environment
 MFLAGS = -pqrR
 # environment
-SSH_AUTH_SOCK = /tmp/ssh-XXXXXXx4C8SG/agent.980
+SSH_AUTH_SOCK = /tmp/ssh-XXXXXXc9yrU8/agent.980
 # default
 .SHELLFLAGS := -c
 # environment
@@ -95,7 +93,7 @@ MAKEFILE_LIST := Makefile
 # automatic
 @F = $(notdir $@)
 # environment
-VSCODE_PID = 2028
+VSCODE_PID = 1723
 # environment
 XDG_SESSION_TYPE = x11
 # automatic
@@ -116,7 +114,7 @@ DBUS_SESSION_BUS_ADDRESS = unix:path=/run/user/1000/bus
 VSCODE_NLS_CONFIG = {"locale":"en-us","availableLanguages":{},"_languagePackSupport":true}
 # default
 MAKE_HOST := x86_64-pc-linux-gnu
-# makefile (from 'Makefile', line 26)
+# makefile (from 'Makefile', line 25)
 OBJS = ${SRCS:.c=.o}
 # makefile
 SHELL = /bin/sh
@@ -185,7 +183,7 @@ _ = /usr/bin/code
 # environment
 XDG_RUNTIME_DIR = /run/user/1000
 # makefile (from 'Makefile', line 12)
-CFLAGS = -g -I $(DINC) -D $(OPTION)
+CFLAGS = -g -I $(DINC)
 # environment
 COLORTERM = truecolor
 # makefile (from 'Makefile', line 9)
@@ -253,26 +251,27 @@ GDMSESSION = lightdm-xsession
 
 # Files
 
-check: push_swap
+check: push_swap clean
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 35):
+#  recipe to execute (from 'Makefile', line 34):
 		@ARG=$$(shuf -i 0-50 -n $(SIZE)); \
 		./push_swap $$ARG
 
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-08-04 18:13:13.332047806
+#  Last modified 2022-08-05 13:02:48.371405915
 #  File has been updated.
 #  Successfully updated.
 
 # Not a target:
 src/utils.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+#  Implicit rule search has been done.
+#  Last modified 2022-08-05 13:01:44.143405339
+#  File has been updated.
+#  Successfully updated.
 
 bonus:
 #  Phony target (prerequisite of .PHONY).
@@ -282,23 +281,26 @@ bonus:
 
 # Not a target:
 src/lst.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+#  Implicit rule search has been done.
+#  Last modified 2022-08-05 13:01:44.167405339
+#  File has been updated.
+#  Successfully updated.
 
 clean:
 #  Phony target (prerequisite of .PHONY).
 #  Implicit rule search has not been done.
+ 
 #  File does not exist.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 38):
+#  recipe to execute (from 'Makefile', line 37):
 		rm -rf $(OBJS)
 
 # Not a target:
 src/safo3n.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+#  Implicit rule search has been done.
+#  Last modified 2022-08-05 13:01:44.26340534
+#  File has been updated.
+#  Successfully updated.
 
 re: fclean push_swap
 #  Phony target (prerequisite of .PHONY).
@@ -309,14 +311,16 @@ re: fclean push_swap
 # Not a target:
 src/main.o:
 #  Implicit rule search has been done.
-#  File does not exist.
-#  File has not been updated.
+#  Last modified 2022-08-05 13:01:44.115405339
+#  File has been updated.
+#  Successfully updated.
 
 # Not a target:
 src/error.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+#  Implicit rule search has been done.
+#  Last modified 2022-08-05 13:01:44.28740534
+#  File has been updated.
+#  Successfully updated.
 
 # Not a target:
 .DEFAULT:
@@ -329,41 +333,38 @@ all: push_swap
 #  Command line target.
 #  Implicit rule search has not been done.
 #  File does not exist.
-#  File has not been updated.
+#  File has been updated.
+#  Successfully updated.
 
 fclean: clean
 #  Phony target (prerequisite of .PHONY).
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
- 
-#  recipe to execute (from 'Makefile', line 41):
+#  recipe to execute (from 'Makefile', line 40):
 		rm -rf $(NAME)
 
 # Not a target:
 src/do_op.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+#  Implicit rule search has been done.
+#  Last modified 2022-08-05 13:01:44.19540534
+#  File has been updated.
+#  Successfully updated.
 
-push_swap: src/main.o src/utils.o src/lst.o src/do_op.o src/sort_algo.o src/assign.o src/safo3n.o src/error.o src/stack_cost.o src/stack_info.o
+push_swap: src/main.o src/utils.o src/lst.o src/do_op.o src/sort_algo.o src/assign.o src/safo3n.o src/error.o src/stack_info.o
 #  Implicit rule search has not been done.
-#  Last modified 2022-08-04 17:21:51.684216051
-#  File has not been updated.
-#  recipe to execute (from 'Makefile', line 31):
+#  Last modified 2022-08-05 13:01:44.335405341
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 30):
 		$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
 
 # Not a target:
 src/sort_algo.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-
-# Not a target:
-src/stack_cost.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+#  Implicit rule search has been done.
+#  Last modified 2022-08-05 13:01:44.21940534
+#  File has been updated.
+#  Successfully updated.
 
 .PHONY: all clean fclean re bonus
 #  Implicit rule search has not been done.
@@ -372,30 +373,32 @@ src/stack_cost.o:
 
 # Not a target:
 src/assign.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+#  Implicit rule search has been done.
+#  Last modified 2022-08-05 13:01:44.23940534
+#  File has been updated.
+#  Successfully updated.
 
 # Not a target:
 src/stack_info.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+#  Implicit rule search has been done.
+#  Last modified 2022-08-05 13:01:44.315405341
+#  File has been updated.
+#  Successfully updated.
 
 # files hash-table stats:
-# Load=21/1024=2%, Rehash=0, Collisions=0/53=0%
+# Load=20/1024=2%, Rehash=0, Collisions=0/53=0%
 # VPATH Search Paths
 
 # No 'vpath' search paths.
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 38 / storage = 357 B / avg = 9 B
-# current buf: size = 8162 B / used = 357 B / count = 38 / avg = 9 B
+# strcache buffers: 1 (0) / strings = 37 / storage = 340 B / avg = 9 B
+# current buf: size = 8162 B / used = 340 B / count = 37 / avg = 9 B
 
-# strcache performance: lookups = 60 / hit rate = 36%
+# strcache performance: lookups = 60 / hit rate = 38%
 # hash-table stats:
-# Load=38/8192=0%, Rehash=0, Collisions=0/60=0%
-# Finished Make data base on Thu Aug  4 18:13:14 2022
+# Load=37/8192=0%, Rehash=0, Collisions=0/60=0%
+# Finished Make data base on Fri Aug  5 13:02:49 2022
 
  

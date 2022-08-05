@@ -6,7 +6,7 @@
 /*   By: mmeguedm <mmeguedm@student42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/09 16:00:36 by mmeguedm          #+#    #+#             */
-/*   Updated: 2022/08/04 17:21:47 by mmeguedm         ###   ########.fr       */
+/*   Updated: 2022/08/05 13:02:39 by mmeguedm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,6 @@ int	main(int argc, char **argv)
 
 	sta = NULL;
 	stb = NULL;
-#ifdef PUSH
 	if (argc < 2)
 		return (-1);
 	if (!(ft_checkargs(argv + 1)))
@@ -58,43 +57,39 @@ int	main(int argc, char **argv)
 
 	ft_lstprint_all(sta, stb);
 /* The following lines are intented for the operation of the script check.sh */
-	ft_lstprint_all(sta, stb);
 	// while (stb)
 	// {
 	// 	printf("<VALUE : %d> [INDEX : %d] (TARGET_POS : %d)\n", stb->value,stb->index, stb->target_pos);
 	// 	stb = stb->next;
 	// }
-#endif
 
-/* The following lines are purposed for the verification of TARGET_POS */
-#ifdef POS
-	ft_lstpush(&sta, 1);
-	ft_lstpush(&sta, 3);
-	ft_lstpush(&sta, 19);
-	ft_lstpush(&sta, 21);
-	ft_lstpush(&sta, 19);
-	ft_lstpush(&sta, 12);
-	ft_lstpush(&sta, 0);
+// /* The following lines are purposed for the verification of TARGET_POS */
+// 	ft_lstpush(&sta, 1);
+// 	ft_lstpush(&sta, 3);
+// 	ft_lstpush(&sta, 19);
+// 	ft_lstpush(&sta, 21);
+// 	ft_lstpush(&sta, 19);
+// 	ft_lstpush(&sta, 12);
+// 	ft_lstpush(&sta, 0);
 
-	set_pos(sta, stb);
-	set_index(sta, 1);
-	set_target_pos(sta, stb);
+// 	set_pos(sta, stb);
+// 	set_index(sta, 1);
+// 	set_target_pos(sta, stb);
 
-	ft_push(&sta, &stb);
-	ft_push(&sta, &stb);
-	ft_push(&sta, &stb);
-	ft_rotate(&stb);
-	ft_swap(&stb);
-	set_pos(sta, stb);
+// 	ft_push(&sta, &stb);
+// 	ft_push(&sta, &stb);
+// 	ft_push(&sta, &stb);
+// 	ft_rotate(&stb);
+// 	ft_swap(&stb);
+// 	set_pos(sta, stb);
 
-	set_target_pos(sta, stb);
+// 	set_target_pos(sta, stb);
 
-	ft_lstprint_all(sta, stb);
-	while (stb)
-	{
-		printf("<VALUE : %d> [INDEX : %d] (TARGET_POS : %d)\n", stb->value,stb->index, stb->target_pos);
-		stb = stb->next;
-	}
-#endif
+// 	ft_lstprint_all(sta, stb);
+// 	while (stb)
+// 	{
+// 		printf("<VALUE : %d> [INDEX : %d] (TARGET_POS : %d)\n", stb->value,stb->index, stb->target_pos);
+// 		stb = stb->next;
+// 	}
 }
 
