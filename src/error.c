@@ -6,7 +6,7 @@
 /*   By: mmeguedm <mmeguedm@student42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/17 18:36:54 by mmeguedm          #+#    #+#             */
-/*   Updated: 2022/08/09 16:12:40 by mmeguedm         ###   ########.fr       */
+/*   Updated: 2022/08/09 18:43:13 by mmeguedm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,8 @@ t_bool	ft_duplicate_string(char **argv, char *str)
 {
 	while (*argv)
 	{
+		if (!(ft_strcmp(*argv, "-0")))
+			return (false);
 		if (!(ft_strcmp(*argv, str)))
 			return (false);
 		argv++;

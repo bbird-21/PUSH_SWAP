@@ -6,7 +6,7 @@
 /*   By: mmeguedm <mmeguedm@student42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/14 15:53:38 by mmeguedm          #+#    #+#             */
-/*   Updated: 2022/08/09 16:30:51 by mmeguedm         ###   ########.fr       */
+/*   Updated: 2022/08/09 19:25:39 by mmeguedm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,13 +48,14 @@ void	ft_sort(t_stack **sta, t_stack **stb)
 		set_cost(*sta, *stb);
 		do_cheapest_op(sta, stb);
 	}
+	set_pos(*sta, *stb);
 	if (!(ft_stack_is_sorted(*sta)))
 		settle_stack(sta);
 }
 
 t_bool	ft_stack_is_sorted(t_stack *sta)
 {
-	while (sta)
+	while (sta->next)
 	{
 		if (sta->value > sta->next->value)
 			return (false);

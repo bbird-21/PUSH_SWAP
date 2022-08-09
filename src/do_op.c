@@ -14,7 +14,7 @@
 #include "lst.h"
 #include "utils.h"
 
-int	ft_swap(t_stack **st)
+void	ft_swap(t_stack **st)
 {
 	t_stack	*cst;
 	t_stack	*tmp;
@@ -29,7 +29,6 @@ int	ft_swap(t_stack **st)
 		ft_putstr("sa\n");
 	else
 		ft_putstr("sb\n");
-	return (1);
 }
 
 int	ft_push(t_stack **src, t_stack **dest)
@@ -49,15 +48,15 @@ int	ft_push(t_stack **src, t_stack **dest)
 	return (1);
 }
 
-int	ft_rotate(t_stack **st)
+void	ft_rotate(t_stack **st)
 {
 	t_stack	*last;
 	t_stack	*second;
 
+	if (!*st)
+		return ;
 	second = (*st)->next;
 	last = *st;
-	if (!*st)
-		return (1);
 	while (last->next)
 		last = last->next;
 	last->next = (*st);
@@ -67,14 +66,15 @@ int	ft_rotate(t_stack **st)
 		ft_putstr("ra\n");
 	else
 		ft_putstr("rb\n");
-	return (1);
 }
 
-int	ft_rrotate(t_stack **st)
+void	ft_rrotate(t_stack **st)
 {
 	t_stack	*last;
 	t_stack	*before_last;
 
+	if (!*st)
+		return ;
 	last = (*st);
 	while (last->next)
 	{
@@ -88,5 +88,4 @@ int	ft_rrotate(t_stack **st)
 		ft_putstr("rra\n");
 	else
 		ft_putstr("rrb\n");
-	return (1);
 }

@@ -7,3 +7,5 @@ output_me
 output_mia
 *.swp
 a.out
+checker_linux
+diff

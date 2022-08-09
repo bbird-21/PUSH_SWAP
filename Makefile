@@ -9,7 +9,7 @@ CC = gcc
 DSRC = src/
 DINC = inc/
 
-CFLAGS = -g -I $(DINC)
+CFLAGS = -g3 -Wall -Werror -Wextra -I $(DINC)
 
 SRCS = $(addprefix $(DSRC),\
 		main.c\
@@ -33,7 +33,7 @@ $(NAME) : $(OBJS)
 
 
 check : $(NAME) clean
-		@ARG=$$(shuf -i 0-50 -n $(SIZE)); \
+		@ARG=$$(shuf -i 0-500 -n $(SIZE)); \
 		echo "ARG : " && echo $$ARG; \
 		./push_swap $$ARG
 clean :
