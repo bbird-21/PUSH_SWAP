@@ -6,7 +6,7 @@
 /*   By: mmeguedm <mmeguedm@student42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/03 17:31:23 by mmeguedm          #+#    #+#             */
-/*   Updated: 2022/08/05 18:52:16 by mmeguedm         ###   ########.fr       */
+/*   Updated: 2022/08/09 14:37:54 by mmeguedm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,23 +78,21 @@ void	set_cost(t_stack *sta, t_stack *stb)
 	}
 }
 
-t_cost	get_cheapest(t_stack *st)
+void	get_cheapest(t_stack *st, t_cost *cost)
 {
-	t_cost	cost;
 	int		cheapest;
 
-	cost.cost_a = st->cost_a;
-	cost.cost_b = st->cost_b;
+	cost->cost_a = st->cost_a;
+	cost->cost_b = st->cost_b;
 	cheapest = abs((st)->cost_a) + abs((st)->cost_b);
 	while (st)
 	{
 		if (abs((st)->cost_a) + abs((st)->cost_b) < cheapest)
 		{
 			cheapest = abs((st)->cost_a) + abs((st)->cost_b);
-			cost.cost_a = st->cost_a;
-			cost.cost_b = st->cost_b;
+			cost->cost_a = st->cost_a;
+			cost->cost_b = st->cost_b;
 		}
 		st = st->next;
 	}
-	return (cost);
 }

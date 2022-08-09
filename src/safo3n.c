@@ -6,7 +6,7 @@
 /*   By: mmeguedm <mmeguedm@student42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/21 16:37:25 by mmeguedm          #+#    #+#             */
-/*   Updated: 2022/08/05 18:53:09 by mmeguedm         ###   ########.fr       */
+/*   Updated: 2022/08/09 16:32:40 by mmeguedm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,13 +39,29 @@ void	ft_push_all_ex3(t_stack **sta, t_stack **stb)
 void	do_cheapest_op(t_stack **sta, t_stack **stb)
 {
 	t_cost	cost;
-
-	cost = get_cheapest(*stb);
-
-	ft_lstprint_all(*sta, *stb);
+	get_cheapest(*stb, &cost);
 	whole_rotate(sta, stb, &cost);
 	whole_rrotate(sta, stb, &cost);
 	do_rotate(sta, stb, &cost);
 	do_rrotate(sta, stb, &cost);
 	ft_push(stb, sta);
+}
+
+void	settle_stack(t_stack **sta)
+{
+	int	pos_lowest_index;
+	int	stack_size;
+
+	stack_size = ft_lstsize(*sta);
+	pos_lowest_index = get_pos_lowest_index(*sta);
+	while ((pos_lowest_index < stack_size / 2 && pos_lowest_index > 0))
+	{
+		ft_rotate(sta);
+		pos_lowest_index = get_pos_lowest_index(*sta);
+	}
+	while ((pos_lowest_index > stack_size / 2 && pos_lowest_index > 0))
+	{
+		ft_rrotate(sta);
+		pos_lowest_index = get_pos_lowest_index(*sta);
+	}
 }

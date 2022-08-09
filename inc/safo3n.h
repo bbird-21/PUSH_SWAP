@@ -6,7 +6,7 @@
 /*   By: mmeguedm <mmeguedm@student42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/21 16:37:44 by mmeguedm          #+#    #+#             */
-/*   Updated: 2022/08/05 14:25:59 by mmeguedm         ###   ########.fr       */
+/*   Updated: 2022/08/09 15:25:33 by mmeguedm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,5 +17,6 @@
 
 void	ft_push_all_ex3(t_stack **sta, t_stack **stb);
 void	do_cheapest_op(t_stack **sta, t_stack **stb);
+void	settle_stack(t_stack **sta);
 
 #endif

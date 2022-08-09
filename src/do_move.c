@@ -6,7 +6,7 @@
 /*   By: mmeguedm <mmeguedm@student42.fr>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/05 17:48:39 by mmeguedm          #+#    #+#             */
-/*   Updated: 2022/08/05 18:52:42 by mmeguedm         ###   ########.fr       */
+/*   Updated: 2022/08/09 15:33:42 by mmeguedm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,6 @@ void	do_rotate(t_stack **sta, t_stack **stb, t_cost *cost)
 	while (cost->cost_a > 0)
 	{
 		ft_rotate(sta);
-		printf("test");
 		cost->cost_a--;
 	}
 	while (cost->cost_b > 0)

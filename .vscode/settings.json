@@ -2,6 +2,7 @@
 	"makefile.extensionOutputFolder": "./.vscode",
 	"files.associations": {
 		"basics.h": "c",
-		"sort_algo.h": "c"
+		"sort_algo.h": "c",
+		"do_op.h": "c"
 	}
 }

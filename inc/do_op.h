@@ -21,6 +21,8 @@ int		ft_rotate(t_stack **st);
 int		ft_rrotate(t_stack **st);
 void	ft_rotate_ab(t_stack **sta, t_stack **stb);
 void	ft_rrotate_ab(t_stack **sta, t_stack **stb);
+int		for_whole_rotate(t_stack **st);
+int		for_whole_rrotate(t_stack **st);
 int		abs(int x);
 
 #endif
