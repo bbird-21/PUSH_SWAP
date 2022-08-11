@@ -3,6 +3,9 @@
 	"files.associations": {
 		"basics.h": "c",
 		"sort_algo.h": "c",
-		"do_op.h": "c"
+		"do_op.h": "c",
+		"lst.h": "c",
+		"tools.h": "c",
+		"error.h": "c"
 	}
 }
