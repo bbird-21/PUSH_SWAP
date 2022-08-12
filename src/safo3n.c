@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   safo3n.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mmeguedm <mmeguedm@student42.fr>           +#+  +:+       +#+        */
+/*   By: mmeguedm <mmeguedm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/21 16:37:25 by mmeguedm          #+#    #+#             */
-/*   Updated: 2022/08/09 19:24:41 by mmeguedm         ###   ########.fr       */
+/*   Updated: 2022/08/12 15:08:47 by mmeguedm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void	ft_push_all_ex3(t_stack **sta, t_stack **stb)
 		if ((*sta)->index <= stack_size / 2)
 			pushed += ft_push(sta, stb);
 		else
-			ft_rotate(sta);
+			ft_rotate(sta, false);
 	}
 	while (stack_size - pushed > 3)
 		pushed += ft_push(sta, stb);
@@ -56,12 +56,12 @@ void	settle_stack(t_stack **sta)
 	pos_lowest_index = get_pos_lowest_index(*sta);
 	while ((pos_lowest_index < stack_size / 2 && pos_lowest_index > 0))
 	{
-		ft_rotate(sta);
+		ft_rotate(sta, false);
 		pos_lowest_index = get_pos_lowest_index(*sta);
 	}
 	while ((pos_lowest_index > stack_size / 2 && pos_lowest_index > 0))
 	{
-		ft_rrotate(sta);
+		ft_rrotate(sta, false);
 		pos_lowest_index = get_pos_lowest_index(*sta);
 	}
 }

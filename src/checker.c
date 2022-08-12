@@ -3,17 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   checker.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mmeguedm <mmeguedm@student42.fr>           +#+  +:+       +#+        */
+/*   By: mmeguedm <mmeguedm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/09 20:40:42 by mmeguedm          #+#    #+#             */
-/*   Updated: 2022/08/09 20:50:47 by mmeguedm         ###   ########.fr       */
+/*   Updated: 2022/08/12 14:50:45 by mmeguedm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "lst.h"
 #include "error.h"
 #include "tools.h"
-
+#include "get_next_line.h"
+#include "parse_std_input.h"
+#include <unistd.h>
 
 t_bool	ft_stack_is_sorted(t_stack *sta)
 {
@@ -54,8 +56,6 @@ t_bool	ft_fillstack(char **argv, t_stack **sta, int argc)
 {
 	while (argc--)
 		ft_lstpush(sta, ft_atoi(argv[argc]));
-	set_index(*sta, 1);
-	ft_is_sta(sta);
 	if (ft_stack_is_sorted(*sta))
 		return (true);
 	return (false);
@@ -75,6 +75,11 @@ int	main(int argc, char **argv)
 		return (ft_putstr("Error\n"));
 	if (ft_fillstack(argv + 1, &sta, argc - 1))
 		return (free_stack(&sta, &stb), 1);
-	ft_push_swap(argc - 1, &sta, &stb);
+	while (*argv)
+	{
+		printf("argv : %s\n", *argv);
+		argv++;
+	}
 	free_stack(&sta, &stb);
+	get_instruction(&sta, &stb);
 }

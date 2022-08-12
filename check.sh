@@ -6,11 +6,11 @@ NC='\033[0m'
 read -p "Enter Stack Size : " STACK_SIZE 
 ARG=$(shuf -i 0-50 -n $STACK_SIZE)
 ./push_swap $ARG > output_me
-./mia/push_swap $ARG > output_mia
+./TEST/push_swap $ARG > output_mia
 diff=$(colordiff output_me output_mia)
 if [ -z "$diff" ]
 then
-	echo -e "${GREEN}No diff detected, outputs are the same."
+	echo -e "${GREEN}No diff detected, outputs are the same.${NC}"
 else
 	printf "${RED}Diff detected.\nAn error report has been generated.${NC}\n" 
 	echo "ARG : " && echo $ARG

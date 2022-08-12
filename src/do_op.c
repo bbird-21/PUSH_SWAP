@@ -14,7 +14,7 @@
 #include "lst.h"
 #include "utils.h"
 
-void	ft_swap(t_stack **st)
+void	ft_swap(t_stack **st, t_bool both)
 {
 	t_stack	*cst;
 	t_stack	*tmp;
@@ -25,9 +25,9 @@ void	ft_swap(t_stack **st)
 	cst->next = tmp->next;
 	tmp->next = cst;
 	*st = tmp;
-	if (ft_is_sta(st))
+	if (ft_is_sta(st) && !both)
 		ft_putstr("sa\n");
-	else
+	else if (!(ft_is_sta(st)) && !both)
 		ft_putstr("sb\n");
 }
 
@@ -48,7 +48,7 @@ int	ft_push(t_stack **src, t_stack **dest)
 	return (1);
 }
 
-void	ft_rotate(t_stack **st)
+void	ft_rotate(t_stack **st, t_bool both)
 {
 	t_stack	*last;
 	t_stack	*second;
@@ -62,13 +62,13 @@ void	ft_rotate(t_stack **st)
 	last->next = (*st);
 	(*st)->next = NULL;
 	(*st) = second;
-	if (ft_is_sta(st))
+	if (ft_is_sta(st) && !both)
 		ft_putstr("ra\n");
-	else
+	else if (!(ft_is_sta(st)) && !both)
 		ft_putstr("rb\n");
 }
 
-void	ft_rrotate(t_stack **st)
+void	ft_rrotate(t_stack **st, t_bool both)
 {
 	t_stack	*last;
 	t_stack	*before_last;
@@ -84,8 +84,8 @@ void	ft_rrotate(t_stack **st)
 	last->next = (*st);
 	before_last->next = NULL;
 	(*st) = last;
-	if (ft_is_sta(st))
+	if (ft_is_sta(st) && !both)
 		ft_putstr("rra\n");
-	else
+	else if (!(ft_is_sta(st)) && !both)
 		ft_putstr("rrb\n");
 }

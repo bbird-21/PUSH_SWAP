@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort_algo.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mmeguedm <mmeguedm@student42.fr>           +#+  +:+       +#+        */
+/*   By: mmeguedm <mmeguedm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/14 15:53:38 by mmeguedm          #+#    #+#             */
-/*   Updated: 2022/08/09 19:25:39 by mmeguedm         ###   ########.fr       */
+/*   Updated: 2022/08/12 15:11:55 by mmeguedm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 
 void	ft_sort_two(t_stack **sta)
 {
-	ft_swap(sta);
+	ft_swap(sta, false);
 }
 
 void	ft_sort_three(t_stack **sta)
@@ -29,11 +29,11 @@ void	ft_sort_three(t_stack **sta)
 
 	highest_index = get_highest_index(*sta);
 	if ((*sta)->index == highest_index)
-		ft_rotate(sta);
+		ft_rotate(sta, false);
 	else if ((*sta)->next->index == highest_index)
-		ft_rrotate(sta);
+		ft_rrotate(sta, false);
 	if ((*sta)->index > (*sta)->next->index)
-		ft_swap(sta);
+		ft_swap(sta, false);
 }
 
 void	ft_sort(t_stack **sta, t_stack **stb)

@@ -8,8 +8,6 @@ CC = gcc
 
 DSRC = src/
 DINC = inc/
-DSRC_CHECKER = src_checker/
-DINC_CHECKER = inc_checker/
 
 CFLAGS = -g3 -Wall -Werror -Wextra -I $(DINC)
 
@@ -26,9 +24,15 @@ SRCS = $(addprefix $(DSRC),\
 		do_move.c\
 		stack_info.c)
 
-SRCS_CHECKER = $(addprefix $(DSRC_CHECKER), \
+SRCS_CHECKER = $(addprefix $(DSRC), \
 		checker.c\
 		error.c\
+		utils.c\
+		get_next_line.c\
+		utils_checker.c\
+		parse_std_input.c\
+		do_op.c\
+		do_op2.c\
 		lst.c)
 
 
@@ -37,10 +41,12 @@ OBJS = ${SRCS:.c=.o}
 
 all : $(NAME)
 
+bonus : $(NAME_CHECKER)
+
 $(NAME) : $(OBJS)
 		$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
 
-bonus : $(OBJS_CHECKER)
+$(NAME_CHECKER) : $(OBJS_CHECKER)
 		$(CC) $(CFLAGS) $(OBJS_CHECKER) -o $(NAME_CHECKER)
 
 check : $(NAME) clean
@@ -48,7 +54,7 @@ check : $(NAME) clean
 		echo "ARG : " && echo $$ARG; \
 		./push_swap $$ARG
 clean :
-		rm -rf $(OBJS)
+		rm -rf $(OBJS) $(OBJS_CHECKER)
 
 fclean : clean
 		rm -rf $(NAME)

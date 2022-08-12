@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mmeguedm <mmeguedm@student42.fr>           +#+  +:+       +#+        */
+/*   By: mmeguedm <mmeguedm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/09 16:00:36 by mmeguedm          #+#    #+#             */
-/*   Updated: 2022/08/09 19:53:48 by mmeguedm         ###   ########.fr       */
+/*   Updated: 2022/08/12 15:11:33 by mmeguedm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ t_bool	ft_fillstack(char **argv, t_stack **sta, int argc)
 void	ft_push_swap(int argc, t_stack **sta, t_stack **stb)
 {
 	if (argc == 2)
-		ft_swap(sta);
+		ft_swap(sta, false);
 	else if (argc == 3)
 		ft_sort_three(sta);
 	else
