@@ -6,7 +6,7 @@
 /*   By: mmeguedm <mmeguedm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/09 20:40:42 by mmeguedm          #+#    #+#             */
-/*   Updated: 2022/08/14 19:40:06 by mmeguedm         ###   ########.fr       */
+/*   Updated: 2022/08/14 23:38:12 by mmeguedm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,6 +91,5 @@ int	main(int argc, char **argv)
 		ft_putstr("OK\n");
 	else
 		ft_putstr("KO\n");
-	ft_lstprint_all(sta, stb);
 	free_stack(&sta, &stb);
 }

@@ -6,7 +6,7 @@
 /*   By: mmeguedm <mmeguedm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/05 16:25:09 by mmeguedm          #+#    #+#             */
-/*   Updated: 2022/08/14 17:13:16 by mmeguedm         ###   ########.fr       */
+/*   Updated: 2022/08/14 23:14:56 by mmeguedm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,40 +15,69 @@
 #include "utils.h"
 #include "tools.h"
 
-t_error	whole_rotate(t_stack **sta, t_stack **stb)
-{
-	int	error;
 
-	error = ft_rotate(sta, true);
-	if (!error)
+t_error	swap(t_stack **data)
+{
+	t_stack	*cst;
+	t_stack	*tmp;
+
+	if (!*data || !data || !(*data)->next)
 		return (error);
-	error = ft_rotate(stb, true);
-	ft_putstr("rr\n");
-	return (error);
+	tmp = *data;
+	cst = *data;
+	tmp = tmp->next;
+	cst->next = tmp->next;
+	tmp->next = cst;
+	*data = tmp;
+	return (no_error);
 }
 
-t_error	whole_rrotate(t_stack **sta, t_stack **stb)
+t_error	push(t_stack **src, t_stack **dest)
 {
-	int	error;
+	t_stack	*tmp_src;
 
-	error = ft_rrotate(sta, true);
-	if (!error)
+	if (!*src || !src)
 		return (error);
-	error = ft_rrotate(stb, true);
-	ft_putstr("rrr\n");
-	return (error);
+	tmp_src = (*src)->next;
+	(*src)->next = *dest;
+	*dest = *src;
+	*src = tmp_src;
+	return (no_error);
 }
 
-t_error	whole_swap(t_stack **sta, t_stack **stb)
-{
-	int	error;
 
-	error = ft_swap(sta, true);
-	if (!error)
+t_error rotate(t_stack **st)
+{
+	t_stack	*last;
+	t_stack	*second;
+
+	second = (*st)->next;
+	last = *st;
+	while (last->next)
+		last = last->next;
+	last->next = (*st);
+	(*st)->next = NULL;
+	(*st) = second;
+	return (no_error);
+}
+
+t_error	rrotate(t_stack **st)
+{
+	t_stack	*last;
+	t_stack	*before_last;
+
+	if (!*st || !st || !(*st)->next)
 		return (error);
-	ft_swap(stb, true);
-	ft_putstr("ss\n");
-	return (error);
+	last = (*st);
+	while (last->next)
+	{
+		before_last = last;
+		last = last->next;
+	}
+	last->next = (*st);
+	before_last->next = NULL;
+	(*st) = last;
+	return (no_error);
 }
 
 int	abs(int x)

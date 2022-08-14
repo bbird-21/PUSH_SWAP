@@ -6,7 +6,7 @@
 /*   By: mmeguedm <mmeguedm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/09 16:00:36 by mmeguedm          #+#    #+#             */
-/*   Updated: 2022/08/14 16:25:21 by mmeguedm         ###   ########.fr       */
+/*   Updated: 2022/08/14 23:15:32 by mmeguedm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,10 +53,10 @@ t_bool	ft_fillstack(char **argv, t_stack **sta, int argc)
 	return (false);
 }
 
-void	ft_push_swap(int argc, t_stack **sta, t_stack **stb)
+void	do_push_swap(int argc, t_stack **sta, t_stack **stb)
 {
 	if (argc == 2)
-		ft_swap(sta, false);
+		do_swap(sta, false);
 	else if (argc == 3)
 		ft_sort_three(sta);
 	else
@@ -77,7 +77,6 @@ int	main(int argc, char **argv)
 		return (ft_putstr("Error\n"));
 	if (ft_fillstack(argv + 1, &sta, argc - 1))
 		return (free_stack(&sta, &stb), 1);
-	ft_push_swap(argc - 1, &sta, &stb);
-	ft_lstprint_all(sta, stb);
+	do_push_swap(argc - 1, &sta, &stb);
 	free_stack(&sta, &stb);
 }

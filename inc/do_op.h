@@ -15,13 +15,18 @@
 
 #include "tools.h"
 
-t_error	ft_swap(t_stack **st, t_bool both);
-t_error	ft_push(t_stack **src, t_stack **dest, t_bool both);
-t_error	ft_rotate(t_stack **st, t_bool both);
-t_error	ft_rrotate(t_stack **st, t_bool both);
-t_error	whole_rotate(t_stack **sta, t_stack **stb);
-t_error	whole_rrotate(t_stack **sta, t_stack **stb);
-t_error	whole_swap(t_stack **sta, t_stack **stb);
+/* ACTION MOVEMENT */
+t_error	do_swap(t_stack **sta, t_stack **stb);
+t_error	do_push(t_stack **src, t_stack **dest);
+t_error	do_rotate(t_stack **sta, t_stack **stb);
+t_error	do_rrotate(t_stack **sta, t_stack **stb);
+
+/* CONFIG MOVEMENT */
+t_error	swap(t_stack **data);
+t_error	push(t_stack **src, t_stack **dest);
+t_error rotate(t_stack **st);
+t_error	rrotate(t_stack **st);
+
 int		abs(int x);
 
 #endif

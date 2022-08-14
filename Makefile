@@ -11,6 +11,8 @@ DINC = inc/
 
 
 CFLAGS = -g3 -Wall -Werror -Wextra -I $(DINC)
+CFLAGS_BONUS = -D BONUS -g3 -Wall -Werror -Wextra -I $(DINC)
+
 SRCS = $(addprefix $(DSRC),\
 		main.c\
 		utils.c\
@@ -47,7 +49,7 @@ $(NAME) : $(OBJS)
 		$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
 
 $(NAME_CHECKER) : $(OBJS_CHECKER)
-		$(CC) $(CFLAGS) $(OBJS_CHECKER) -o $(NAME_CHECKER)
+		$(CC) $(CFLAGS_BONUS) $(OBJS_CHECKER) -o $(NAME_CHECKER)
 
 check : $(NAME) clean
 		@ARG=$$(shuf -i 0-500 -n $(SIZE)); \

@@ -6,12 +6,13 @@
 /*   By: mmeguedm <mmeguedm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/09 18:20:20 by mmeguedm          #+#    #+#             */
-/*   Updated: 2022/07/19 19:59:01 by mmeguedm         ###   ########.fr       */
+/*   Updated: 2022/08/14 23:55:21 by mmeguedm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 #include "lst.h"
+#include "tools.h"
 
 int	ft_atoi(const char *str)
 {
@@ -52,6 +53,9 @@ int	ft_putstr(char *str)
 {
 	int	count;
 
+	printf("%d\n", PRINT_INSTRUCTION);
+	if (PRINT_INSTRUCTION == 0)
+		return (0);
 	count = 0;
 	while (*str)
 	{
