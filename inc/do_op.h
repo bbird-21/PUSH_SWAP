@@ -15,14 +15,13 @@
 
 #include "tools.h"
 
-void	ft_swap(t_stack **st, t_bool both);
-int		ft_push(t_stack **src, t_stack **dest);
-void	ft_rotate(t_stack **st, t_bool both);
-void	ft_rrotate(t_stack **st, t_bool both);
-void	ft_rotate_ab(t_stack **sta, t_stack **stb);
-void	ft_rrotate_ab(t_stack **sta, t_stack **stb);
-void	for_whole_rotate(t_stack **st);
-void	for_whole_rrotate(t_stack **st);
+t_error	ft_swap(t_stack **st, t_bool both);
+t_error	ft_push(t_stack **src, t_stack **dest, t_bool both);
+t_error	ft_rotate(t_stack **st, t_bool both);
+t_error	ft_rrotate(t_stack **st, t_bool both);
+t_error	whole_rotate(t_stack **sta, t_stack **stb);
+t_error	whole_rrotate(t_stack **sta, t_stack **stb);
+t_error	whole_swap(t_stack **sta, t_stack **stb);
 int		abs(int x);
 
 #endif

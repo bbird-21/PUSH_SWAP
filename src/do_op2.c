@@ -6,7 +6,7 @@
 /*   By: mmeguedm <mmeguedm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/05 16:25:09 by mmeguedm          #+#    #+#             */
-/*   Updated: 2022/08/12 15:19:59 by mmeguedm         ###   ########.fr       */
+/*   Updated: 2022/08/14 17:13:16 by mmeguedm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,18 +15,40 @@
 #include "utils.h"
 #include "tools.h"
 
-void	ft_rotate_ab(t_stack **sta, t_stack **stb)
+t_error	whole_rotate(t_stack **sta, t_stack **stb)
 {
-	ft_rotate(sta, true);
-	ft_rotate(stb, true);
+	int	error;
+
+	error = ft_rotate(sta, true);
+	if (!error)
+		return (error);
+	error = ft_rotate(stb, true);
 	ft_putstr("rr\n");
+	return (error);
 }
 
-void	ft_rrotate_ab(t_stack **sta, t_stack **stb)
+t_error	whole_rrotate(t_stack **sta, t_stack **stb)
 {
-	ft_rrotate(sta, true);
-	ft_rrotate(stb, true);
+	int	error;
+
+	error = ft_rrotate(sta, true);
+	if (!error)
+		return (error);
+	error = ft_rrotate(stb, true);
 	ft_putstr("rrr\n");
+	return (error);
+}
+
+t_error	whole_swap(t_stack **sta, t_stack **stb)
+{
+	int	error;
+
+	error = ft_swap(sta, true);
+	if (!error)
+		return (error);
+	ft_swap(stb, true);
+	ft_putstr("ss\n");
+	return (error);
 }
 
 int	abs(int x)

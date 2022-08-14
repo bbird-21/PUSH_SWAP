@@ -6,16 +6,18 @@
 /*   By: mmeguedm <mmeguedm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/09 20:40:42 by mmeguedm          #+#    #+#             */
-/*   Updated: 2022/08/12 14:50:45 by mmeguedm         ###   ########.fr       */
+/*   Updated: 2022/08/14 19:40:06 by mmeguedm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "do_op.h"
 #include "lst.h"
 #include "error.h"
 #include "tools.h"
 #include "get_next_line.h"
 #include "parse_std_input.h"
 #include <unistd.h>
+#include <stdlib.h>
 
 t_bool	ft_stack_is_sorted(t_stack *sta)
 {
@@ -56,9 +58,17 @@ t_bool	ft_fillstack(char **argv, t_stack **sta, int argc)
 {
 	while (argc--)
 		ft_lstpush(sta, ft_atoi(argv[argc]));
+	ft_is_sta(sta, true);
 	if (ft_stack_is_sorted(*sta))
 		return (true);
 	return (false);
+}
+
+int	exit_error(t_stack **sta, t_stack **stb)
+{
+	ft_putstr("An error has occurred. Arguments are the same?\n");
+	free_stack(sta, stb);
+	exit(EXIT_FAILURE);
 }
 
 int	main(int argc, char **argv)
@@ -75,11 +85,12 @@ int	main(int argc, char **argv)
 		return (ft_putstr("Error\n"));
 	if (ft_fillstack(argv + 1, &sta, argc - 1))
 		return (free_stack(&sta, &stb), 1);
-	while (*argv)
-	{
-		printf("argv : %s\n", *argv);
-		argv++;
-	}
+	if (get_instruction(&sta, &stb) == error)
+		return (exit_error(&sta, &stb));
+	if (ft_stack_is_sorted(sta) && !ft_lstsize(stb))
+		ft_putstr("OK\n");
+	else
+		ft_putstr("KO\n");
+	ft_lstprint_all(sta, stb);
 	free_stack(&sta, &stb);
-	get_instruction(&sta, &stb);
 }

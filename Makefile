@@ -9,8 +9,8 @@ CC = gcc
 DSRC = src/
 DINC = inc/
 
-CFLAGS = -g3 -Wall -Werror -Wextra -I $(DINC)
 
+CFLAGS = -g3 -Wall -Werror -Wextra -I $(DINC)
 SRCS = $(addprefix $(DSRC),\
 		main.c\
 		utils.c\

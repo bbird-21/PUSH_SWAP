@@ -6,7 +6,7 @@
 /*   By: mmeguedm <mmeguedm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/21 16:37:25 by mmeguedm          #+#    #+#             */
-/*   Updated: 2022/08/12 15:08:47 by mmeguedm         ###   ########.fr       */
+/*   Updated: 2022/08/14 16:56:09 by mmeguedm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,12 +26,12 @@ void	ft_push_all_ex3(t_stack **sta, t_stack **stb)
 	while (pushed < stack_size / 2)
 	{
 		if ((*sta)->index <= stack_size / 2)
-			pushed += ft_push(sta, stb);
+			pushed += ft_push(sta, stb, false);
 		else
 			ft_rotate(sta, false);
 	}
 	while (stack_size - pushed > 3)
-		pushed += ft_push(sta, stb);
+		pushed += ft_push(sta, stb, false);
 }
 
 
@@ -39,12 +39,13 @@ void	ft_push_all_ex3(t_stack **sta, t_stack **stb)
 void	do_cheapest_op(t_stack **sta, t_stack **stb)
 {
 	t_cost	cost;
+
 	get_cheapest(*stb, &cost);
-	whole_rotate(sta, stb, &cost);
-	whole_rrotate(sta, stb, &cost);
+	do_whole_rrotate(sta, stb, &cost);
+	do_whole_rrotate(sta, stb, &cost);
 	do_rotate(sta, stb, &cost);
 	do_rrotate(sta, stb, &cost);
-	ft_push(stb, sta);
+	ft_push(stb, sta, false);
 }
 
 void	settle_stack(t_stack **sta)

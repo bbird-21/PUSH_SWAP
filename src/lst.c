@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   lst.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mmeguedm <mmeguedm@student42.fr>           +#+  +:+       +#+        */
+/*   By: mmeguedm <mmeguedm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/09 16:02:22 by mmeguedm          #+#    #+#             */
-/*   Updated: 2022/08/05 16:18:24 by mmeguedm         ###   ########.fr       */
+/*   Updated: 2022/08/14 15:53:47 by mmeguedm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,11 +41,11 @@ int	ft_lstsize(t_stack *st)
 	return (lenght);
 }
 
-t_bool	ft_is_sta(t_stack **sta)
+t_bool	ft_is_sta(t_stack **sta, t_bool reset_sta)
 {
 	static t_stack **sta_glob = 0;
 
-	if (sta_glob == 0)
+	if (sta_glob == 0 || reset_sta)
 		sta_glob = sta;
 	if (sta_glob == sta)
 		return (true);
