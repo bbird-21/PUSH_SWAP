@@ -6,12 +6,12 @@
 /*   By: mmeguedm <mmeguedm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/19 18:45:25 by mmeguedm          #+#    #+#             */
-/*   Updated: 2022/08/15 00:06:48 by mmeguedm         ###   ########.fr       */
+/*   Updated: 2022/08/15 23:47:14 by mmeguedm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef __STRUCTS__H
-#define __STRUCTS__H
+# define __STRUCTS__H
 
 typedef enum {false, true} t_bool;
 // typedef enum {error, no_error} t_error;
@@ -22,11 +22,9 @@ typedef enum e_error_signal
 	no_error
 }	t_error;
 
-#ifdef BONUS
-#define PRINT_INSTRUCTION 1
-#else
-#define PRINT_INSTRUCTION 0
-#endif
+# ifndef PRINT_INSTRUCTION
+#  define  PRINT_INSTRUCTION 1
+# endif
 /*
 typedef enum e_error_signal
 {

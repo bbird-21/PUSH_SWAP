@@ -9,9 +9,10 @@ CC = gcc
 DSRC = src/
 DINC = inc/
 
-
 CFLAGS = -g3 -Wall -Werror -Wextra -I $(DINC)
-CFLAGS_BONUS = -D BONUS -g3 -Wall -Werror -Wextra -I $(DINC)
+ifeq ($(filter bonus,$(MAKECMDGOALS)),bonus)
+CFLAGS += -D PRINT_INSTRUCTION=0
+endif
 
 SRCS = $(addprefix $(DSRC),\
 		main.c\
@@ -29,19 +30,27 @@ SRCS = $(addprefix $(DSRC),\
 SRCS_CHECKER = $(addprefix $(DSRC), \
 		checker.c\
 		error.c\
-		utils.c\
 		get_next_line.c\
 		utils_checker.c\
 		parse_std_input.c\
+		utils.c\
 		do_op.c\
 		do_op2.c\
 		lst.c)
 
-
 OBJS_CHECKER = ${SRCS_CHECKER:.c=.o}
+
 OBJS = ${SRCS:.c=.o}
 
-all : $(NAME)
+# utils.o : CFLAGS_CHECKER+=-O3
+
+# u%.o : u%.c
+#     $(CFLAGS_CHECKER) -o $@ $<
+
+# .c.o:
+#     ${CC} ${CFLAGS_CHECKER} -c $<
+
+all : $(SET) $(NAME)
 
 bonus : $(NAME_CHECKER)
 
@@ -49,7 +58,7 @@ $(NAME) : $(OBJS)
 		$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
 
 $(NAME_CHECKER) : $(OBJS_CHECKER)
-		$(CC) $(CFLAGS_BONUS) $(OBJS_CHECKER) -o $(NAME_CHECKER)
+		$(CC) $(CFLAGS) $(OBJS_CHECKER) -o $(NAME_CHECKER)
 
 check : $(NAME) clean
 		@ARG=$$(shuf -i 0-500 -n $(SIZE)); \
@@ -63,4 +72,6 @@ fclean : clean
 
 re : fclean $(NAME)
 
-.PHONY : all clean fclean re check bonus
+re_bonus : fclean bonus
+
+.PHONY : all clean fclean re check checker test

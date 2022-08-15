@@ -1,5 +1,11 @@
 make --dry-run --keep-going --print-directory
-make: Entering directory '/mnt/nfs/homes/mmeguedm/Desktop/Projects/PUSH_SWAP'
-make: Nothing to be done for 'all'.
-make: Leaving directory '/mnt/nfs/homes/mmeguedm/Desktop/Projects/PUSH_SWAP'
+make: Entering directory '/mnt/nfs/homes/mmeguedm/Desktop/Projects/PUSH_SWAP_CP'
+gcc -D PRINT_INSTRUCTION=1 -g3 -Wall -Werror -Wextra -I inc/ -c src/main.c -o src/main.o -I src/
+gcc -D PRINT_INSTRUCTION=1 -g3 -Wall -Werror -Wextra -I inc/ -c src/sort_algo.c -o src/sort_algo.o -I src/
+gcc -D PRINT_INSTRUCTION=1 -g3 -Wall -Werror -Wextra -I inc/ -c src/assign.c -o src/assign.o -I src/
+gcc -D PRINT_INSTRUCTION=1 -g3 -Wall -Werror -Wextra -I inc/ -c src/safo3n.c -o src/safo3n.o -I src/
+gcc -D PRINT_INSTRUCTION=1 -g3 -Wall -Werror -Wextra -I inc/ -c src/do_move.c -o src/do_move.o -I src/
+gcc -D PRINT_INSTRUCTION=1 -g3 -Wall -Werror -Wextra -I inc/ -c src/stack_info.c -o src/stack_info.o -I src/
+gcc -D PRINT_INSTRUCTION=1 -g3 -Wall -Werror -Wextra -I inc/ src/main.o src/utils.o src/lst.o src/do_op.o src/do_op2.o src/sort_algo.o src/assign.o src/safo3n.o src/error.o src/do_move.o src/stack_info.o -o push_swap
+make: Leaving directory '/mnt/nfs/homes/mmeguedm/Desktop/Projects/PUSH_SWAP_CP'
  
