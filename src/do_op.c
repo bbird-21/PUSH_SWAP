@@ -14,28 +14,29 @@
 #include "lst.h"
 #include "utils.h"
 #include "tools.h"
-#include <stdio.h>
-
+#include <unistd.h>
 
 t_error	do_swap(t_stack **sta, t_stack **stb)
 {
 	if (sta && stb)
 	{
-		if (!swap(sta) || !swap(stb))
+		if (!swap(sta))
 			return (error);
-		ft_putstr("ss\n");
+		if (!(swap(stb)))
+			return (error);
+		ft_putstr_fd("ss\n", STDOUT_FILENO);
 	}
 	else if (sta)
 	{
 		if (!swap(sta))
 			return (error);
-		ft_putstr("sa\n");
+		ft_putstr_fd("sa\n", STDOUT_FILENO);
 	}
 	else if (stb)
 	{
 		if (!swap(stb))
 			return (error);
-		ft_putstr("sb\n");
+		ft_putstr_fd("sb\n", STDOUT_FILENO);
 	}
 	return (no_error);
 }
@@ -44,10 +45,13 @@ t_error	do_swap(t_stack **sta, t_stack **stb)
 t_error	do_push(t_stack **src, t_stack **dest)
 {
 	if (ft_is_sta(dest, false))
-		ft_putstr("pa\n");
+		ft_putstr_fd("pa\n", STDOUT_FILENO);
 	if (!ft_is_sta(dest, false))
-		ft_putstr("pb\n");
-	return (push(src, dest));
+		ft_putstr_fd("pb\n", STDOUT_FILENO);
+
+	if (!(push(src, dest)))
+		return (error);
+	return (no_error);
 }
 
 
@@ -56,19 +60,23 @@ t_error	do_rotate(t_stack **sta, t_stack **stb)
 {
 	if (sta && stb)
 	{
-		rotate(sta);
-		rotate(stb);
-		ft_putstr("rr\n");
+		if (!(rotate(sta)))
+			return (error);
+		if (!(rotate(stb)))
+			return (error);
+		ft_putstr_fd("rr\n", STDOUT_FILENO);
 	}
 	else if (sta)
 	{
-		rotate(sta);
-		ft_putstr("ra\n");
+		if (!(rotate(sta)))
+			return (error);
+		ft_putstr_fd("ra\n", STDOUT_FILENO);
 	}
 	else if (stb)
 	{
-		rotate(stb);
-		ft_putstr("rb\n");
+		if (!(rotate(stb)))
+			return (error);
+		ft_putstr_fd("rb\n", STDOUT_FILENO);
 	}
 	return (no_error);
 }
@@ -79,19 +87,23 @@ t_error	do_rrotate(t_stack **sta, t_stack **stb)
 {
 	if (sta && stb)
 	{
-		rrotate(sta);
-		rrotate(stb);
-		ft_putstr("rrr\n");
+		if (!(rrotate(sta)))
+			return (error);
+		if (!(rrotate(stb)))
+			return (error);
+		ft_putstr_fd("rrr\n", STDOUT_FILENO);
 	}
 	else if (sta)
 	{
-		rrotate(sta);
-		ft_putstr("rra\n");
+		if (!(rrotate(sta)))
+			return (error);
+		ft_putstr_fd("rra\n", STDOUT_FILENO);
 	}
 	else if (stb)
 	{
-		rrotate(stb);
-		ft_putstr("rrb\n");
+		if (!(rrotate(stb)))
+			return (error);
+		ft_putstr_fd("rrb\n", STDOUT_FILENO);
 	}
 	return (no_error);
 }

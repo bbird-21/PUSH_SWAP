@@ -6,7 +6,7 @@
 /*   By: mmeguedm <mmeguedm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/09 20:40:42 by mmeguedm          #+#    #+#             */
-/*   Updated: 2022/08/14 23:38:12 by mmeguedm         ###   ########.fr       */
+/*   Updated: 2022/08/17 21:42:41 by mmeguedm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,6 @@ void	free_stack(t_stack **sta, t_stack **stb)
 {
 	t_stack	*tmp;
 
-	if (!sta || !(*sta))
-		return ;
 	tmp = *sta;
 	while (*sta)
 	{
@@ -60,14 +58,16 @@ t_bool	ft_fillstack(char **argv, t_stack **sta, int argc)
 		ft_lstpush(sta, ft_atoi(argv[argc]));
 	ft_is_sta(sta, true);
 	if (ft_stack_is_sorted(*sta))
+	{
+		ft_putstr_fd("OK\n", STDERR_FILENO);
 		return (true);
+	}
 	return (false);
 }
 
-int	exit_error(t_stack **sta, t_stack **stb)
+int	exit_error(void)
 {
-	ft_putstr("An error has occurred. Arguments are the same?\n");
-	free_stack(sta, stb);
+	ft_putstr_fd("An error has occurred. Arguments are the same?\n", STDERR_FILENO);
 	exit(EXIT_FAILURE);
 }
 
@@ -82,14 +82,32 @@ int	main(int argc, char **argv)
 	if (argc < 2)
 		return (-1);
 	if (!(ft_checkargs(argv + 1)))
-		return (ft_putstr("Error\n"));
+		return (ft_putstr_fd("Error\n", STDERR_FILENO));
 	if (ft_fillstack(argv + 1, &sta, argc - 1))
+	{
+		free_stack(&sta, &stb);
 		return (free_stack(&sta, &stb), 1);
+	}
 	if (get_instruction(&sta, &stb) == error)
-		return (exit_error(&sta, &stb));
+	{
+		free_stack(&sta, &stb);
+		return (exit_error());
+	}
 	if (ft_stack_is_sorted(sta) && !ft_lstsize(stb))
-		ft_putstr("OK\n");
+		ft_putstr_fd("OK\n", STDOUT_FILENO);
 	else
-		ft_putstr("KO\n");
+		ft_putstr_fd("KO\n", STDOUT_FILENO);
 	free_stack(&sta, &stb);
 }
+	// ft_lstprint_all(sta, stb);
+	// do_rotate(&sta, NULL);
+	// do_push(&sta, &stb);
+	// do_rotate(&sta, NULL);
+	// // do_rotate(&sta, NULL);
+	// // do_push(&sta, &stb);
+	// // do_swap(&sta, NULL);
+	// // do_push(&stb, &sta);
+	// // do_rotate(&sta, NULL);
+	// // do_push(&stb, &stb);
+	// // do_rrotate(&sta, NULL);
+	// ft_lstprint_all(sta, stb);

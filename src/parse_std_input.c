@@ -6,7 +6,7 @@
 /*   By: mmeguedm <mmeguedm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/09 20:50:36 by mmeguedm          #+#    #+#             */
-/*   Updated: 2022/08/14 23:37:33 by mmeguedm         ###   ########.fr       */
+/*   Updated: 2022/08/17 21:42:41 by mmeguedm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,17 @@ t_error	get_instruction(t_stack **sta, t_stack **stb)
 	instruction = NULL;
 	while ((instruction = get_next_line(STDIN_FILENO)) != NULL)
 	{
-		if (do_instruction(sta, stb, instruction) == error)
+		if (!(is_instruction(instruction)))
+		{
+			free(instruction);
 			return (error);
+		}
+		if (do_instruction(sta, stb, instruction) == error)
+		{
+			free(instruction);
+			return (error);
+		}
+		free(instruction);
 	}
 	return (no_error);
 }
@@ -61,4 +70,32 @@ t_error	do_instruction(t_stack **sta, t_stack **stb, char *instruction)
 	else if (!(ft_strcmp(instruction, "rrr\n")))
 		return (do_rrotate(sta, stb));
 	return (no_error);
+}
+
+t_bool	is_instruction(char *instruction)
+{
+	int	i;
+
+	i = 0;
+	if (!instruction)
+		return (false);
+	const char instruction_arr[NUMBER_STRING][MAX_STRING_SIZE] = {"rr\n",
+		"sa\n",
+		"sb\n",
+		"ss\n",
+		"pa\n",
+		"pb\n",
+		"ra\n",
+		"rb\n",
+		"rr\n",
+		"rra\n",
+		"rrb\n",
+		"rrr\n"
+	};
+	while (++i < NUMBER_STRING)
+	{
+		if (!(ft_strcmp(instruction_arr[i], instruction)))
+			return (true);
+	}
+	return (false);
 }

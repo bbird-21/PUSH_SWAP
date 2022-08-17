@@ -6,7 +6,7 @@
 /*   By: mmeguedm <mmeguedm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/09 16:00:36 by mmeguedm          #+#    #+#             */
-/*   Updated: 2022/08/14 23:15:32 by mmeguedm         ###   ########.fr       */
+/*   Updated: 2022/08/17 22:12:22 by mmeguedm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@
 #include "sort_algo.h"
 #include "assign.h"
 #include "error.h"
+#include "limits.h"
+#include <unistd.h>
 
 void	free_stack(t_stack **sta, t_stack **stb)
 {
@@ -49,14 +51,14 @@ t_bool	ft_fillstack(char **argv, t_stack **sta, int argc)
 	set_index(*sta, 1);
 	ft_is_sta(sta, true);
 	if (ft_stack_is_sorted(*sta))
-		return (true);
-	return (false);
+		return (false);
+	return (true);
 }
 
 void	do_push_swap(int argc, t_stack **sta, t_stack **stb)
 {
 	if (argc == 2)
-		do_swap(sta, false);
+		do_swap(sta, NULL);
 	else if (argc == 3)
 		ft_sort_three(sta);
 	else
@@ -74,8 +76,8 @@ int	main(int argc, char **argv)
 	if (argc < 2)
 		return (-1);
 	if (!(ft_checkargs(argv + 1)))
-		return (ft_putstr("Error\n"));
-	if (ft_fillstack(argv + 1, &sta, argc - 1))
+		return (ft_putstr_fd("Error\n", STDERR_FILENO));
+	if (!(ft_fillstack(argv + 1, &sta, argc - 1)))
 		return (free_stack(&sta, &stb), 1);
 	do_push_swap(argc - 1, &sta, &stb);
 	free_stack(&sta, &stb);

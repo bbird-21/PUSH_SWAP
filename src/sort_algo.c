@@ -6,7 +6,7 @@
 /*   By: mmeguedm <mmeguedm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/14 15:53:38 by mmeguedm          #+#    #+#             */
-/*   Updated: 2022/08/14 23:11:09 by mmeguedm         ###   ########.fr       */
+/*   Updated: 2022/08/17 22:13:37 by mmeguedm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 
 void	ft_sort_two(t_stack **sta)
 {
-	do_swap(sta, false);
+	do_swap(sta, NULL);
 }
 
 void	ft_sort_three(t_stack **sta)
@@ -33,7 +33,7 @@ void	ft_sort_three(t_stack **sta)
 	else if ((*sta)->next->index == highest_index)
 		do_rrotate(sta, NULL);
 	if ((*sta)->index > (*sta)->next->index)
-		do_swap(sta, false);
+		do_swap(sta, NULL);
 }
 
 void	ft_sort(t_stack **sta, t_stack **stb)

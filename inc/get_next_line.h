@@ -6,7 +6,7 @@
 /*   By: mmeguedm <mmeguedm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/06 14:46:19 by mmeguedm          #+#    #+#             */
-/*   Updated: 2022/08/12 14:11:58 by mmeguedm         ###   ########.fr       */
+/*   Updated: 2022/08/17 20:01:51 by mmeguedm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,5 @@
 
 char	*get_next_line(int fd);
 int		ft_newline(char *s);
-int		ft_sizemalloc(char	*line);
-char	*ft_backline(char	*line);
-char	*ft_afterline(char	*line);
 
 #endif

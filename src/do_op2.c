@@ -6,7 +6,7 @@
 /*   By: mmeguedm <mmeguedm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/05 16:25:09 by mmeguedm          #+#    #+#             */
-/*   Updated: 2022/08/14 23:14:56 by mmeguedm         ###   ########.fr       */
+/*   Updated: 2022/08/17 19:35:44 by mmeguedm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,20 +15,19 @@
 #include "utils.h"
 #include "tools.h"
 
-
-t_error	swap(t_stack **data)
+t_error	swap(t_stack **st)
 {
 	t_stack	*cst;
 	t_stack	*tmp;
 
-	if (!*data || !data || !(*data)->next)
+	if (!*st || !st || !(*st)->next)
 		return (error);
-	tmp = *data;
-	cst = *data;
+	tmp = *st;
+	cst = *st;
 	tmp = tmp->next;
 	cst->next = tmp->next;
 	tmp->next = cst;
-	*data = tmp;
+	*st = tmp;
 	return (no_error);
 }
 
@@ -51,6 +50,8 @@ t_error rotate(t_stack **st)
 	t_stack	*last;
 	t_stack	*second;
 
+	if (!*st || !st || !(*st)->next)
+		return (error);
 	second = (*st)->next;
 	last = *st;
 	while (last->next)
