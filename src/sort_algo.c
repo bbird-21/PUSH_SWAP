@@ -6,7 +6,7 @@
 /*   By: mmeguedm <mmeguedm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/14 15:53:38 by mmeguedm          #+#    #+#             */
-/*   Updated: 2022/08/17 22:13:37 by mmeguedm         ###   ########.fr       */
+/*   Updated: 2022/09/01 15:26:23 by mmeguedm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,6 @@ void	ft_sort(t_stack **sta, t_stack **stb)
 {
 	do_push_all_ex3(sta, stb);
 	ft_sort_three(sta);
-
 	while (*stb)
 	{
 		set_pos(*sta, *stb);

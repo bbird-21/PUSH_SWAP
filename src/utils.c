@@ -6,7 +6,7 @@
 /*   By: mmeguedm <mmeguedm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/09 18:20:20 by mmeguedm          #+#    #+#             */
-/*   Updated: 2022/08/17 22:04:24 by mmeguedm         ###   ########.fr       */
+/*   Updated: 2022/09/01 15:25:55 by mmeguedm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ int	ft_putchar_fd(char c, int fd)
 
 int	ft_putstr_fd(char *str, int fd)
 {
-	int count;
+	int	count;
 
 	if (PRINT_INSTRUCTION == 0 && is_instruction(str))
 		return (0);

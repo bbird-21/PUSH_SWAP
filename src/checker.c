@@ -6,7 +6,7 @@
 /*   By: mmeguedm <mmeguedm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/09 20:40:42 by mmeguedm          #+#    #+#             */
-/*   Updated: 2022/08/17 21:42:41 by mmeguedm         ###   ########.fr       */
+/*   Updated: 2022/09/01 18:36:21 by mmeguedm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,23 +57,17 @@ t_bool	ft_fillstack(char **argv, t_stack **sta, int argc)
 	while (argc--)
 		ft_lstpush(sta, ft_atoi(argv[argc]));
 	ft_is_sta(sta, true);
-	if (ft_stack_is_sorted(*sta))
-	{
-		ft_putstr_fd("OK\n", STDERR_FILENO);
-		return (true);
-	}
 	return (false);
 }
 
 int	exit_error(void)
 {
-	ft_putstr_fd("An error has occurred. Arguments are the same?\n", STDERR_FILENO);
+	ft_putstr_fd("An error has occurred.\n", STDERR_FILENO);
 	exit(EXIT_FAILURE);
 }
 
 int	main(int argc, char **argv)
 {
-
 	t_stack	*sta;
 	t_stack	*stb;
 
@@ -99,15 +93,3 @@ int	main(int argc, char **argv)
 		ft_putstr_fd("KO\n", STDOUT_FILENO);
 	free_stack(&sta, &stb);
 }
-	// ft_lstprint_all(sta, stb);
-	// do_rotate(&sta, NULL);
-	// do_push(&sta, &stb);
-	// do_rotate(&sta, NULL);
-	// // do_rotate(&sta, NULL);
-	// // do_push(&sta, &stb);
-	// // do_swap(&sta, NULL);
-	// // do_push(&stb, &sta);
-	// // do_rotate(&sta, NULL);
-	// // do_push(&stb, &stb);
-	// // do_rrotate(&sta, NULL);
-	// ft_lstprint_all(sta, stb);

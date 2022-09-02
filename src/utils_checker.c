@@ -6,7 +6,7 @@
 /*   By: mmeguedm <mmeguedm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/29 13:53:46 by mmeguedm          #+#    #+#             */
-/*   Updated: 2022/08/12 14:17:05 by mmeguedm         ###   ########.fr       */
+/*   Updated: 2022/09/01 11:59:16 by mmeguedm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,5 +52,23 @@ char	*ft_strjoin(char *line, char *buffer)
 	p[i] = '\0';
 	if (line != NULL)
 		free(line);
+	return (p);
+}
+
+char	*ft_strdup(const char *src)
+{
+	int		i;
+	char	*p;
+
+	i = 0;
+	p = malloc(sizeof(char) * ft_strlen((char *)src) + 1);
+	if (!p)
+		return (NULL);
+	while (src[i])
+	{
+		p[i] = src[i];
+		i++;
+	}
+	p[i] = '\0';
 	return (p);
 }

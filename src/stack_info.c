@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   stack_info.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mmeguedm <mmeguedm@student42.fr>           +#+  +:+       +#+        */
+/*   By: mmeguedm <mmeguedm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/03 17:31:23 by mmeguedm          #+#    #+#             */
-/*   Updated: 2022/08/09 14:37:54 by mmeguedm         ###   ########.fr       */
+/*   Updated: 2022/09/01 15:25:05 by mmeguedm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 
 int	get_highest_index(t_stack *st)
 {
-	int highest_index;
+	int	highest_index;
 
 	highest_index = st->index;
 	while (st)
@@ -52,7 +52,6 @@ void	set_cost(t_stack *sta, t_stack *stb)
 {
 	int	stack_size_a;
 	int	stack_size_b;
-
 
 	stack_size_a = ft_lstsize(sta);
 	stack_size_b = ft_lstsize(stb);

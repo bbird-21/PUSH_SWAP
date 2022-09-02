@@ -6,7 +6,7 @@
 /*   By: mmeguedm <mmeguedm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/17 18:36:54 by mmeguedm          #+#    #+#             */
-/*   Updated: 2022/08/17 18:39:38 by mmeguedm         ###   ########.fr       */
+/*   Updated: 2022/09/01 14:47:41 by mmeguedm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@ t_bool	ft_allowed_string(char *str)
 		return (false);
 	if (str[0] == '-')
 		i++;
+	if (!(ft_isdigit(str[i])))
+		return (false);
 	while (str[i])
 	{
 		if (!(ft_isdigit(str[i])))

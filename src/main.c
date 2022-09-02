@@ -6,7 +6,7 @@
 /*   By: mmeguedm <mmeguedm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/09 16:00:36 by mmeguedm          #+#    #+#             */
-/*   Updated: 2022/08/17 22:12:22 by mmeguedm         ###   ########.fr       */
+/*   Updated: 2022/09/01 15:22:12 by mmeguedm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,6 @@ void	do_push_swap(int argc, t_stack **sta, t_stack **stb)
 
 int	main(int argc, char **argv)
 {
-
 	t_stack	*sta;
 	t_stack	*stb;
 

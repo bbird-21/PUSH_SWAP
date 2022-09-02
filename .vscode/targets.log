@@ -1,4 +1,6 @@
 make all --print-data-base --no-builtin-variables --no-builtin-rules --question
+make: *** No rule to make target 'src/main.o', needed by 'push_swap'.  Stop.
+
 # GNU Make 4.2.1
 # Built for x86_64-pc-linux-gnu
 # Copyright (C) 1988-2016 Free Software Foundation, Inc.
@@ -6,7 +8,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Wed Aug 17 23:05:54 2022
+# Make data base, printed on Fri Sep  2 10:59:00 2022
 
 # Variables
 
@@ -33,7 +35,7 @@ GDMSESSION = ubuntu
 # environment
 XMODIFIERS = @im=ibus
 # makefile
-CURDIR := /mnt/nfs/homes/mmeguedm/Desktop/Projects/PUSH_SWAP_CP
+CURDIR := /mnt/nfs/homes/mmeguedm/Desktop/Projects/PUSH_SWAP
 # makefile
 SHELL = /bin/sh
 # environment
@@ -42,13 +44,13 @@ VTE_VERSION = 6003
 VSCODE_NLS_CONFIG = {"locale":"en-us","availableLanguages":{},"_languagePackSupport":true}
 # environment
 _ = /usr/bin/code
-# makefile (from 'Makefile', line 12)
-CFLAGS = -g3 -Wall -Werror -Wextra -I $(DINC)
+# makefile (from 'Makefile', line 8)
+CFLAGS = -Wall -Werror -Wextra -I $(DINC)
 # environment
-JOURNAL_STREAM = 9:8314288
+JOURNAL_STREAM = 9:10066795
 # environment
 XDG_CONFIG_DIRS = /etc/xdg/xdg-ubuntu:/etc/xdg
-# makefile (from 'Makefile', line 9)
+# makefile (from 'Makefile', line 5)
 DSRC = src/
 # makefile (from 'Makefile', line 1)
 MAKEFILE_LIST :=  Makefile
@@ -64,16 +66,16 @@ MANDATORY_PATH = /usr/share/gconf/ubuntu.mandatory.path
 XDG_DATA_DIRS = /usr/share/gnome:/usr/share/ubuntu:/mnt/nfs/homes/mmeguedm/.local/share/flatpak/exports/share:/var/lib/flatpak/exports/share:/usr/local/share:/usr/share:/var/lib/snapd/desktop
 # environment
 DBUS_SESSION_BUS_ADDRESS = unix:path=/run/user/101815/bus
-# makefile (from 'Makefile', line 48)
+# makefile (from 'Makefile', line 43)
 OBJS = ${SRCS:.c=.o}
 # environment
-MANAGERPID = 1401651
+MANAGERPID = 1605921
 # environment
-VSCODE_CWD = /mnt/nfs/homes/mmeguedm/Desktop/Projects/PUSH_SWAP_CP
+VSCODE_CWD = /mnt/nfs/homes/mmeguedm/Desktop/Projects/PUSH_SWAP
 # environment
-XDG_SESSION_PATH = /org/freedesktop/DisplayManager/Session23
+XDG_SESSION_PATH = /org/freedesktop/DisplayManager/Session26
 # environment
-KRB5CCNAME = FILE:/tmp/krb5cc_101815_iudq0Z
+KRB5CCNAME = FILE:/tmp/krb5cc_101815_KZuj7G
 # default
 MAKE_HOST := x86_64-pc-linux-gnu
 # environment
@@ -83,7 +85,7 @@ GPG_AGENT_INFO = /run/user/101815/gnupg/S.gpg-agent:0:1
 # environment
 LSCOLORS = Gxfxcxdxbxegedabagacad
 # environment
-SESSION_MANAGER = local/e1r11p6.clusters.42paris.fr:@/tmp/.ICE-unix/1402107,unix/e1r11p6.clusters.42paris.fr:/tmp/.ICE-unix/1402107
+SESSION_MANAGER = local/e1r10p5.clusters.42paris.fr:@/tmp/.ICE-unix/1606356,unix/e1r10p5.clusters.42paris.fr:/tmp/.ICE-unix/1606356
 # environment
 XDG_RUNTIME_DIR = /run/user/101815
 # environment
@@ -91,7 +93,7 @@ XDG_MENU_PREFIX = gnome-
 # environment
 ELECTRON_RUN_AS_NODE = 1
 # environment
-INVOCATION_ID = 0accf17b4dc44fa3922418b0d7012147
+INVOCATION_ID = 0e09e419c3004bdb9a75a0b0f894d23d
 # default
 .FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell archives jobserver output-sync check-symlink load
 # environment
@@ -101,27 +103,26 @@ ELECTRON_NO_ATTACH_CONSOLE = 1
 # environment
 XDG_GREETER_DATA_DIR = /var/lib/lightdm-data/mmeguedm
 # environment
- 
 LS_COLORS = rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:
 # environment
 XDG_SESSION_DESKTOP = ubuntu
 # environment
 SSH_AUTH_SOCK = /run/user/101815/keyring/ssh
 # environment
-GIO_LAUNCHED_DESKTOP_FILE_PID = 1406205
+GIO_LAUNCHED_DESKTOP_FILE_PID = 1608038
 # automatic
 %F = $(notdir $%)
 # environment
 DISPLAY = :0
 # environment
-PWD = /mnt/nfs/homes/mmeguedm/Desktop/Projects/PUSH_SWAP_CP
+PWD = /mnt/nfs/homes/mmeguedm/Desktop/Projects/PUSH_SWAP
 # default
 .LOADED := 
 # environment
-SSH_AGENT_PID = 1402045
+SSH_AGENT_PID = 1606314
 # environment
 ORIGINAL_XDG_CURRENT_DESKTOP = ubuntu:GNOME
-# makefile (from 'Makefile', line 35)
+# makefile (from 'Makefile', line 30)
 SRCS_CHECKER = $(addprefix $(DSRC), checker.c error.c get_next_line.c utils_checker.c parse_std_input.c utils.c do_op2.c do_op.c lst.c)
 # environment
 GTK_MODULES = gail:atk-bridge
@@ -136,13 +137,13 @@ VSCODE_CODE_CACHE_PATH = /mnt/nfs/homes/mmeguedm/.config/Code/CachedData/3b889b0
 # environment
 LOGNAME = mmeguedm
 # environment
-APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = true
+APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
 # environment
 ZSH = /mnt/nfs/homes/mmeguedm/.oh-my-zsh
 # environment
 VSCODE_HANDLES_UNCAUGHT_ERRORS = true
 # makefile (from 'Makefile', line 2)
-NAME_CHECKER = lola
+NAME_CHECKER = checker
 # environment
 GNOME_DESKTOP_SESSION_ID = this-is-deprecated
 # automatic
@@ -157,14 +158,14 @@ MAKE = $(MAKE_COMMAND)
 MAKECMDGOALS := all
 # environment
 QT_IM_MODULE = ibus
-# makefile (from 'Makefile', line 18)
-SRCS = $(addprefix $(DSRC), main.c utils.c lst.c do_op.c all.c do_op2.c sort_algo.c assign.c safo3n.c error.c get_next_line.c parse_std_input.c utils_checker.c do_move.c stack_info.c)
+# makefile (from 'Makefile', line 14)
+SRCS = $(addprefix $(DSRC), main.c utils.c lst.c do_op.c do_op2.c sort_algo.c assign.c safo3n.c error.c get_next_line.c parse_std_input.c utils_checker.c do_move.c stack_info.c)
 # environment
 SHLVL = 2
 # makefile (from 'Makefile', line 3)
 CC = cc
 # environment
-TERMINATOR_UUID = urn:uuid:88444865-b338-4aeb-8dd8-7377e92cad31
+TERMINATOR_UUID = urn:uuid:f665741a-150f-46cf-836b-498f2508806d
 # default
 MAKE_VERSION := 4.2.1
 # environment
@@ -181,10 +182,10 @@ LESS = -R
 %D = $(patsubst %/,%,$(dir $%))
 # default
 MAKE_COMMAND := make
-# makefile (from 'Makefile', line 10)
+# makefile (from 'Makefile', line 6)
 DINC = inc/
 # environment
-OLDPWD = /mnt/nfs/homes/mmeguedm/Desktop/Projects/PUSH_SWAP
+OLDPWD = /mnt/nfs/homes/mmeguedm
 # environment
 TERMINATOR_DBUS_PATH = /net/tenshu/Terminator2
 # default
@@ -219,7 +220,7 @@ MAKEFILES :=
 PAGER = less
 # environment
 LC_ALL = C
-# makefile (from 'Makefile', line 46)
+# makefile (from 'Makefile', line 41)
 OBJS_CHECKER = ${SRCS_CHECKER:.c=.o}
 # automatic
 ^F = $(notdir $^)
@@ -242,9 +243,9 @@ TERMINATOR_DBUS_NAME = net.tenshu.Terminator21a9d5db22c73a993ff0b42f64b396873
 # environment
 DOCKER_HOST = unix:///run/user/101815/docker.sock
 # environment
-VSCODE_PID = 1407929
+VSCODE_PID = 1608355
 # variable set hash-table stats:
-# Load=116/1024=11%, Rehash=0, Collisions=32/171=19%
+# Load=116/1024=11%, Rehash=0, Collisions=26/156=17%
 
 # Pattern-specific Variable Values
 
@@ -252,9 +253,9 @@ VSCODE_PID = 1407929
 
 # Directories
 
-# . (device 59, inode 228141290): 22 files, no impossibilities.
+# . (device 55, inode 228139009): 15 files, no impossibilities.
 
-# 22 files, no impossibilities in 1 directories.
+# 15 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -264,31 +265,29 @@ VSCODE_PID = 1407929
 
 # Not a target:
 src/lst.o:
-#  Implicit rule search has been done.
-#  Last modified 2022-08-17 23:05:47.032781986
-#  File has been updated.
-#  Successfully updated.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
-# makefile (from 'Makefile', line 52)
+# makefile (from 'Makefile', line 47)
 all: CFLAGS += -D PRINT_INSTRUCTION=1
 all: push_swap
 #  Phony target (prerequisite of .PHONY).
 #  Command line target.
 #  Implicit rule search has not been done.
 #  File does not exist.
-#  File has been updated.
-#  Needs to be updated (-q is set).
+#  File has not been updated.
 # variable set hash-table stats:
-# Load=1/32=3%, Rehash=0, Collisions=1/19=5%
+# Load=1/32=3%, Rehash=0, Collisions=0/2=0%
+ 
 
 # Not a target:
 src/get_next_line.o:
-#  Implicit rule search has been done.
-#  Last modified 2022-08-17 23:05:47.418784335
-#  File has been updated.
-#  Successfully updated.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
-.PHONY: all bonus clean fclean re check checker test
+.PHONY: all bonus clean fclean re check
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -296,19 +295,11 @@ src/get_next_line.o:
 # Not a target:
 src/main.o:
 #  Implicit rule search has been done.
-#  Last modified 2022-08-17 23:05:46.932781377
-#  File has been updated.
-#  Successfully updated.
+#  File does not exist.
+#  File has not been updated.
 
 # Not a target:
 src/error.o:
-#  Implicit rule search has been done.
-#  Last modified 2022-08-17 23:05:47.361783988
-#  File has been updated.
-#  Successfully updated.
-
-# Not a target:
-.SUFFIXES:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -316,29 +307,14 @@ src/error.o:
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-08-17 23:05:40.778743925
+#  Last modified 2022-09-01 17:49:54.131998024
 #  File has been updated.
 #  Successfully updated.
 
 # Not a target:
 src/do_op.o:
-#  Implicit rule search has been done.
-#  Last modified 2022-08-17 23:05:47.081782284
-#  File has been updated.
-#  Successfully updated.
-
-lola: src/checker.o src/error.o src/get_next_line.o src/utils_checker.o src/parse_std_input.o src/utils.o src/do_op2.o src/do_op.o src/lst.o
 #  Implicit rule search has not been done.
 #  Modification time never checked.
-#  File has not been updated.
-#  recipe to execute (from 'Makefile', line 79):
-		$(CC) $(CFLAGS) -c $(DSRC)utils.c -o $(DSRC)utils.o
-		$(CC) $(CFLAGS) $(OBJS_CHECKER) -o $(NAME_CHECKER)
-
-test:
-#  Phony target (prerequisite of .PHONY).
-#  Implicit rule search has not been done.
-#  File does not exist.
 #  File has not been updated.
 
 # Not a target:
@@ -352,9 +328,9 @@ re_bonus: fclean bonus
 #  Modification time never checked.
 #  File has not been updated.
 
-# makefile (from 'Makefile', line 50)
+# makefile (from 'Makefile', line 45)
 bonus: CFLAGS += -D PRINT_INSTRUCTION=0
-bonus: lola
+bonus: checker
 #  Phony target (prerequisite of .PHONY).
 #  Implicit rule search has not been done.
 #  File does not exist.
@@ -366,7 +342,7 @@ bonus: lola
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 59):
+#  recipe to execute (from 'Makefile', line 52):
 			${CC} ${CFLAGS} -c $< -o ${<:.c=.o}
 
 fclean: clean
@@ -374,23 +350,14 @@ fclean: clean
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 90):
-		rm -rf $(NAME) $(NAME)
-
-# Not a target:
-src/all.o:
- 
-#  Implicit rule search has been done.
-#  Last modified 2022-08-17 23:05:47.108782448
-#  File has been updated.
-#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 75):
+		rm -rf $(NAME) $(NAME_CHECKER)
 
 # Not a target:
 src/utils.o:
-#  Implicit rule search has been done.
-#  Last modified 2022-08-17 23:05:47.677785911
-#  File has been updated.
-#  Successfully updated.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 # Not a target:
 .DEFAULT:
@@ -398,13 +365,15 @@ src/utils.o:
 #  Modification time never checked.
 #  File has not been updated.
 
-checker:
-#  Phony target (prerequisite of .PHONY).
+checker: src/checker.o src/error.o src/get_next_line.o src/utils_checker.o src/parse_std_input.o src/utils.o src/do_op2.o src/do_op.o src/lst.o
 #  Implicit rule search has not been done.
-#  File does not exist.
+#  Modification time never checked.
 #  File has not been updated.
+#  recipe to execute (from 'Makefile', line 64):
+		$(CC) $(CFLAGS) -c $(DSRC)utils.c -o $(DSRC)utils.o
+		$(CC) $(CFLAGS) $(OBJS_CHECKER) -o $(NAME_CHECKER)
 
-# makefile (from 'Makefile', line 54)
+# makefile (from 'Makefile', line 49)
 re: CFLAGS += -D PRINT_INSTRUCTION=1
 re: fclean push_swap
 #  Phony target (prerequisite of .PHONY).
@@ -419,117 +388,89 @@ clean:
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 87):
+#  recipe to execute (from 'Makefile', line 72):
 		rm -rf $(OBJS) $(OBJS_CHECKER)
 
 # Not a target:
 src/sort_algo.o:
-#  Implicit rule search has been done.
-#  Last modified 2022-08-17 23:05:47.206783045
-#  File has been updated.
-#  Successfully updated.
-
-push_swap: src/main.o src/utils.o src/lst.o src/do_op.o src/all.o src/do_op2.o src/sort_algo.o src/assign.o src/safo3n.o src/error.o src/get_next_line.o src/parse_std_input.o src/utils_checker.o src/do_move.o src/stack_info.o
 #  Implicit rule search has not been done.
-#  Implicit/static pattern stem: ''
-#  File does not exist.
-#  File has been updated.
-#  Needs to be updated (-q is set).
-# automatic
-# @ := push_swap
-# automatic
-# % := 
-# automatic
-# * := 
-# automatic
-# + := src/main.o src/utils.o src/lst.o src/do_op.o src/all.o src/do_op2.o src/sort_algo.o src/assign.o src/safo3n.o src/error.o src/get_next_line.o src/parse_std_input.o src/utils_checker.o src/do_move.o src/stack_info.o
-# automatic
-# | := 
-# automatic
-# < := src/main.o
-# automatic
-# ^ := src/main.o src/utils.o src/lst.o src/do_op.o src/all.o src/do_op2.o src/sort_algo.o src/assign.o src/safo3n.o src/error.o src/get_next_line.o src/parse_std_input.o src/utils_checker.o src/do_move.o src/stack_info.o
-# automatic
-# ? := src/main.o src/utils.o src/lst.o src/do_op.o src/all.o src/do_op2.o src/sort_algo.o src/assign.o src/safo3n.o src/error.o src/get_next_line.o src/parse_std_input.o src/utils_checker.o src/do_move.o src/stack_info.o
-# variable set hash-table stats:
-# Load=8/32=25%, Rehash=0, Collisions=8/25=32%
-#  recipe to execute (from 'Makefile', line 75):
+#  Modification time never checked.
+#  File has not been updated.
+
+push_swap: src/main.o src/utils.o src/lst.o src/do_op.o src/do_op2.o src/sort_algo.o src/assign.o src/safo3n.o src/error.o src/get_next_line.o src/parse_std_input.o src/utils_checker.o src/do_move.o src/stack_info.o
+#  Implicit rule search has not been done.
+#  Last modified 2022-09-01 17:57:55.886591973
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 60):
 		$(CC) $(CFLAGS) -c $(DSRC)utils.c -o $(DSRC)utils.o
 		$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
 
 # Not a target:
 src/do_op2.o:
-#  Implicit rule search has been done.
-#  Last modified 2022-08-17 23:05:47.157782746
-#  File has been updated.
-#  Successfully updated.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 # Not a target:
 src/do_move.o:
-#  Implicit rule search has been done.
-#  Last modified 2022-08-17 23:05:47.569785254
-#  File has been updated.
-#  Successfully updated.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 # Not a target:
 src/assign.o:
-#  Implicit rule search has been done.
-#  Last modified 2022-08-17 23:05:47.256783349
-#  File has been updated.
-#  Successfully updated.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 # Not a target:
 src/utils_checker.o:
-#  Implicit rule search has been done.
-#  Last modified 2022-08-17 23:05:47.525784986
-#  File has been updated.
-#  Successfully updated.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 # Not a target:
 src/parse_std_input.o:
-#  Implicit rule search has been done.
-#  Last modified 2022-08-17 23:05:47.480784712
-#  File has been updated.
-#  Successfully updated.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 check: push_swap clean
 #  Phony target (prerequisite of .PHONY).
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 83):
+#  recipe to execute (from 'Makefile', line 68):
 		@ARG=$$(shuf -i 0-500 -n $(SIZE)); \
 		echo "ARG : " && echo $$ARG; \
 		./push_swap $$ARG
 
 # Not a target:
 src/safo3n.o:
-#  Implicit rule search has been done.
-#  Last modified 2022-08-17 23:05:47.314783702
-#  File has been updated.
-#  Successfully updated.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 # Not a target:
 src/stack_info.o:
-#  Implicit rule search has been done.
-#  Last modified 2022-08-17 23:05:47.62178557
-#  File has been updated.
-#  Successfully updated.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 # files hash-table stats:
-# Load=32/1024=3%, Rehash=0, Collisions=0/93=0%
+# Load=29/1024=3%, Rehash=0, Collisions=0/86=0%
 # VPATH Search Paths
 
 # No 'vpath' search paths.
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 52 / storage = 539 B / avg = 10 B
-# current buf: size = 8162 B / used = 539 B / count = 52 / avg = 10 B
+# strcache buffers: 1 (0) / strings = 43 / storage = 442 B / avg = 10 B
+# current buf: size = 8162 B / used = 442 B / count = 43 / avg = 10 B
 
-# strcache performance: lookups = 100 / hit rate = 48%
+# strcache performance: lookups = 89 / hit rate = 51%
 # hash-table stats:
-# Load=52/8192=1%, Rehash=0, Collisions=1/100=1%
-# Finished Make data base on Wed Aug 17 23:05:54 2022
+# Load=43/8192=1%, Rehash=0, Collisions=1/89=1%
+# Finished Make data base on Fri Sep  2 10:59:00 2022
 
  

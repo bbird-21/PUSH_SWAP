@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   assign.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mmeguedm <mmeguedm@student42.fr>           +#+  +:+       +#+        */
+/*   By: mmeguedm <mmeguedm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/16 18:10:16 by mmeguedm          #+#    #+#             */
-/*   Updated: 2022/08/05 14:26:13 by mmeguedm         ###   ########.fr       */
+/*   Updated: 2022/09/01 15:23:30 by mmeguedm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,31 +14,6 @@
 #include "assign.h"
 #include "sort_algo.h"
 #include "stack_info.h"
-
-// void	ft_assign_index(t_stack *sta)
-// {
-// 	t_stack	*current;
-// 	t_stack	*min;
-// 	t_stack	*tmp2;
-
-// 	int	index;
-
-// 	index = 1;
-// 	tmp2 = sta;
-// 	while (tmp2)
-// 	{
-// 		current = NULL;
-// 		min = sta;
-// 		while (min)
-// 		{
-// 			if (!min->index && (!current || min->value < current->value))
-// 				current = min;
-// 			min = min->next;
-// 		}
-// 		current->index = index++;
-// 		tmp2 = tmp2->next;
-// 	}
-// }
 
 void	set_index(t_stack *sta, int index)
 {
@@ -78,14 +53,13 @@ void	set_pos(t_stack *sta, t_stack *stb)
 		stb = stb->next;
 		pos++;
 	}
-
 }
 
 void	set_target_pos(t_stack *sta, t_stack *stb)
 {
-	t_stack *tmp_a;
-	int	nearest_index;
-	int	index_sup;
+	t_stack		*tmp_a;
+	int			nearest_index;
+	int			index_sup;
 
 	while (stb)
 	{
@@ -94,7 +68,8 @@ void	set_target_pos(t_stack *sta, t_stack *stb)
 		nearest_index = get_highest_index(sta);
 		while (tmp_a)
 		{
-			if ((tmp_a->index - stb->index < nearest_index) && (tmp_a->index > stb->index))
+			if ((tmp_a->index - stb->index < nearest_index)
+				&& (tmp_a->index > stb->index))
 			{
 				index_sup = 1;
 				stb->target_pos = tmp_a->pos;

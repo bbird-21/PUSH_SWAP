@@ -2,14 +2,10 @@ NAME = push_swap
 NAME_CHECKER = checker
 CC = cc
 
-# DON T FORGET FLAGS
-
-# PATHS
-
 DSRC = src/
 DINC = inc/
 
-CFLAGS = -g3 -Wall -Werror -Wextra -I $(DINC)
+CFLAGS = -Wall -Werror -Wextra -I $(DINC)
 
 # ifeq ($(filter bonus,$(MAKECMDGOALS)),bonus)
 # CFLAGS += -D PRINT_INSTRUCTION=0
@@ -51,19 +47,9 @@ bonus : CFLAGS+=-D PRINT_INSTRUCTION=0
 all : CFLAGS+= -D PRINT_INSTRUCTION=1
 
 re : CFLAGS+= -D PRINT_INSTRUCTION=1
-# utils.o : utils.c
-# $(CC) $(CFLAGS) -o $@ $<
 
 .c.o:
 			${CC} ${CFLAGS} -c $< -o ${<:.c=.o}
-
-# utils.o : CFLAGS_CHECKER+=-O3
-
-# u%.o : u%.c
-#     $(CFLAGS_CHECKER) -o $@ $<
-
-# .c.o:
-#     ${CC} ${CFLAGS_CHECKER} -c $<
 
 
 all : $(NAME)

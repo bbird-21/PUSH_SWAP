@@ -41,20 +41,16 @@ t_error	do_swap(t_stack **sta, t_stack **stb)
 	return (no_error);
 }
 
-
 t_error	do_push(t_stack **src, t_stack **dest)
 {
 	if (ft_is_sta(dest, false))
 		ft_putstr_fd("pa\n", STDOUT_FILENO);
 	if (!ft_is_sta(dest, false))
 		ft_putstr_fd("pb\n", STDOUT_FILENO);
-
 	if (!(push(src, dest)))
 		return (error);
 	return (no_error);
 }
-
-
 
 t_error	do_rotate(t_stack **sta, t_stack **stb)
 {
@@ -80,8 +76,6 @@ t_error	do_rotate(t_stack **sta, t_stack **stb)
 	}
 	return (no_error);
 }
-
-
 
 t_error	do_rrotate(t_stack **sta, t_stack **stb)
 {

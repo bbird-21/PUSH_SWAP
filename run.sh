@@ -5,15 +5,17 @@ NC='\033[0m'
 FAILURE=KO
 make
 make bonus
-for i in {1..100}
+#for i in {1..10}
+while [ "$output_push_swap" != "$FAILURE" ]
 do
-	ARG=$(shuf -i 0-500 -n 20) && ./push_swap $ARG | ./checker $ARG > output_checker
-	string_output=output_checker
-	if [ "$string_output" = "$FAILURE" ]; then
+	ARG=$(shuf -i 0-500 -n 20) && output_push_swap=$(./push_swap $ARG | ./checker_linux $ARG)
+#./push_swap $ARG | ./checker $ARG > output_checker
+#diff=$(diff output_checker output_checker_linux)
+	if [ "$output_push_swap" != "$FAILURE" ]; then
+		printf "${GREEN}OK${NC}\n"
+	else
 		echo $ARG
 		printf "${RED}An error has been encoutered. Plese check args.${NC}"
-		break ;
-	else
-		printf "${GREEN}OK${NC}\n"
+		break;
 	fi
 done

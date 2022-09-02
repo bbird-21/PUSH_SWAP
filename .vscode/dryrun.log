@@ -1,6 +1,20 @@
-make --dry-run --keep-going --print-directory
-make: Entering directory '/mnt/nfs/homes/mmeguedm/Desktop/Projects/PUSH_SWAP_CP'
-cc -g3 -Wall -Werror -Wextra -I inc/ -D PRINT_INSTRUCTION=1 -c src/utils.c -o src/utils.o
-cc -g3 -Wall -Werror -Wextra -I inc/ -D PRINT_INSTRUCTION=1 src/main.o src/utils.o src/lst.o src/do_op.o src/all.o src/do_op2.o src/sort_algo.o src/assign.o src/safo3n.o src/error.o src/get_next_line.o src/parse_std_input.o src/utils_checker.o src/do_move.o src/stack_info.o -o push_swap
-make: Leaving directory '/mnt/nfs/homes/mmeguedm/Desktop/Projects/PUSH_SWAP_CP'
+make --dry-run --always-make --keep-going --print-directory
+make: Entering directory '/mnt/nfs/homes/mmeguedm/Desktop/Projects/PUSH_SWAP'
+cc -Wall -Werror -Wextra -I inc/ -D PRINT_INSTRUCTION=1 -c src/main.c -o src/main.o
+cc -Wall -Werror -Wextra -I inc/ -D PRINT_INSTRUCTION=1 -c src/utils.c -o src/utils.o
+cc -Wall -Werror -Wextra -I inc/ -D PRINT_INSTRUCTION=1 -c src/lst.c -o src/lst.o
+cc -Wall -Werror -Wextra -I inc/ -D PRINT_INSTRUCTION=1 -c src/do_op.c -o src/do_op.o
+cc -Wall -Werror -Wextra -I inc/ -D PRINT_INSTRUCTION=1 -c src/do_op2.c -o src/do_op2.o
+cc -Wall -Werror -Wextra -I inc/ -D PRINT_INSTRUCTION=1 -c src/sort_algo.c -o src/sort_algo.o
+cc -Wall -Werror -Wextra -I inc/ -D PRINT_INSTRUCTION=1 -c src/assign.c -o src/assign.o
+cc -Wall -Werror -Wextra -I inc/ -D PRINT_INSTRUCTION=1 -c src/safo3n.c -o src/safo3n.o
+cc -Wall -Werror -Wextra -I inc/ -D PRINT_INSTRUCTION=1 -c src/error.c -o src/error.o
+cc -Wall -Werror -Wextra -I inc/ -D PRINT_INSTRUCTION=1 -c src/get_next_line.c -o src/get_next_line.o
+cc -Wall -Werror -Wextra -I inc/ -D PRINT_INSTRUCTION=1 -c src/parse_std_input.c -o src/parse_std_input.o
+cc -Wall -Werror -Wextra -I inc/ -D PRINT_INSTRUCTION=1 -c src/utils_checker.c -o src/utils_checker.o
+cc -Wall -Werror -Wextra -I inc/ -D PRINT_INSTRUCTION=1 -c src/do_move.c -o src/do_move.o
+cc -Wall -Werror -Wextra -I inc/ -D PRINT_INSTRUCTION=1 -c src/stack_info.c -o src/stack_info.o
+cc -Wall -Werror -Wextra -I inc/ -D PRINT_INSTRUCTION=1 -c src/utils.c -o src/utils.o
+cc -Wall -Werror -Wextra -I inc/ -D PRINT_INSTRUCTION=1 src/main.o src/utils.o src/lst.o src/do_op.o src/do_op2.o src/sort_algo.o src/assign.o src/safo3n.o src/error.o src/get_next_line.o src/parse_std_input.o src/utils_checker.o src/do_move.o src/stack_info.o -o push_swap
+make: Leaving directory '/mnt/nfs/homes/mmeguedm/Desktop/Projects/PUSH_SWAP'
  

@@ -6,7 +6,7 @@
 /*   By: mmeguedm <mmeguedm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/05 16:25:09 by mmeguedm          #+#    #+#             */
-/*   Updated: 2022/08/17 19:35:44 by mmeguedm         ###   ########.fr       */
+/*   Updated: 2022/09/01 15:25:35 by mmeguedm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,8 +44,7 @@ t_error	push(t_stack **src, t_stack **dest)
 	return (no_error);
 }
 
-
-t_error rotate(t_stack **st)
+t_error	rotate(t_stack **st)
 {
 	t_stack	*last;
 	t_stack	*second;
