@@ -8,7 +8,7 @@ make: *** No rule to make target 'src/main.o', needed by 'push_swap'.  Stop.
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Fri Sep  2 10:59:00 2022
+# Make data base, printed on Fri Sep  2 14:27:58 2022
 
 # Variables
 
@@ -71,7 +71,7 @@ OBJS = ${SRCS:.c=.o}
 # environment
 MANAGERPID = 1605921
 # environment
-VSCODE_CWD = /mnt/nfs/homes/mmeguedm/Desktop/Projects/PUSH_SWAP
+VSCODE_CWD = /mnt/nfs/homes/mmeguedm/Desktop/Projects/PIPEX
 # environment
 XDG_SESSION_PATH = /org/freedesktop/DisplayManager/Session26
 # environment
@@ -185,7 +185,7 @@ MAKE_COMMAND := make
 # makefile (from 'Makefile', line 6)
 DINC = inc/
 # environment
-OLDPWD = /mnt/nfs/homes/mmeguedm
+OLDPWD = /mnt/nfs/homes/mmeguedm/Desktop/Projects
 # environment
 TERMINATOR_DBUS_PATH = /net/tenshu/Terminator2
 # default
@@ -208,6 +208,8 @@ MFLAGS = -pqrR
 GDK_BACKEND = x11
 # automatic
 +F = $(notdir $+)
+# environment
+NO_AT_BRIDGE = 1
 # environment
 QT_ACCESSIBILITY = 1
 # environment
@@ -243,9 +245,9 @@ TERMINATOR_DBUS_NAME = net.tenshu.Terminator21a9d5db22c73a993ff0b42f64b396873
 # environment
 DOCKER_HOST = unix:///run/user/101815/docker.sock
 # environment
-VSCODE_PID = 1608355
+VSCODE_PID = 1610395
 # variable set hash-table stats:
-# Load=116/1024=11%, Rehash=0, Collisions=26/156=17%
+# Load=117/1024=11%, Rehash=0, Collisions=26/157=17%
 
 # Pattern-specific Variable Values
 
@@ -277,9 +279,9 @@ all: push_swap
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
+ 
 # variable set hash-table stats:
 # Load=1/32=3%, Rehash=0, Collisions=0/2=0%
- 
 
 # Not a target:
 src/get_next_line.o:
@@ -471,6 +473,6 @@ src/stack_info.o:
 # strcache performance: lookups = 89 / hit rate = 51%
 # hash-table stats:
 # Load=43/8192=1%, Rehash=0, Collisions=1/89=1%
-# Finished Make data base on Fri Sep  2 10:59:00 2022
+# Finished Make data base on Fri Sep  2 14:27:58 2022
 
  
