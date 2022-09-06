@@ -21,9 +21,6 @@ SRCS = $(addprefix $(DSRC),\
 		assign.c\
 		safo3n.c\
 		error.c\
-		get_next_line.c\
-		parse_std_input.c\
-		utils_checker.c\
 		do_move.c\
 		stack_info.c)
 
@@ -35,33 +32,30 @@ SRCS_CHECKER = $(addprefix $(DSRC), \
 		parse_std_input.c\
 		utils.c\
 		do_op2.c\
-		do_op.c\
+		do_op_checker.c\
 		lst.c)
 
 OBJS_CHECKER = ${SRCS_CHECKER:.c=.o}
 
 OBJS = ${SRCS:.c=.o}
 
-bonus : CFLAGS+=-D PRINT_INSTRUCTION=0
+# bonus : CFLAGS+=-D PRINT_INSTRUCTION=0
 
-all : CFLAGS+= -D PRINT_INSTRUCTION=1
+# all : CFLAGS+= -D PRINT_INSTRUCTION=1
 
-re : CFLAGS+= -D PRINT_INSTRUCTION=1
+# re : CFLAGS+= -D PRINT_INSTRUCTION=1
 
 .c.o:
 			${CC} ${CFLAGS} -c $< -o ${<:.c=.o}
-
 
 all : $(NAME)
 
 bonus : $(NAME_CHECKER)
 
 $(NAME) : $(OBJS)
-		$(CC) $(CFLAGS) -c $(DSRC)utils.c -o $(DSRC)utils.o
 		$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
 
 $(NAME_CHECKER) : $(OBJS_CHECKER)
-		$(CC) $(CFLAGS) -c $(DSRC)utils.c -o $(DSRC)utils.o
 		$(CC) $(CFLAGS) $(OBJS_CHECKER) -o $(NAME_CHECKER)
 
 check : $(NAME) clean

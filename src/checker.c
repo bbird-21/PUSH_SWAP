@@ -6,7 +6,7 @@
 /*   By: mmeguedm <mmeguedm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/09 20:40:42 by mmeguedm          #+#    #+#             */
-/*   Updated: 2022/09/01 18:36:21 by mmeguedm         ###   ########.fr       */
+/*   Updated: 2022/09/06 14:38:19 by mmeguedm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 #include "parse_std_input.h"
 #include <unistd.h>
 #include <stdlib.h>
+#include <stdio.h>
 
 t_bool	ft_stack_is_sorted(t_stack *sta)
 {
@@ -56,7 +57,6 @@ t_bool	ft_fillstack(char **argv, t_stack **sta, int argc)
 {
 	while (argc--)
 		ft_lstpush(sta, ft_atoi(argv[argc]));
-	ft_is_sta(sta, true);
 	return (false);
 }
 

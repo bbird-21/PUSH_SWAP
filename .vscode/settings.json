@@ -20,6 +20,8 @@
 		"utility": "c",
 		"unistd.h": "c",
 		"stdlib.h": "c",
-		"parse_std_input.h": "c"
+		"parse_std_input.h": "c",
+		"streambuf": "c",
+		"do_op_checker.h": "c"
 	}
 }

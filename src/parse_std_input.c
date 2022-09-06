@@ -6,7 +6,7 @@
 /*   By: mmeguedm <mmeguedm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/09 20:50:36 by mmeguedm          #+#    #+#             */
-/*   Updated: 2022/09/01 18:34:37 by mmeguedm         ###   ########.fr       */
+/*   Updated: 2022/09/06 14:40:41 by mmeguedm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,6 @@ t_error	get_instruction(t_stack **sta, t_stack **stb)
 	char	*instruction;
 
 	instruction = get_next_line(STDIN_FILENO);
-	if (!instruction)
-		return (error);
 	while (instruction != NULL)
 	{
 		if (!(is_instruction(instruction)))
@@ -44,30 +42,26 @@ t_error	get_instruction(t_stack **sta, t_stack **stb)
 	return (no_error);
 }
 
-t_error	do_instruction(t_stack **sta, t_stack **stb, char *instruction)
+t_error do_instruction(t_stack **sta, t_stack **stb, char *instruction)
 {
-	if (!(ft_strcmp(instruction, "sa\n")))
-		return (do_swap(sta, NULL));
-	else if (!(ft_strcmp(instruction, "sb\n")))
-		return (do_swap(NULL, stb));
-	else if (!(ft_strcmp(instruction, "ss\n")))
-		return (do_swap(sta, stb));
-	else if (!(ft_strcmp(instruction, "pa\n")))
-		return (do_push(stb, sta));
-	else if (!(ft_strcmp(instruction, "pb\n")))
-		do_push(sta, stb);
-	else if (!(ft_strcmp(instruction, "ra\n")))
-		return (do_rotate(sta, NULL));
-	else if (!(ft_strcmp(instruction, "rb\n")))
-		return (do_rotate(NULL, stb));
-	else if (!(ft_strcmp(instruction, "rr\n")))
-		return (do_rotate(sta, stb));
-	else if (!(ft_strcmp(instruction, "rra\n")))
-		return (do_rrotate(sta, NULL));
-	else if (!(ft_strcmp(instruction, "rrb\n")))
-		return (do_rrotate(NULL, stb));
-	else if (!(ft_strcmp(instruction, "rrr\n")))
-		return (do_rrotate(sta, stb));
+	unsigned int index;
+
+	index = 0;
+	while (g_storage[index].instruction != NULL)
+	{
+		if (!(ft_strcmp(instruction, g_storage[index].instruction)))
+		{
+			if (g_storage[index].params == STA_STB)
+				g_storage[index].do_op(sta, stb);
+			else if (g_storage[index].params == STB_STA)
+				g_storage[index].do_op(stb, sta);
+			else if (g_storage[index].params == STA)
+				g_storage[index].do_op(sta, NULL);
+			else if (g_storage[index].params == STB)
+				g_storage[index].do_op(NULL, stb);
+		}
+		index++;
+	}
 	return (no_error);
 }
 
@@ -87,7 +81,6 @@ t_bool	is_instruction(char *instruction)
 		"rrb\n",
 		"rrr\n"
 	};
-
 	i = 0;
 	if (!instruction)
 		return (false);
