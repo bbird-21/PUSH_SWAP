@@ -6,7 +6,7 @@
 /*   By: mmeguedm <mmeguedm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/19 18:45:25 by mmeguedm          #+#    #+#             */
-/*   Updated: 2022/09/01 18:14:23 by mmeguedm         ###   ########.fr       */
+/*   Updated: 2022/09/26 18:49:17 by mmeguedm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 /* <parse_std_input.c> requires this constant to be declared here.
    This corresponds to the size of the double array.  */
-# define NUMBER_STRING 12
+# define NUMBER_STRING 13
 # define MAX_STRING_SIZE 5
 
 /* To prevent integer overflow in expression of type ‘int’  */

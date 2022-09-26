@@ -6,7 +6,7 @@
 /*   By: mmeguedm <mmeguedm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/09 20:49:08 by mmeguedm          #+#    #+#             */
-/*   Updated: 2022/09/06 14:33:31 by mmeguedm         ###   ########.fr       */
+/*   Updated: 2022/09/12 13:26:13 by mmeguedm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
 # define USE_STACK_B   1
 # define USE_STACK_ALL 2
 
-typedef t_error(*t_pf_op)(t_stack**, t_stack**);
+typedef t_error		(*t_pf_op)(t_stack**, t_stack**);
 
 typedef enum e_params
 {
@@ -31,46 +31,31 @@ typedef enum e_params
 	STB_STA
 }	t_params;
 
-typedef struct	s_op
+typedef struct s_op
 {
-	const char	*instruction;
-	t_pf_op		do_op;
+	const char		*instruction;
+	t_pf_op			do_op;
 	t_params		params;
-}				t_op;
+}					t_op;
 
-static t_op const g_storage[] = {
-	{ "sa\n", do_swap_checker, STA},
-	{ "sb\n", do_swap_checker, STB},
-	{ "ss\n", do_swap_checker, STA_STB},
-	{ "pa\n", do_push_checker, STB_STA},
-	{ "pb\n", do_push_checker, STA_STB},
-	{ "ra\n", do_rotate_checker, STA},
-	{ "rb\n", do_rotate_checker, STB},
-	{ "rr\n", do_rotate_checker, STA_STB},
-	{ "rra\n", do_rrotate_checker, STA},
-	{ "rrb\n", do_rrotate_checker, STB},
-	{ "rrr\n", do_rrotate_checker, STA_STB},
-	{0},
+static t_op const	g_storage[] = {
+{"sa\n", do_swap_checker, STA},
+{"sb\n", do_swap_checker, STB},
+{"ss\n", do_swap_checker, STA_STB},
+{"pa\n", do_push_checker, STB_STA},
+{"pb\n", do_push_checker, STA_STB},
+{"ra\n", do_rotate_checker, STA},
+{"rb\n", do_rotate_checker, STB},
+{"rr\n", do_rotate_checker, STA_STB},
+{"rra\n", do_rrotate_checker, STA},
+{"rrb\n", do_rrotate_checker, STB},
+{"rrr\n", do_rrotate_checker, STA_STB},
+{0},
 };
 
 t_error	get_instruction(t_stack **sta, t_stack **stb);
 t_error	do_instruction(t_stack **sta, t_stack **stb, char *instruction);
 t_bool	is_instruction(char *instruction);
 t_op	*operation_storage(t_stack **sta, t_stack **stb);
-
-
-
-// 	t_op op = storage[1];
-
-// 	void *sta = 1, *stb = 1;
-// 	if (op.flags & USE_STACK_A != 0)
-// 		stb = NULL;
-// 	else if (op.flags & USE_STACK_B != 0)
-// 		sta = NULL;
-
-// 	op.operation(sta, stb);
-
-// 	return (storage);
-// }
 
 #endif

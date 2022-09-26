@@ -6,7 +6,7 @@
 /*   By: mmeguedm <mmeguedm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/09 20:50:36 by mmeguedm          #+#    #+#             */
-/*   Updated: 2022/09/06 14:40:41 by mmeguedm         ###   ########.fr       */
+/*   Updated: 2022/09/26 18:50:59 by mmeguedm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,14 @@ t_error	get_instruction(t_stack **sta, t_stack **stb)
 {
 	char	*instruction;
 
-	instruction = get_next_line(STDIN_FILENO);
+	instruction = get_next_line(STDIN_FILENO, sta, stb);
 	while (instruction != NULL)
 	{
+		if (*instruction == '\0')
+			return (no_error);
 		if (!(is_instruction(instruction)))
 		{
+			printf("instruction : %s\n", instruction);
 			free(instruction);
 			return (error);
 		}
@@ -37,14 +40,14 @@ t_error	get_instruction(t_stack **sta, t_stack **stb)
 			return (error);
 		}
 		free(instruction);
-		instruction = get_next_line(STDIN_FILENO);
+		instruction = get_next_line(STDIN_FILENO, sta, stb);
 	}
 	return (no_error);
 }
 
-t_error do_instruction(t_stack **sta, t_stack **stb, char *instruction)
+t_error	do_instruction(t_stack **sta, t_stack **stb, char *instruction)
 {
-	unsigned int index;
+	unsigned int	index;
 
 	index = 0;
 	while (g_storage[index].instruction != NULL)
@@ -79,8 +82,9 @@ t_bool	is_instruction(char *instruction)
 		"rr\n",
 		"rra\n",
 		"rrb\n",
-		"rrr\n"
+		"rrr\n",
 	};
+
 	i = 0;
 	if (!instruction)
 		return (false);

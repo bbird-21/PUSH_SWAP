@@ -6,7 +6,7 @@
 /*   By: mmeguedm <mmeguedm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/29 13:53:15 by mmeguedm          #+#    #+#             */
-/*   Updated: 2022/09/01 17:57:51 by mmeguedm         ###   ########.fr       */
+/*   Updated: 2022/09/26 18:56:13 by mmeguedm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ int	ft_newline(char *s)
 	return (0);
 }
 
-char	*get_next_line(int fd)
+char	*get_next_line(int fd, t_stack **sta, t_stack **stb)
 {
 	char	*buffer;
 	char	*line;
@@ -48,6 +48,10 @@ char	*get_next_line(int fd)
 		line = ft_strjoin(line, buffer);
 	}
 	if (!(is_instruction(line)))
-		return (free(buffer), free(line), NULL);
+	{
+		free(buffer);
+		free(line);
+		exit_error(sta, stb);
+	}
 	return (free(buffer), line);
 }
