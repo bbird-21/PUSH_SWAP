@@ -6,7 +6,7 @@
 /*   By: mmeguedm <mmeguedm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/09 20:49:08 by mmeguedm          #+#    #+#             */
-/*   Updated: 2022/09/12 13:26:13 by mmeguedm         ###   ########.fr       */
+/*   Updated: 2022/10/09 14:13:09 by mmeguedm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ static t_op const	g_storage[] = {
 };
 
 t_error	get_instruction(t_stack **sta, t_stack **stb);
-t_error	do_instruction(t_stack **sta, t_stack **stb, char *instruction);
+void	do_instruction(t_stack **sta, t_stack **stb, char *instruction);
 t_bool	is_instruction(char *instruction);
 t_op	*operation_storage(t_stack **sta, t_stack **stb);
 

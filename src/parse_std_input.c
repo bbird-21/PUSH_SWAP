@@ -6,7 +6,7 @@
 /*   By: mmeguedm <mmeguedm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/09 20:50:36 by mmeguedm          #+#    #+#             */
-/*   Updated: 2022/09/26 18:50:59 by mmeguedm         ###   ########.fr       */
+/*   Updated: 2022/10/09 14:13:19 by mmeguedm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,25 +27,15 @@ t_error	get_instruction(t_stack **sta, t_stack **stb)
 	while (instruction != NULL)
 	{
 		if (*instruction == '\0')
-			return (no_error);
-		if (!(is_instruction(instruction)))
-		{
-			printf("instruction : %s\n", instruction);
-			free(instruction);
-			return (error);
-		}
-		if (do_instruction(sta, stb, instruction) == error)
-		{
-			free(instruction);
-			return (error);
-		}
+			return (free(instruction), no_error);
+		do_instruction(sta, stb, instruction);
 		free(instruction);
 		instruction = get_next_line(STDIN_FILENO, sta, stb);
 	}
 	return (no_error);
 }
 
-t_error	do_instruction(t_stack **sta, t_stack **stb, char *instruction)
+void	do_instruction(t_stack **sta, t_stack **stb, char *instruction)
 {
 	unsigned int	index;
 
@@ -65,7 +55,6 @@ t_error	do_instruction(t_stack **sta, t_stack **stb, char *instruction)
 		}
 		index++;
 	}
-	return (no_error);
 }
 
 t_bool	is_instruction(char *instruction)

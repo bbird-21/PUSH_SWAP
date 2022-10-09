@@ -6,7 +6,7 @@
 /*   By: mmeguedm <mmeguedm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/09 20:40:42 by mmeguedm          #+#    #+#             */
-/*   Updated: 2022/09/26 17:34:37 by mmeguedm         ###   ########.fr       */
+/*   Updated: 2022/10/09 17:24:20 by mmeguedm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,11 +53,10 @@ void	free_stack(t_stack **sta, t_stack **stb)
 	*stb = NULL;
 }
 
-t_bool	ft_fillstack(char **argv, t_stack **sta, int argc)
+void	ft_fillstack(char **argv, t_stack **sta, int argc)
 {
 	while (argc--)
 		ft_lstpush(sta, ft_atoi(argv[argc]));
-	return (false);
 }
 
 int	exit_error(t_stack **sta, t_stack **stb)
@@ -78,11 +77,9 @@ int	main(int argc, char **argv)
 		return (-1);
 	if (!(ft_checkargs(argv + 1)))
 		return (ft_putstr_fd("Error\n", STDERR_FILENO));
-	if (ft_fillstack(argv + 1, &sta, argc - 1))
-	{
-		free_stack(&sta, &stb);
-		return (free_stack(&sta, &stb), 1);
-	}
+	ft_fillstack(argv + 1, &sta, argc - 1);
+	if (duplicate_int(sta))
+		return (exit_error(&sta, &stb));
 	if (get_instruction(&sta, &stb) == error)
 		return (exit_error(&sta, &stb));
 	if (ft_stack_is_sorted(sta) && !ft_lstsize(stb))
